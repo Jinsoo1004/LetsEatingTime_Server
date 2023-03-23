@@ -11,4 +11,5 @@ public interface UserMapper {
     public void register(User user);
     public User[] getBySchoolNumber(String schoolNumber);
     public User[] get();
+    public void updateLastTime(String schoolNumber);
 }

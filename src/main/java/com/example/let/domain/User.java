@@ -1,6 +1,7 @@
 package com.example.let.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 /**
@@ -9,7 +10,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User extends RegisterTimeEntity {
     /**
      * idx
     */
@@ -21,12 +22,16 @@ public class User {
     /**
      * 비밀번호
      */
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+    /**
+     * 이름
+     */
+    private String name;
     /**
      * 마지막 작용 시간
      */
-    private String last_time;
+    private String lastTime;
     /**
      * 급식 신청
      */
@@ -34,5 +39,5 @@ public class User {
     /**
      * 유저 타입 (S:학생, T:교사, M:관리자, A:어드민)
      */
-    private char user_type;
+    private char userType;
 }
