@@ -1,0 +1,63 @@
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.let.mapper.UserMapper">
+
+    <resultMap type="com.example.let.domain.User" id="result">
+        <result property="idx" column="idx" />
+        <result property="schoolNumber" column="school_number" />
+        <result property="password" column="password" />
+        <result property="name" column="name" />
+        <result property="lastTime" column="last_time" />
+        <result property="mealApplication" column="meal_application" />
+        <result property="userType" column="user_type" />
+    </resultMap>
+
+    <sql id="sql_select">
+        SELECT
+            a.idx
+             , a.school_number
+             , a.password
+             , a.name
+             , DATE_FORMAT(a.register_time, '%Y-%m-%dT%T+09:00') AS a.last_time
+             , a.meal_application
+             , a.user_type
+    </sql>
+
+    <select id="get" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM user AS a
+    </select>
+    <select id="getBySchoolNumber" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM user AS a
+        WHERE a.school_number = #{schoolNumber}
+    </select>
+
+    <insert id="register" parameterType="com.example.let.domain.User"
+            keyProperty="idx">
+
+        INSERT INTO user
+        (
+            idx
+            , school_number
+            , password
+            , name
+            , last_time
+            , meal_application
+            , user_type
+        )
+        VALUES
+        (
+            #{idx}
+            , #{schoolNumber}
+            , #{password}
+            , #{name}
+            , #{lastTime}
+            , #{mealApplication}
+            , #{userType}
+        )
+    </insert>
+
+</mapper>

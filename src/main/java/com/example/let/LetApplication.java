@@ -1,13 +1,13 @@
-package com.example.letseatingtime_server;
+package com.example.let;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LetsEatingTimeServerApplication {
+public class LetApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LetsEatingTimeServerApplication.class, args);
+		SpringApplication.run(LetApplication.class, args);
 	}
 
 }

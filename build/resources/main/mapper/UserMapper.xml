@@ -1,0 +1,44 @@
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.let.mapper.UserMapper">
+
+    <resultMap type="com.example.let.domain.User" id="result">
+        <result property="idx" column="idx" />
+        <result property="email" column="email" />
+        <result property="password" column="password" />
+    </resultMap>
+
+    <sql id="sql_select">
+        SELECT
+            a.idx
+             , a.email
+             , a.password
+    </sql>
+
+    <select id="get" resultMap="result">
+        SELECT * FROM user
+    </select>
+    <select id="getByEmail" resultMap="result">
+        SELECT * FROM user WHERE email = #{email}
+    </select>
+
+    <insert id="register" parameterType="com.example.let.domain.User"
+            keyProperty="idx">
+
+        INSERT INTO user
+        (
+            idx
+        , email
+        , password
+        )
+        VALUES
+            (
+                #{idx}
+            , #{email}
+            , #{password}
+            )
+    </insert>
+
+</mapper>
