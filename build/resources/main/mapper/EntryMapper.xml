@@ -1,0 +1,55 @@
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.let.mapper.EntryMapper">
+
+    <resultMap type="com.example.let.domain.Entry" id="result">
+        <result property="idx" column="idx" />
+        <result property="userCode" column="user_code" />
+        <result property="entryTime" column="entry_time" />
+        <result property="status" column="status" />
+        <result property="mealType" column="meal_type" />
+    </resultMap>
+
+    <sql id="sql_select">
+        SELECT
+            a.idx
+             , a.user_code
+             , DATE_FORMAT(a.register_time, '%Y-%m-%dT%T+09:00') AS a.entry_time
+             , a.status
+             , a.meal_type
+    </sql>
+
+    <select id="get" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM entry AS a
+    </select>
+    <select id="getByUserCode" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM entry AS a
+        WHERE a.user_code = #{userCode}
+    </select>
+
+    <insert id="register" parameterType="com.example.let.domain.Entry"
+            keyProperty="idx">
+
+        INSERT INTO entry
+        (
+            idx
+            , user_code
+            , entry_time
+            , status
+            , meal_type
+        )
+        VALUES
+        (
+            #{idx}
+            , #{userCode}
+            , #{entryTime}
+            , #{status}
+            , #{mealType}
+        )
+    </insert>
+
+</mapper>

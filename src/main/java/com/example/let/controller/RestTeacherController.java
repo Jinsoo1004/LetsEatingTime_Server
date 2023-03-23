@@ -43,7 +43,7 @@ public class RestTeacherController {
     /**
      * @Name 출입 기록 가져오기
      * @Path "api/teacher/get/entry"
-     * @Request RequestParam(user) : String
+     * @Request RequestParam(schoolNumber) : String
      *
      * @text
      * user가 비어있지 않으면 학번을 포함한 정보를 가져온다.
