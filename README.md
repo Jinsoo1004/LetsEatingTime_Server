@@ -1,2 +1,3 @@
 # LETServer
-developer : 이찬혁
+developer : 박하은, 이찬혁
+
