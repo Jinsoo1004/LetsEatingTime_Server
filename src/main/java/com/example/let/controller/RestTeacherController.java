@@ -59,4 +59,18 @@ public class RestTeacherController {
             return entryService.get(userCode);
         }
     }
+    /**
+     * @Name 출입 기록 날자를 통해 가져오기
+     * @Path "api/teacher/get/entry/date"
+     * @Request RequestParam(date) : String[data["YYYY-MM-DD"]]
+     *
+     * @text
+     * date와 같은 날자의 학번을 포함한 정보를 가져온다.
+     *
+     * @Return Entry[]
+     */
+    @PostMapping("/get/entry/date")
+    public Entry[] GetEntryByTime(@RequestParam(name = "date") String date) {
+        return entryService.getByDate(date);
+    }
 }

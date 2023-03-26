@@ -30,6 +30,11 @@
         FROM entry AS a
         WHERE a.user_code = #{userCode}
     </select>
+    <select id="getByDate" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM entry AS a
+        WHERE date_format(a.entryTime, '%Y-%m-%d') = #{date};
+    </select>
 
     <insert id="register" parameterType="com.example.let.domain.Entry"
             keyProperty="idx">

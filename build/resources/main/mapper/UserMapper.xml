@@ -36,6 +36,12 @@
         WHERE a.school_number = #{schoolNumber}
     </select>
 
+    <update id="updateLastTime" >
+        UPDATE user SET
+            last_time = now()
+        WHERE school_number = #{schoolNumber}
+    </update>
+
     <insert id="register" parameterType="com.example.let.domain.User"
             keyProperty="idx">
 

@@ -10,7 +10,7 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User extends RegisterTimeEntity {
+public class User {
     /**
      * idx
     */
