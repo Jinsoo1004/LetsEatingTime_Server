@@ -11,5 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface EntryMapper {
     public void register(Entry entry);
     public Entry[] getByUserCode(String userCode);
+    public Entry[] getByDate(String dates);
     public Entry[] get();
 }

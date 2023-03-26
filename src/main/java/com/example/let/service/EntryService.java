@@ -6,5 +6,6 @@ import com.example.let.domain.User;
 public interface EntryService {
     public String register(Entry entry);
     public Entry[] get(String userCode);
+    public Entry[] getByDate(String Time);
     public Entry[] get();
 }

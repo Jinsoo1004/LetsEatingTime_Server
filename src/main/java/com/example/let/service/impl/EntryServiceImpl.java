@@ -21,6 +21,10 @@ public class EntryServiceImpl implements EntryService {
         return entryMapper.getByUserCode(userCode);
     }
     @Override
+    public Entry[] getByDate(String date) {
+        return entryMapper.getByDate(date);
+    }
+    @Override
     public Entry[] get() {
         return entryMapper.get();
     }
