@@ -1,17 +1,21 @@
 package com.example.let.controller;
 
+import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.service.UserService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user")
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Log4j2
 public class RestUserController {
     private final UserService userService;
+    private final PasswordEncoder passwordEncoder;
 
     /**
      * @Name 회원가입
@@ -25,6 +29,8 @@ public class RestUserController {
      */
     @PostMapping("/signup.do")
     public String Signup(@RequestBody User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setUserType('S');
         return userService.register(user);
     }
     /**
@@ -38,7 +44,8 @@ public class RestUserController {
      * @Return String(학번)
      */
     @PostMapping("/login.do")
-    public String Login(@RequestBody User user) {
-        return userService.register(user);
+    public TokenInfo Login(@RequestBody User user) {
+        TokenInfo tokenInfo = userService.login(user.getSchoolNumber(), user.getPassword());
+        return tokenInfo;
     }
 }

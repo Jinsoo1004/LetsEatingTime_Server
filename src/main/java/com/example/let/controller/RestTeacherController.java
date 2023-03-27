@@ -6,6 +6,7 @@ import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.UserMapper;
 import com.example.let.service.EntryService;
 import com.example.let.service.UserService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/teacher")
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Log4j2
 public class RestTeacherController {
     private final UserService userService;
@@ -36,7 +37,7 @@ public class RestTeacherController {
         if(schoolNumber.equals("")) {
             return userService.get();
         } else {
-            return userService.get(schoolNumber);
+            return new User[]{userService.get(schoolNumber)};
         }
     }
 
