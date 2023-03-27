@@ -1,14 +1,13 @@
-package com.example.let;
+package com.example.let.config;
 
+import com.example.let.JwtTokenProvider;
 import com.example.let.filter.JwtAuthenticationFilter;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,7 +34,8 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/user/**").permitAll()
+                .antMatchers("/api/account/**").permitAll()
+                .antMatchers("/api/user/**").hasRole("USER")
                 .antMatchers("/api/teacher/**").hasRole("TEACHER")
                 .anyRequest().permitAll()
                 .and()
