@@ -5,12 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 출입 기록
+ * 카드
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Entry {
+public class Card {
     /**
      * idx
      */
@@ -20,19 +20,19 @@ public class Entry {
      */
     private Long userId;
     /**
-     * 카드
+     * nfc 아이디
      */
-    private Long cardId;
+    private Long nfcId;
     /**
-     * 마지막 작용 시간
-     */
-    private String entryTime;
-    /**
-     * 결과 (N:정상, B:출입 불허)
+     * 카드 상태 (W:대기, U:사용, F:동결)
      */
     private char status;
     /**
-     * 식사 유형 (B:아침, L:점심, D:저녁, N:예외)
+     * 최초 생성 날짜
      */
-    private char mealType;
+    private String createTime;
+    /**
+     * 마지막 사용 기록
+     */
+    private String LastTime;
 }

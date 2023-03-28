@@ -18,12 +18,12 @@ public class RestUserController {
     private final PasswordEncoder passwordEncoder;
 
     /**
-     * @Name 회원가입
-     * @Path "api/user/signup.do"
-     * @Request RequestBody(Json) : User[school_number, password, name, meal_application, user_type]
+     * @Name 프로필 수정
+     * @Path "api/user/profile"
+     * @Request RequestBody(Json) : User[schoolNumber, password, name, mealApplication, user_type]
      *
      * @text
-     * DB에 새로운 유저를 생성한다.
+     * DB에 존재하는 유저 프로필 정보를 변환한다.
      *
      * @Return String(학번)
      */
@@ -32,20 +32,5 @@ public class RestUserController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setUserType('S');
         return userService.register(user);
-    }
-    /**
-     * @Name 로그인
-     * @Path "api/user/login.do"
-     * @Request RequestBody(Json) : User[school_number, password]
-     *
-     * @text
-     * 로그인하여 권한을 전달한다.
-     *
-     * @Return String(학번)
-     */
-    @PostMapping("/login.do")
-    public TokenInfo Login(@RequestBody User user) {
-        TokenInfo tokenInfo = userService.login(user.getSchoolNumber(), user.getPassword());
-        return tokenInfo;
     }
 }

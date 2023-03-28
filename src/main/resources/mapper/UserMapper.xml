@@ -9,7 +9,7 @@
         <result property="schoolNumber" column="school_number" />
         <result property="password" column="password" />
         <result property="name" column="name" />
-        <result property="lastTime" column="last_time" />
+        <result property="createTime" column="create_time" />
         <result property="mealApplication" column="meal_application" />
         <result property="userType" column="user_type" />
         <result property="registerTime" column="register_time" />
@@ -21,7 +21,7 @@
              , a.school_number
              , a.password
              , a.name
-             , a.last_time
+             , a.create_time
              , a.meal_application
              , a.user_type
     </sql>
@@ -36,12 +36,6 @@
         WHERE a.school_number = #{schoolNumber}
     </select>
 
-    <update id="updateLastTime" >
-        UPDATE user SET
-            last_time = now()
-        WHERE school_number = #{schoolNumber}
-    </update>
-
     <insert id="register" parameterType="com.example.let.domain.User"
             keyProperty="idx">
 
@@ -51,7 +45,7 @@
             , school_number
             , password
             , name
-            , last_time
+            , create_time
             , meal_application
             , user_type
         )

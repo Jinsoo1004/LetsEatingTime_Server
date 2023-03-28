@@ -1,4 +1,4 @@
-package com.example.let;
+package com.example.let.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
