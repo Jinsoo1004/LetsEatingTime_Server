@@ -20,7 +20,7 @@ public class RestUserController {
     /**
      * @Name 프로필 수정
      * @Path "api/user/profile"
-     * @Request RequestBody(Json) : User[school_number, password, name, meal_application, user_type]
+     * @Request RequestBody(Json) : User[schoolNumber, password, name, mealApplication, user_type]
      *
      * @text
      * DB에 존재하는 유저 프로필 정보를 변환한다.

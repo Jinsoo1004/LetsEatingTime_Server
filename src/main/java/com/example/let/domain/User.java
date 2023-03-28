@@ -14,7 +14,11 @@ public class User {
     /**
      * idx
     */
-    private int idx;
+    private Long idx;
+    /**
+     * 증명사진
+     */
+    private Long image;
     /**
      * 학번
      */
@@ -29,13 +33,13 @@ public class User {
      */
     private String name;
     /**
-     * 마지막 작용 시간
+     * 생성 시간
      */
-    private String lastTime;
+    private String createTime;
     /**
      * 급식 신청
      */
-    private String mealApplication;
+    private char mealApplication;
     /**
      * 유저 타입 (S:학생, T:교사, M:관리자, A:어드민)
      */

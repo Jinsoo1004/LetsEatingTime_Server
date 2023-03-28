@@ -53,11 +53,11 @@ public class RestTeacherController {
      * @Return Entry[]
      */
     @PostMapping("/get/entry")
-    public Entry[] GetEntry(@RequestParam(name = "user") String userCode) {
-        if(userCode.equals("")) {
+    public Entry[] GetEntry(@RequestParam(name = "schoolNumber") String schoolNumber) {
+        if(schoolNumber.equals("")) {
             return entryService.get();
         } else {
-            return entryService.get(userCode);
+            return entryService.get(schoolNumber);
         }
     }
     /**
