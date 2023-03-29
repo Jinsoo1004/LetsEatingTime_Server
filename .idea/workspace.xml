@@ -4,30 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0afab210-f127-4602-b26f-ed80da76b2c7" name="변경" comment="Account/user change">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestCardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/domain/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/exception/CustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/CardMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/CardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/CardServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CardMapper.xml" afterDir="false" />
+    <list default="true" id="0afab210-f127-4602-b26f-ed80da76b2c7" name="변경" comment="sql mapper - object attribute change">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestDeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/EntryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/EntryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/Entry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/UserForSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/UserForSecurity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/EntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/EntryService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/EntryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/EntryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/EntryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/EntryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserServiceImpl.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/domain/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/domain/Entry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/EntryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/EntryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/domain/UserForSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/domain/UserForSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/EntryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/EntryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/CardServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/EntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/EntryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CardMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EntryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EntryMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
@@ -71,7 +83,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="lch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,19 +117,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/git/LetsEatingTime_Server/src/main/resources/mapper",
-    "spring.configuration.checksum": "17278dbf3faffa600a4895f3f247a4ed"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/git/LetsEatingTime_Server/src/main/resources/mapper&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;17278dbf3faffa600a4895f3f247a4ed&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.let.domain" />
@@ -164,7 +176,9 @@
       <workItem from="1679619570446" duration="12746000" />
       <workItem from="1679879030045" duration="12874000" />
       <workItem from="1679975853701" duration="6132000" />
-      <workItem from="1679988499827" duration="10422000" />
+      <workItem from="1679988499827" duration="10874000" />
+      <workItem from="1680011886145" duration="3174000" />
+      <workItem from="1680057607422" duration="9632000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1679399843168</created>
@@ -243,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679925481242</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="sql mapper - object attribute change">
+      <created>1680011645525</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1680011645525</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +290,7 @@
     <MESSAGE value="lch basic" />
     <MESSAGE value="jwt upload" />
     <MESSAGE value="Account/user change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Account/user change" />
+    <MESSAGE value="sql mapper - object attribute change" />
+    <option name="LAST_COMMIT_MESSAGE" value="sql mapper - object attribute change" />
   </component>
 </project>

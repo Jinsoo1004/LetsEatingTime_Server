@@ -9,7 +9,7 @@
         <result property="schoolNumber" column="school_number" />
         <result property="password" column="password" />
         <result property="name" column="name" />
-        <result property="lastTime" column="last_time" />
+        <result property="createTime" column="create_time" />
         <result property="mealApplication" column="meal_application" />
         <result property="userType" column="user_type" />
         <result property="registerTime" column="register_time" />
@@ -17,30 +17,29 @@
 
     <sql id="sql_select">
         SELECT
-            a.idx
-             , a.school_number
-             , a.password
-             , a.name
-             , a.last_time
-             , a.meal_application
-             , a.user_type
+            idx
+             , school_number
+             , password
+             , name
+             , DATE_FORMAT(create_time, '%Y-%m-%dT%T+09:00') AS create_time
+             , meal_application
+             , user_type
     </sql>
 
     <select id="get" resultMap="result">
         <include refid="sql_select"></include>
-        FROM user AS a
+        FROM user
+    </select>
+    <select id="getByIdx" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM user
+        WHERE idx = #{idx}
     </select>
     <select id="getBySchoolNumber" resultMap="result">
         <include refid="sql_select"></include>
-        FROM user AS a
-        WHERE a.school_number = #{schoolNumber}
-    </select>
-
-    <update id="updateLastTime" >
-        UPDATE user SET
-            last_time = now()
+        FROM user
         WHERE school_number = #{schoolNumber}
-    </update>
+    </select>
 
     <insert id="register" parameterType="com.example.let.domain.User"
             keyProperty="idx">
@@ -51,7 +50,7 @@
             , school_number
             , password
             , name
-            , last_time
+            , create_time
             , meal_application
             , user_type
         )

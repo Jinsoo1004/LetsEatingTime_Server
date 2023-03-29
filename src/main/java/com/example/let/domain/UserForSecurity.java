@@ -42,6 +42,10 @@ public class UserForSecurity implements UserDetails {
             authority = new SimpleGrantedAuthority("ROLE_TEACHER");
             authorities.add(authority);
         }
+        else if (user.getUserType() == 'D') {  // 디바이스
+            authority = new SimpleGrantedAuthority("ROLE_DEVICE");
+            authorities.add(authority);
+        }
 
         log.info(authorities.toString());
         return authorities;

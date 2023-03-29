@@ -14,22 +14,22 @@
 
     <sql id="sql_select">
         SELECT
-            a.idx
-             , a.user_id
-             , a.card_id
-             , DATE_FORMAT(a.entry_time, '%Y-%m-%dT%T+09:00') AS a.entry_time
-             , a.status
-             , a.meal_type
+            idx
+             , user_id
+             , card_id
+             , DATE_FORMAT(entry_time, '%Y-%m-%dT%T+09:00')
+             , status
+             , meal_type
     </sql>
 
     <select id="get" resultMap="result">
         <include refid="sql_select"></include>
-        FROM entry AS a
+        FROM entry
     </select>
     <select id="getBySchoolNumber" resultMap="result">
         <include refid="sql_select"></include>
-        FROM entry AS a
-        WHERE a.user_id =
+        FROM entry
+        WHERE user_id =
             (
                 SELECT idx FROM `user`
                 WHERE school_number = #{schoolNumber}
@@ -37,8 +37,8 @@
     </select>
     <select id="getByDate" resultMap="result">
         <include refid="sql_select"></include>
-        FROM entry AS a
-        WHERE date_format(a.entryTime, '%Y-%m-%d') = #{date};
+        FROM entry
+        WHERE date_format(entryTime, '%Y-%m-%d') = #{date};
     </select>
 
     <insert id="register" parameterType="com.example.let.domain.Entry"
@@ -58,7 +58,7 @@
             #{idx}
             , #{userId}
             , #{cardId}
-            , #{entryTime}
+            , now()
             , #{status}
             , #{mealType}
         )

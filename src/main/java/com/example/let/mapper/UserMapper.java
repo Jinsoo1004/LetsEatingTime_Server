@@ -10,5 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface UserMapper {
     public void register(User user);
     public User getBySchoolNumber(String schoolNumber);
+    public User getByIdx(Long idx);
     public User[] get();
 }
