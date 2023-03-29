@@ -25,15 +25,19 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public TokenInfo login(String schoolNumber, String password) {
+        log.info("login trial : " + schoolNumber);
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(schoolNumber, password);
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication);
-
         return tokenInfo;
     }
     @Override
     public User get(String schoolNumber) {
         return userMapper.getBySchoolNumber(schoolNumber);
+    }
+    @Override
+    public User get(Long idx) {
+        return userMapper.getByIdx(idx);
     }
     @Override
     public User[] get() {

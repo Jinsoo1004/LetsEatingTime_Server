@@ -7,6 +7,7 @@ import com.example.let.exception.CustomException;
 import com.example.let.mapper.EntryMapper;
 import com.example.let.service.CardService;
 import com.example.let.service.EntryService;
+import com.example.let.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,21 +16,31 @@ import org.springframework.stereotype.Service;
 public class EntryServiceImpl implements EntryService {
     private final EntryMapper entryMapper;
     private final CardService cardService;
+    private final UserService userService;
     @Override
     public String register(Long nfcId) throws CustomException {
         Entry entry = new Entry();
         Card card = cardService.getByNfcId(nfcId);
+        entry.setUserId(card.getUserId());
+        entry.setCardId(card.getIdx());
         switch (card.getStatus()) {
             case 'W':
+                entry.setStatus('B');
+                entryMapper.register(entry);
                 throw new CustomException("This card is awaiting approval.");
             case 'F':
+                entry.setStatus('B');
+                entryMapper.register(entry);
                 throw new CustomException("This card is frozen.");
             case 'U':
+                entry.setStatus('N');
+                entryMapper.register(entry);
+                return entry.getEntryTime();
+            default:
+                entry.setStatus('B');
                 entryMapper.register(entry);
                 return entry.getEntryTime();
         }
-        entryMapper.register(entry);
-        return entry.getEntryTime();
     }
     @Override
     public Entry[] get(String schoolNumber) {

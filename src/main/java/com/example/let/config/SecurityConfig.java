@@ -38,6 +38,7 @@ public class SecurityConfig {
                 .antMatchers("/api/user/**").hasRole("USER")
                 .antMatchers("/api/card/**").hasRole("USER")
                 .antMatchers("/api/teacher/**").hasRole("TEACHER")
+                .antMatchers("/api/device/**").hasRole("DEVICE")
                 .anyRequest().permitAll()
                 .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);

@@ -12,6 +12,13 @@ public interface UserService {
      */
     public String register(User user);
     /**
+     * 해당 인덱스를 갖는 학생을 가져온다.
+     *
+     * @param Long idx
+     * @return User
+     */
+    public User get(Long idx);
+    /**
      * 해당 학번을 갖는 학생을 가져온다.
      *
      * @param String schoolNumber

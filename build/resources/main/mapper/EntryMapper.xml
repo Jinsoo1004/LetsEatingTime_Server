@@ -3,10 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.let.mapper.EntryMapper">
-
     <resultMap type="com.example.let.domain.Entry" id="result">
         <result property="idx" column="idx" />
-        <result property="userCode" column="user_code" />
+        <result property="userId" column="user_id" />
+        <result property="cardId" column="card_id" />
         <result property="entryTime" column="entry_time" />
         <result property="status" column="status" />
         <result property="mealType" column="meal_type" />
@@ -14,26 +14,31 @@
 
     <sql id="sql_select">
         SELECT
-            a.idx
-             , a.user_code
-             , DATE_FORMAT(a.register_time, '%Y-%m-%dT%T+09:00') AS a.entry_time
-             , a.status
-             , a.meal_type
+            idx
+             , user_id
+             , card_id
+             , DATE_FORMAT(entry_time, '%Y-%m-%dT%T+09:00')
+             , status
+             , meal_type
     </sql>
 
     <select id="get" resultMap="result">
         <include refid="sql_select"></include>
-        FROM entry AS a
+        FROM entry
     </select>
-    <select id="getByUserCode" resultMap="result">
+    <select id="getBySchoolNumber" resultMap="result">
         <include refid="sql_select"></include>
-        FROM entry AS a
-        WHERE a.user_code = #{userCode}
+        FROM entry
+        WHERE user_id =
+            (
+                SELECT idx FROM `user`
+                WHERE school_number = #{schoolNumber}
+            )
     </select>
     <select id="getByDate" resultMap="result">
         <include refid="sql_select"></include>
-        FROM entry AS a
-        WHERE date_format(a.entryTime, '%Y-%m-%d') = #{date};
+        FROM entry
+        WHERE date_format(entryTime, '%Y-%m-%d') = #{date};
     </select>
 
     <insert id="register" parameterType="com.example.let.domain.Entry"
@@ -42,7 +47,8 @@
         INSERT INTO entry
         (
             idx
-            , user_code
+            , user_id
+            , card_id
             , entry_time
             , status
             , meal_type
@@ -50,8 +56,9 @@
         VALUES
         (
             #{idx}
-            , #{userCode}
-            , #{entryTime}
+            , #{userId}
+            , #{cardId}
+            , now()
             , #{status}
             , #{mealType}
         )

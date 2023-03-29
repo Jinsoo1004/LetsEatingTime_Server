@@ -17,23 +17,28 @@
 
     <sql id="sql_select">
         SELECT
-            a.idx
-             , a.school_number
-             , a.password
-             , a.name
-             , a.create_time
-             , a.meal_application
-             , a.user_type
+            idx
+             , school_number
+             , password
+             , name
+             , DATE_FORMAT(create_time, '%Y-%m-%dT%T+09:00') AS create_time
+             , meal_application
+             , user_type
     </sql>
 
     <select id="get" resultMap="result">
         <include refid="sql_select"></include>
-        FROM user AS a
+        FROM user
+    </select>
+    <select id="getByIdx" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM user
+        WHERE idx = #{idx}
     </select>
     <select id="getBySchoolNumber" resultMap="result">
         <include refid="sql_select"></include>
-        FROM user AS a
-        WHERE a.school_number = #{schoolNumber}
+        FROM user
+        WHERE school_number = #{schoolNumber}
     </select>
 
     <insert id="register" parameterType="com.example.let.domain.User"
