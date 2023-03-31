@@ -3,12 +3,14 @@ package com.example.let.controller;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "유저", description = "프로필 수정등 유저 권한 이상이 필요한 API")
 @RestController
 @RequestMapping("/api/user")
 @AllArgsConstructor
@@ -20,7 +22,7 @@ public class RestUserController {
     /**
      * @Name 프로필 수정
      * @Path "api/user/profile"
-     * @Request RequestBody(Json) : User[schoolNumber, password, name, mealApplication, user_type]
+     * @Request RequestBody(Json) : User[id, password, name, user_type]
      *
      * @text
      * DB에 존재하는 유저 프로필 정보를 변환한다.

@@ -5,10 +5,12 @@ import com.example.let.domain.UserForSecurity;
 import com.example.let.mapper.UserMapper;
 import com.example.let.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+@Log4j2
 @RequiredArgsConstructor
 @Service
 public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
@@ -16,7 +18,7 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userMapper.getBySchoolNumber(username);
+        User user = userMapper.getById(username);
         if (user != null) {
             return UserForSecurity.builder()
                     .user(user)

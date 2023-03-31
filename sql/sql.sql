@@ -8,12 +8,15 @@ CREATE TABLE file (
 CREATE TABLE user (
                       idx int(11) NOT NULL AUTO_INCREMENT,
                       image int(11),
-                      school_number char(5) NOT NULL UNIQUE,
+                      id char(5) NOT NULL UNIQUE,
                       password varchar(256) NOT NULL,
                       name varchar(64) NOT NULL,
                       create_time datetime NOT NULL,
                       meal_application char(1) NOT NULL DEFAULT('N'),
                       user_type char(1) NOT NULL DEFAULT('S'),
+                      approved_yn char(1) NOT NULL DEFAULT('N'),
+                      withdrawed_yn char(1) NOT NULL DEFAULT('N'),
+                      withdrawed_time datetime NOT NULL,
                       PRIMARY KEY (idx),
                       CONSTRAINT fk_user_file_idx FOREIGN KEY (image) REFERENCES file (idx)
 ) DEFAULT CHARSET=utf8;

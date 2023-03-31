@@ -13,16 +13,16 @@ public class CardServiceImpl implements CardService {
     private final CardMapper cardMapper;
     private final UserService userService;
     @Override
-    public Long register(String schoolNumber, Long nfcId) {
+    public Long register(String id, Long nfcId) {
         Card card = new Card();
-        card.setUserId(userService.get(schoolNumber).getIdx());
+        card.setUserId(userService.get(id).getIdx());
         card.setNfcId(nfcId);
         cardMapper.register(card);
         return card.getNfcId();
     }
     @Override
-    public Card[] get(String schoolNumber) {
-        return cardMapper.getBySchoolNumber(schoolNumber);
+    public Card[] get(String id) {
+        return cardMapper.getById(id);
     }
     public Card getByNfcId(Long nfcId) {
         return cardMapper.getByNfcId(nfcId);

@@ -6,6 +6,7 @@ import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.UserMapper;
 import com.example.let.service.EntryService;
 import com.example.let.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "교사", description = "정보 열람등 교사 권한이 필요한 api")
 @RestController
 @RequestMapping("/api/teacher")
 @AllArgsConstructor
@@ -24,27 +26,27 @@ public class RestTeacherController {
     /**
      * @Name 사용자 정보 가져오기
      * @Path "api/teacher/get/user"
-     * @Request RequestParam(schoolNumber) : String
+     * @Request RequestParam(id) : String
      *
      * @text
-     * schoolNumber가 비어있지 않으면 학번을 포함한 정보를 가져온다.
+     * id가 비어있지 않으면 학번을 포함한 정보를 가져온다.
      * 단 비어있으면 모든 정보를 가져온다.
      *
      * @Return Entry[]
      */
     @PostMapping("/get/user")
-    public User[] GetUser(@RequestParam(name = "schoolNumber") String schoolNumber) {
-        if(schoolNumber.equals("")) {
+    public User[] GetUser(@RequestParam(name = "id") String id) {
+        if(id.equals("")) {
             return userService.get();
         } else {
-            return new User[]{userService.get(schoolNumber)};
+            return new User[]{userService.get(id)};
         }
     }
 
     /**
      * @Name 출입 기록 가져오기
      * @Path "api/teacher/get/entry"
-     * @Request RequestParam(schoolNumber) : String
+     * @Request RequestParam(id) : String
      *
      * @text
      * user가 비어있지 않으면 학번을 포함한 정보를 가져온다.
@@ -53,11 +55,11 @@ public class RestTeacherController {
      * @Return Entry[]
      */
     @PostMapping("/get/entry")
-    public Entry[] GetEntry(@RequestParam(name = "schoolNumber") String schoolNumber) {
-        if(schoolNumber.equals("")) {
+    public Entry[] GetEntry(@RequestParam(name = "id") String id) {
+        if(id.equals("")) {
             return entryService.get();
         } else {
-            return entryService.get(schoolNumber);
+            return entryService.get(id);
         }
     }
     /**

@@ -20,9 +20,9 @@ public class User {
      */
     private Long image;
     /**
-     * 학번
+     * 아이디
      */
-    private String schoolNumber;
+    private String id;
     /**
      * 비밀번호
      */
@@ -41,7 +41,31 @@ public class User {
      */
     private char mealApplication;
     /**
-     * 유저 타입 (S:학생, T:교사, M:관리자, A:어드민)
+     * 유저 타입 (S:학생, T:교사, M:관리자, A:어드민, D:디바이스)
      */
     private char userType;
+    /**
+     * 학년
+     */
+    private short grade;
+    /**
+     * 반
+     */
+    private short className;
+    /**
+     * 번호
+     */
+    private short classNo;
+    /**
+     * 인증 여부
+     */
+    private char approvedYn;
+    /**
+     * 탈퇴 여부
+     */
+    private char withdrawedYn;
+    /**
+     * 탈퇴 시간
+     */
+    private String withdrawedTime;
 }
