@@ -16,7 +16,7 @@ public class Entry {
      */
     private Long idx;
     /**
-     * 학번
+     * 유저 idx
      */
     private Long userId;
     /**

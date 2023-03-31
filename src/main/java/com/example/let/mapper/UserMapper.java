@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper {
     public void register(User user);
-    public User getBySchoolNumber(String schoolNumber);
+    public User getById(String id);
     public User getByIdx(Long idx);
     public User[] get();
 }

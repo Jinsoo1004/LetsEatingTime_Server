@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EntryMapper {
     public void register(Entry entry);
-    public Entry[] getBySchoolNumber(String schoolNumber);
+    public Entry[] getById(String id);
     public Entry[] getByDate(String date);
     public Entry[] get();
 }

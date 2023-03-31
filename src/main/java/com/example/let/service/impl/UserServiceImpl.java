@@ -21,19 +21,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public String register(User user) {
         userMapper.register(user);
-        return user.getSchoolNumber();
+        return user.getId();
     }
     @Override
-    public TokenInfo login(String schoolNumber, String password) {
-        log.info("login trial : " + schoolNumber);
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(schoolNumber, password);
+    public TokenInfo login(String id, String password) {
+        log.info("login trial : " + id + " " + password);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(id, password);
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication);
         return tokenInfo;
     }
     @Override
-    public User get(String schoolNumber) {
-        return userMapper.getBySchoolNumber(schoolNumber);
+    public User get(String id) {
+        return userMapper.getById(id);
     }
     @Override
     public User get(Long idx) {

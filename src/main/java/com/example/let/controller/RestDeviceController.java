@@ -1,8 +1,8 @@
 package com.example.let.controller;
 
-import com.example.let.exception.CustomException;
-import com.example.let.service.CardService;
+import com.example.let.exception.GlobalException;
 import com.example.let.service.EntryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "디바이스", description = "임베디드 단말장치의 요청 응답 API")
 @RestController
 @RequestMapping("/api/device")
 @AllArgsConstructor
@@ -28,7 +29,7 @@ public class RestDeviceController {
      * @Return String(학번)
      */
     @PostMapping("/check.do")
-    public String CheckEntry(@RequestParam(name = "nfcId") Long nfcId) throws CustomException {
+    public String CheckEntry(@RequestParam(name = "nfcId") Long nfcId) throws GlobalException {
         return entryService.register(nfcId);
     }
 }

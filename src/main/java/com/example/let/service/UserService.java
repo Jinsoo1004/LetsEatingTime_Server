@@ -8,7 +8,7 @@ public interface UserService {
      * 유저를 생성한다.
      *
      * @param User user
-     * @return String[schoolNumber]
+     * @return String[id]
      */
     public String register(User user);
     /**
@@ -21,10 +21,10 @@ public interface UserService {
     /**
      * 해당 학번을 갖는 학생을 가져온다.
      *
-     * @param String schoolNumber
+     * @param String id
      * @return User
      */
-    public User get(String schoolNumber);
+    public User get(String id);
     /**
      * 모든 유저를 가져온다.
      *
@@ -34,8 +34,8 @@ public interface UserService {
     /**
      * 로그인 한다.
      *
-     * @param String schoolNumber, String password
+     * @param String id, String password
      * @return TokenInfo
      */
-    public TokenInfo login(String schoolNumber, String password);
+    public TokenInfo login(String id, String password);
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CardMapper {
     public void register(Card card);
-    public Card[] getBySchoolNumber(String schoolNumber);
+    public Card[] getById(String id);
     public Card getByNfcId(Long nfcId);
     public Card[] get();
 }

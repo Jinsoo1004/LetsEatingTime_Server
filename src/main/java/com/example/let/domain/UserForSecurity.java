@@ -1,9 +1,11 @@
 package com.example.let.domain;
 
+import com.example.let.exception.GlobalException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -58,11 +60,19 @@ public class UserForSecurity implements UserDetails {
 
     @Override
     public String getUsername() {
-        return ((user != null) ? user.getSchoolNumber() : null);
+        return ((user != null) ? user.getId() : null);
     }
 
     @Override
     public boolean isAccountNonExpired() {
+        if (user != null) {
+            if('N' == user.getWithdrawedYn()) {
+                return true;
+            } else {
+                throw new GlobalException(HttpStatus.BAD_REQUEST, "unauthorized account");
+            }
+        }
+
         return true;
     }
 
@@ -73,6 +83,14 @@ public class UserForSecurity implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
+        if (user != null) {
+            if('Y' == user.getApprovedYn()) {
+                return true;
+            } else {
+                throw new GlobalException(HttpStatus.BAD_REQUEST, "withdrawn account");
+            }
+        }
+
         return true;
     }
 
