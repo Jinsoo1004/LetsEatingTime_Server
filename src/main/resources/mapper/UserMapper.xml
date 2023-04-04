@@ -20,6 +20,7 @@
         <result property="approvedYn" column="approved_yn" />
         <result property="withdrawedYn" column="withdrawed_yn" />
         <result property="withdrawedTime" column="withdrawed_time" />
+        <result property="refreshToken" column="refresh_token" />
     </resultMap>
 
     <sql id="sql_select">
@@ -51,6 +52,16 @@
     </select>
     <select id="getById" resultMap="result">
         <include refid="sql_select"></include>
+        FROM user
+        WHERE id = #{id}
+    </select>
+    <update id="setRefreshToken">
+        UPDATE user
+        SET refresh_token = #{refreshCode}
+        WHERE id = #{id}
+    </update>
+    <select id="getRefreshTokenById" resultMap="result">
+        SELECT refresh_token
         FROM user
         WHERE id = #{id}
     </select>

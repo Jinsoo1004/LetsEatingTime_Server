@@ -18,6 +18,7 @@ public interface UserService {
      * @return User
      */
     public User get(Long idx);
+
     /**
      * 해당 학번을 갖는 학생을 가져온다.
      *
@@ -38,4 +39,25 @@ public interface UserService {
      * @return TokenInfo
      */
     public TokenInfo login(String id, String password);
+    /**
+     * refresh token을 설정 한다.
+     *
+     * @param String id, String refreshToken
+     * @return
+     */
+    public void setRefreshToken(String id, String refreshCode);
+    /**
+     * refresh token을 가져온다.
+     *
+     * @param String id
+     * @return String
+     */
+    public String getRefreshToken(String id);
+    /**
+     * 해당 학번을 갖는 학생을 가져온다.
+     *
+     * @param String refreshToken, String accessToken
+     * @return User
+     */
+    TokenInfo refresh(String refreshToken, String accessToken);
 }

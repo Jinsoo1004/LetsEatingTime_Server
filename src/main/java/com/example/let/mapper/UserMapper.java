@@ -12,4 +12,6 @@ public interface UserMapper {
     public User getById(String id);
     public User getByIdx(Long idx);
     public User[] get();
+    public void setRefreshToken(String id, String refreshCode);
+    public String getRefreshTokenById(String id);
 }

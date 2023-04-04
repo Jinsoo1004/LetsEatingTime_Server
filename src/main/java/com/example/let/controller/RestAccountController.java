@@ -67,9 +67,9 @@ public class RestAccountController {
         return tokenInfo;
     }
     /**
-     * @Name 로그인
-     * @Path "api/account/login.do"
-     * @Request RequestBody(Json) : User[id, password]
+     * @Name 재발급
+     * @Path "api/account/refresh.do"
+     * @Request
      *
      * @text
      * 로그인하여 권한을 전달한다.
@@ -77,9 +77,10 @@ public class RestAccountController {
      * @Return TokenInfo[grantType, accessToken, refreshToken]
      */
     @Operation(summary = "재발급", description = "refresh token을 이용하여 access와 refresh 토큰을 재발급 받습니다")
-    @PostMapping("/refresh")
-    public TokenInfo Refresh(@RequestBody User user, @RequestHeader String refreshToken) {
-        TokenInfo tokenInfo = userService.login(user.getId(), refreshToken);
+    @PostMapping("/refresh.do")
+    public TokenInfo Refresh(@RequestHeader("AccessAuthorization") String accessToken, @RequestHeader("RefreshAuthorization") String refreshToken) {
+
+        TokenInfo tokenInfo = userService.refresh(accessToken, refreshToken);
         return tokenInfo;
     }
 
