@@ -69,7 +69,7 @@ public class UserForSecurity implements UserDetails {
             if('N' == user.getWithdrawedYn()) {
                 return true;
             } else {
-                throw new GlobalException(HttpStatus.BAD_REQUEST, "unauthorized account");
+                throw new GlobalException(HttpStatus.BAD_REQUEST, "withdrawn account");
             }
         }
 
@@ -78,19 +78,19 @@ public class UserForSecurity implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
+        if (user != null) {
+            if('Y' == user.getApprovedYn()) {
+                return true;
+            } else {
+                throw new GlobalException(HttpStatus.BAD_REQUEST, "unauthorized account");
+            }
+        }
+
         return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        if (user != null) {
-            if('Y' == user.getApprovedYn()) {
-                return true;
-            } else {
-                throw new GlobalException(HttpStatus.BAD_REQUEST, "withdrawn account");
-            }
-        }
-
         return true;
     }
 
