@@ -3,6 +3,7 @@ package com.example.let.controller;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +30,7 @@ public class RestUserController {
      *
      * @Return String(학번)
      */
+    @Operation(summary = "프로필 수정", description = "프로필을 변경합니다")
     @PostMapping("/signup.do")
     public String Signup(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));

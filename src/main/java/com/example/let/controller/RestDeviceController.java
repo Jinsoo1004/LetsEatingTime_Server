@@ -2,6 +2,7 @@ package com.example.let.controller;
 
 import com.example.let.exception.GlobalException;
 import com.example.let.service.EntryService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -28,6 +29,7 @@ public class RestDeviceController {
      *
      * @Return String(학번)
      */
+    @Operation(summary = "태깅 작성", description = "출입시 태깅한 정보를 확인하고 저장합니다")
     @PostMapping("/check.do")
     public String CheckEntry(@RequestParam(name = "nfcId") Long nfcId) throws GlobalException {
         return entryService.register(nfcId);
