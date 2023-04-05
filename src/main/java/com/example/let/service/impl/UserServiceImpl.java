@@ -41,18 +41,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public TokenInfo refresh(String refreshToken, String accessToken) {
-        String id = jwtTokenProvider.getAccessSubFromToken(accessToken);
-        log.info("1:"+id + " " + jwtTokenProvider.getRefreshSubFromToken(refreshToken));
-        if(id.equals(jwtTokenProvider.getRefreshSubFromToken(refreshToken))) {
-            String refreshCode = randomStringGenerator.generateRandomString(64);
-            userMapper.setRefreshToken(id, refreshCode);
-            Authentication authentication = new UsernamePasswordAuthenticationToken(id, "", UserForSecurity.builder()
-                    .user(userMapper.getById(id))
-                    .build().getAuthorities());
-            TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication, refreshCode);
-            return tokenInfo;
-        } else throw new GlobalException(HttpStatus.BAD_REQUEST, "2 token is not match");
+    public TokenInfo refresh(String refreshToken) {
+        if(jwtTokenProvider.validateRefreshToken(refreshToken)) {
+            String id = jwtTokenProvider.getRefreshSubFromToken(refreshToken);
+            String code = jwtTokenProvider.getRefreshCodeFromToken(refreshToken);
+
+            if(userMapper.getRefreshTokenById(id).equals(code)) {
+                String refreshCode = randomStringGenerator.generateRandomString(64);
+                userMapper.setRefreshToken(id, refreshCode);
+                Authentication authentication = new UsernamePasswordAuthenticationToken(id, "", UserForSecurity.builder()
+                        .user(userMapper.getById(id))
+                        .build().getAuthorities());
+                TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication, refreshCode);
+                return tokenInfo;
+            } else throw new GlobalException(HttpStatus.BAD_REQUEST, "different code");
+        } return null;
     }
 
     @Override

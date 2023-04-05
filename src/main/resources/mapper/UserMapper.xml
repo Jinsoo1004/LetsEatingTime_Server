@@ -60,7 +60,7 @@
         SET refresh_token = #{refreshCode}
         WHERE id = #{id}
     </update>
-    <select id="getRefreshTokenById" resultMap="result">
+    <select id="getRefreshTokenById" resultType="String">
         SELECT refresh_token
         FROM user
         WHERE id = #{id}

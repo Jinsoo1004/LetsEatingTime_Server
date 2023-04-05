@@ -56,8 +56,8 @@ public interface UserService {
     /**
      * 해당 학번을 갖는 학생을 가져온다.
      *
-     * @param String refreshToken, String accessToken
+     * @param String token
      * @return User
      */
-    TokenInfo refresh(String refreshToken, String accessToken);
+    TokenInfo refresh(String token);
 }
