@@ -3,6 +3,7 @@ package com.example.let.controller;
 import com.example.let.service.CardService;
 import com.example.let.service.EntryService;
 import com.example.let.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -28,6 +29,7 @@ public class RestCardController {
      *
      * @Return Long(nfc_Code)
      */
+    @Operation(summary = "카드 생성", description = "카드를 생성 합니다")
     @PostMapping("/create.do")
     public Long RegisterCard(@RequestParam(name = "id") String id,
                              @RequestParam(name = "nfcId") Long nfcId) {

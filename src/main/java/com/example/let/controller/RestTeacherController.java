@@ -6,6 +6,7 @@ import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.UserMapper;
 import com.example.let.service.EntryService;
 import com.example.let.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,7 @@ public class RestTeacherController {
      *
      * @Return Entry[]
      */
+    @Operation(summary = "사용자 정보요청", description = "사용자 정보를 요청합니다. id param이 필요하지만, 값이 없을시 전부 가져옵니다")
     @PostMapping("/get/user")
     public User[] GetUser(@RequestParam(name = "id") String id) {
         if(id.equals("")) {
@@ -54,6 +56,7 @@ public class RestTeacherController {
      *
      * @Return Entry[]
      */
+    @Operation(summary = "출입 정보요청", description = "nfc 태깅 기록을 가져옵니다. id param이 필요하지만, 값이 없을시 전부 가져옵니다")
     @PostMapping("/get/entry")
     public Entry[] GetEntry(@RequestParam(name = "id") String id) {
         if(id.equals("")) {
@@ -72,6 +75,7 @@ public class RestTeacherController {
      *
      * @Return Entry[]
      */
+    @Operation(summary = "출입 정보요청(날짜)", description = "출입 정보를 요청합니다, YYYY-MM-DD 로 포멧 된 date가 필요합니다")
     @PostMapping("/get/entry/date")
     public Entry[] GetEntryByTime(@RequestParam(name = "date") String date) {
         return entryService.getByDate(date);

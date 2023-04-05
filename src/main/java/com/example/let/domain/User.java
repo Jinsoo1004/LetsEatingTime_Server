@@ -68,4 +68,8 @@ public class User {
      * 탈퇴 시간
      */
     private String withdrawedTime;
+    /**
+     * refresh 토큰
+     */
+    private String refreshToken;
 }

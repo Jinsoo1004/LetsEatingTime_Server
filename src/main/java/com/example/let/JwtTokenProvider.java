@@ -1,14 +1,15 @@
 package com.example.let;
 
 import com.example.let.domain.TokenInfo;
+import com.example.let.exception.GlobalException;
+import com.example.let.module.RandomStringGenerator;
+import com.example.let.service.UserService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,15 +26,19 @@ import java.util.stream.Collectors;
 @Log4j2
 @Component
 public class JwtTokenProvider {
-    private final Key key;
+    private final Key accessKey;
+    private final Key refreshKey;
 
-    public JwtTokenProvider(@Value("${jwt.secret}") String secretKey) {
-        byte[] keyBytes = Decoders.BASE64.decode(secretKey);
-        this.key = Keys.hmacShaKeyFor(keyBytes);
+    public JwtTokenProvider(@Value("${jwt.access.secret}") String accessSecretKey,
+                            @Value("${jwt.refresh.secret}") String refreshSecretKey) {
+        byte[] accessKeyBytes = Decoders.BASE64.decode(accessSecretKey);
+        byte[] refreshKeyBytes = Decoders.BASE64.decode(refreshSecretKey);
+        this.accessKey = Keys.hmacShaKeyFor(accessKeyBytes);
+        this.refreshKey = Keys.hmacShaKeyFor(refreshKeyBytes);
     }
 
     // 유저 정보를 가지고 AccessToken, RefreshToken 을 생성하는 메서드
-    public TokenInfo generateToken(Authentication authentication) {
+    public TokenInfo generateToken(Authentication authentication, String refreshCode) {
 
         String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
@@ -41,18 +46,19 @@ public class JwtTokenProvider {
 
         long now = (new Date()).getTime();
         // Access Token 생성
-        Date accessTokenExpiresIn = new Date(now + 86400000);
+        Date accessTokenExpiresIn = new Date(now + (60000 * 5));  // 5분
         String accessToken = Jwts.builder()
                 .setSubject(authentication.getName())
                 .claim("auth", authorities)
                 .setExpiration(accessTokenExpiresIn)
-                .signWith(key, SignatureAlgorithm.HS256)
+                .signWith(accessKey, SignatureAlgorithm.HS256)
                 .compact();
 
-        // Refresh Token 생성
         String refreshToken = Jwts.builder()
-                .setExpiration(new Date(now + 86400000))
-                .signWith(key, SignatureAlgorithm.HS256)
+                .setSubject(authentication.getName())
+                .claim("code", refreshCode)
+                .setExpiration(new Date(now + (60000 * 60 * 24 * 7)))   // 1주
+                .signWith(refreshKey, SignatureAlgorithm.HS256)
                 .compact();
 
         return TokenInfo.builder()
@@ -65,7 +71,7 @@ public class JwtTokenProvider {
     // JWT 토큰을 복호화하여 토큰에 들어있는 정보를 꺼내는 메서드
     public Authentication getAuthentication(String accessToken) {
         // 토큰 복호화
-        Claims claims = parseClaims(accessToken);
+        Claims claims = getAccessAllClaims(accessToken);
 
         if (claims.get("auth") == null) {
             throw new RuntimeException("권한 정보가 없는 토큰입니다.");
@@ -82,10 +88,25 @@ public class JwtTokenProvider {
         return new UsernamePasswordAuthenticationToken(principal, "", authorities);
     }
 
-    // 토큰 정보를 검증하는 메서드
-    public boolean validateToken(String token) {
+
+    public boolean validateToken(String token) throws GlobalException {
         try {
-            Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+            Jwts.parser().setSigningKey(accessKey).parseClaimsJws(token);
+            return true;
+        } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "Invalid JWT Token");
+        } catch (ExpiredJwtException e) {
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "Expired JWT Token");
+        } catch (UnsupportedJwtException e) {
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "Unsupported JWT Token");
+        } catch (IllegalArgumentException e) {
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "JWT claims string is empty.");
+        }
+    }
+    // refresh 토큰 정보를 검증하는 메서드
+    public boolean validateRefreshToken(String token) {
+        try {
+            Claims claims = Jwts.parser().setSigningKey(refreshKey).parseClaimsJws(token).getBody();
             return true;
         } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
             log.info("Invalid JWT Token", e);
@@ -99,11 +120,45 @@ public class JwtTokenProvider {
         return false;
     }
 
-    private Claims parseClaims(String accessToken) {
-        try {
-            return Jwts.parser().setSigningKey(key).parseClaimsJws(accessToken).getBody();
-        } catch (ExpiredJwtException e) {
-            return e.getClaims();
-        }
+    /**
+     * refresh 토큰의 Claim 디코딩
+     */
+    private Claims getRefreshAllClaims(String token) {
+        return Jwts.parser()
+                .setSigningKey(refreshKey)
+                .parseClaimsJws(token)
+                .getBody();
+    }
+    /**
+     * access 토큰의 Claim 디코딩
+     */
+    private Claims getAccessAllClaims(String token) {
+        return Jwts.parser()
+                .setSigningKey(accessKey)
+                .parseClaimsJws(token)
+                .getBody();
+    }
+    /**
+     * refresh token의 Claim 에서 sub 가져오기
+     */
+    public String getRefreshSubFromToken(String token) {
+        String username = String.valueOf(getRefreshAllClaims(token).get("sub"));
+        return username;
+    }
+
+    /**
+     * access token의 Claim 에서 sub 가져오기
+     */
+    public String getAccessSubFromToken(String token) {
+        String username = String.valueOf(getAccessAllClaims(token).get("sub"));
+        return username;
+    }
+
+    /**
+     * refresh token의 Claim 에서 code 가져오기
+     */
+    public String getRefreshCodeFromToken(String token) {
+        String code = String.valueOf(getRefreshAllClaims(token).get("code"));
+        return code;
     }
 }

@@ -995,299 +995,306 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="288" parent="1" name="alt">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="information_schema">
+    <schema id="289" parent="1" name="alters">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="290" parent="1" name="let">
+    <schema id="290" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="291" parent="1" name="let">
       <Current>1</Current>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="mysql">
+    <schema id="292" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="performance_schema">
+    <schema id="293" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="293" parent="1" name="sakila">
+    <schema id="294" parent="1" name="sakila">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="294" parent="1" name="sys">
+    <schema id="295" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="295" parent="1" name="tlss">
+    <schema id="296" parent="1" name="tlss">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="296" parent="1" name="world">
+    <schema id="297" parent="1" name="world">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="297" parent="1" name="mysql.infoschema">
+    <user id="298" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="298" parent="1" name="mysql.session">
+    <user id="299" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="299" parent="1" name="mysql.sys">
+    <user id="300" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="300" parent="1" name="root">
+    <user id="301" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="301" parent="290" name="card">
+    <table id="302" parent="291" name="card">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="302" parent="290" name="entry">
+    <table id="303" parent="291" name="entry">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="303" parent="290" name="file">
+    <table id="304" parent="291" name="file">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="304" parent="290" name="user">
+    <table id="305" parent="291" name="user">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <column id="305" parent="301" name="idx">
+    <column id="306" parent="302" name="idx">
       <AutoIncrement>2</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="306" parent="301" name="user_id">
+    <column id="307" parent="302" name="user_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="307" parent="301" name="nfc_id">
+    <column id="308" parent="302" name="nfc_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="308" parent="301" name="status">
+    <column id="309" parent="302" name="status">
       <DataType>char(1)|0s</DataType>
       <DefaultExpression>&apos;W&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="309" parent="301" name="create_time">
+    <column id="310" parent="302" name="create_time">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="310" parent="301" name="last_time">
+    <column id="311" parent="302" name="last_time">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="311" parent="301" name="fk_card_user_idx">
+    <foreign-key id="312" parent="302" name="fk_card_user_idx">
       <ColNames>user_id</ColNames>
       <RefColNames>idx</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="312" parent="301" name="nfc_id">
+    <index id="313" parent="302" name="nfc_id">
       <ColNames>nfc_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="313" parent="301" name="fk_card_user_idx">
+    <index id="314" parent="302" name="fk_card_user_idx">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="314" parent="301" name="PRIMARY">
+    <key id="315" parent="302" name="PRIMARY">
       <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="315" parent="301" name="nfc_id">
+    <key id="316" parent="302" name="nfc_id">
       <ColNames>nfc_id</ColNames>
       <UnderlyingIndexName>nfc_id</UnderlyingIndexName>
     </key>
-    <column id="316" parent="302" name="idx">
+    <column id="317" parent="303" name="idx">
       <AutoIncrement>3</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="317" parent="302" name="user_id">
+    <column id="318" parent="303" name="user_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="318" parent="302" name="card_id">
+    <column id="319" parent="303" name="card_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="319" parent="302" name="entry_time">
+    <column id="320" parent="303" name="entry_time">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="320" parent="302" name="status">
+    <column id="321" parent="303" name="status">
       <DataType>char(1)|0s</DataType>
       <DefaultExpression>&apos;N&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="321" parent="302" name="meal_type">
+    <column id="322" parent="303" name="meal_type">
       <DataType>char(1)|0s</DataType>
       <DefaultExpression>&apos;N&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="322" parent="302" name="fk_entry_user_idx">
+    <foreign-key id="323" parent="303" name="fk_entry_user_idx">
       <ColNames>user_id</ColNames>
       <RefColNames>idx</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <foreign-key id="323" parent="302" name="fk_entry_card_idx">
+    <foreign-key id="324" parent="303" name="fk_entry_card_idx">
       <ColNames>card_id</ColNames>
       <RefColNames>idx</RefColNames>
       <RefTableName>card</RefTableName>
     </foreign-key>
-    <index id="324" parent="302" name="fk_entry_user_idx">
+    <index id="325" parent="303" name="fk_entry_user_idx">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="325" parent="302" name="fk_entry_card_idx">
+    <index id="326" parent="303" name="fk_entry_card_idx">
       <ColNames>card_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="326" parent="302" name="PRIMARY">
+    <key id="327" parent="303" name="PRIMARY">
       <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="327" parent="303" name="idx">
+    <column id="328" parent="304" name="idx">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="328" parent="303" name="path">
+    <column id="329" parent="304" name="path">
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="329" parent="303" name="name">
+    <column id="330" parent="304" name="name">
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <key id="330" parent="303" name="PRIMARY">
+    <key id="331" parent="304" name="PRIMARY">
       <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="331" parent="304" name="idx">
-      <AutoIncrement>13</AutoIncrement>
+    <column id="332" parent="305" name="idx">
+      <AutoIncrement>21</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="332" parent="304" name="image">
+    <column id="333" parent="305" name="image">
       <DataType>int|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="333" parent="304" name="id">
+    <column id="334" parent="305" name="id">
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="334" parent="304" name="password">
+    <column id="335" parent="305" name="password">
       <DataType>varchar(256)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="335" parent="304" name="name">
+    <column id="336" parent="305" name="name">
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="336" parent="304" name="create_time">
+    <column id="337" parent="305" name="create_time">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="337" parent="304" name="grade">
+    <column id="338" parent="305" name="grade">
       <DataType>tinyint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="338" parent="304" name="class_name">
+    <column id="339" parent="305" name="class_name">
       <DataType>tinyint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="339" parent="304" name="class_no">
+    <column id="340" parent="305" name="class_no">
       <DataType>tinyint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="340" parent="304" name="user_type">
+    <column id="341" parent="305" name="user_type">
       <DataType>char(1)|0s</DataType>
       <DefaultExpression>&apos;N&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <column id="341" parent="304" name="meal_application">
+    <column id="342" parent="305" name="meal_application">
       <DataType>char(1)|0s</DataType>
       <DefaultExpression>&apos;N&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
-    <column id="342" parent="304" name="approved_yn">
+    <column id="343" parent="305" name="approved_yn">
       <DataType>char(1)|0s</DataType>
       <DefaultExpression>&apos;N&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
-    <column id="343" parent="304" name="withdrawed_yn">
+    <column id="344" parent="305" name="withdrawed_yn">
       <DataType>char(1)|0s</DataType>
       <DefaultExpression>&apos;N&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>13</Position>
     </column>
-    <column id="344" parent="304" name="withdrawed_time">
+    <column id="345" parent="305" name="withdrawed_time">
       <DataType>datetime|0s</DataType>
       <Position>14</Position>
     </column>
-    <foreign-key id="345" parent="304" name="fk_user_file_idx">
+    <column id="346" parent="305" name="refresh_token">
+      <DataType>varchar(256)|0s</DataType>
+      <Position>15</Position>
+    </column>
+    <foreign-key id="347" parent="305" name="fk_user_file_idx">
       <ColNames>image</ColNames>
       <RefColNames>idx</RefColNames>
       <RefTableName>file</RefTableName>
     </foreign-key>
-    <index id="346" parent="304" name="idx_UNIQUE">
+    <index id="348" parent="305" name="idx_UNIQUE">
       <ColNames>idx</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="347" parent="304" name="id_UNIQUE">
+    <index id="349" parent="305" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="348" parent="304" name="fk_user_file_idx">
+    <index id="350" parent="305" name="fk_user_file_idx">
       <ColNames>image</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="349" parent="304" name="PRIMARY">
+    <key id="351" parent="305" name="PRIMARY">
       <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="350" parent="304" name="idx_UNIQUE">
+    <key id="352" parent="305" name="idx_UNIQUE">
       <ColNames>idx</ColNames>
       <UnderlyingIndexName>idx_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="351" parent="304" name="id_UNIQUE">
+    <key id="353" parent="305" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
