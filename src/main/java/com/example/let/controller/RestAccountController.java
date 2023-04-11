@@ -80,7 +80,7 @@ public class RestAccountController {
     @PostMapping("/refresh.do")
     public TokenInfo Refresh(@RequestHeader("Authorization") String token) {
 
-        TokenInfo tokenInfo = userService.refresh(token);
+        TokenInfo tokenInfo = userService.refresh(token.substring(7));
         return tokenInfo;
     }
 
