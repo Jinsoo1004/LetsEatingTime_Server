@@ -11,6 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Card {
+    public Card(Long userId, Long nfcId) {
+        this.userId = userId;
+        this.nfcId = nfcId;
+    }
     /**
      * idx
      */

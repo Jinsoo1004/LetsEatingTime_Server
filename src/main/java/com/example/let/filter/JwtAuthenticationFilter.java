@@ -25,6 +25,7 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         // 1. Request Header 에서 JWT 토큰 추출
         String token = resolveToken((HttpServletRequest) request);
+
         if(((HttpServletRequest) request).getMethod().equals("POST")
             && ((HttpServletRequest) request).getServletPath().equals("/api/account/refresh.do")) {
         }

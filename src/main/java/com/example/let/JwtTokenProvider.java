@@ -157,7 +157,6 @@ public class JwtTokenProvider {
         log.info("acc");
         log.info(token);
         log.info(getAccessAllClaims(token).getSubject());
-        log.info(getAccessAllClaims(token).getSubject());
         String username = getAccessAllClaims(token).getSubject();
         return username;
     }
