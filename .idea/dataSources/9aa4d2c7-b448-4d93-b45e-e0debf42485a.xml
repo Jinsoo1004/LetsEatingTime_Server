@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@let">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.41">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1105,12 +1105,11 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
     </index>
     <key id="315" parent="302" name="PRIMARY">
-      <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>idx</UnderlyingIndexColNames>
     </key>
     <key id="316" parent="302" name="nfc_id">
-      <ColNames>nfc_id</ColNames>
       <UnderlyingIndexName>nfc_id</UnderlyingIndexName>
     </key>
     <column id="317" parent="303" name="idx">
@@ -1165,9 +1164,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
     </index>
     <key id="327" parent="303" name="PRIMARY">
-      <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>idx</UnderlyingIndexColNames>
     </key>
     <column id="328" parent="304" name="idx">
       <DataType>int|0s</DataType>
@@ -1185,9 +1184,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>3</Position>
     </column>
     <key id="331" parent="304" name="PRIMARY">
-      <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>idx</UnderlyingIndexColNames>
     </key>
     <column id="332" parent="305" name="idx">
       <AutoIncrement>21</AutoIncrement>
@@ -1286,16 +1285,14 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
     </index>
     <key id="351" parent="305" name="PRIMARY">
-      <ColNames>idx</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexColNames>idx</UnderlyingIndexColNames>
     </key>
     <key id="352" parent="305" name="idx_UNIQUE">
-      <ColNames>idx</ColNames>
       <UnderlyingIndexName>idx_UNIQUE</UnderlyingIndexName>
     </key>
     <key id="353" parent="305" name="id_UNIQUE">
-      <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
   </database-model>
