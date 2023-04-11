@@ -1,11 +1,14 @@
 package com.example.let.controller;
 
+import com.example.let.domain.User;
+import com.example.let.domain.res.CardCheckResponse;
 import com.example.let.exception.GlobalException;
 import com.example.let.service.EntryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,7 +34,7 @@ public class RestDeviceController {
      */
     @Operation(summary = "태깅 작성", description = "출입시 태깅한 정보를 확인하고 저장합니다")
     @PostMapping("/check.do")
-    public String CheckEntry(@RequestParam(name = "nfcId") Long nfcId) throws GlobalException {
+    public CardCheckResponse CheckEntry(@RequestParam(name = "nfcId") Long nfcId) throws GlobalException {
         return entryService.register(nfcId);
     }
 }
