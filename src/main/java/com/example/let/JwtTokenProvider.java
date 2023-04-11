@@ -17,6 +17,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.Collection;
@@ -46,7 +47,7 @@ public class JwtTokenProvider {
 
         long now = (new Date()).getTime();
         // Access Token 생성
-        Date accessTokenExpiresIn = new Date(now + (60000 * 5));  // 5분
+        Date accessTokenExpiresIn = new Date(now + (60000 * 30));  // 30분
         String accessToken = Jwts.builder()
                 .setSubject(authentication.getName())
                 .claim("auth", authorities)
@@ -106,18 +107,17 @@ public class JwtTokenProvider {
     // refresh 토큰 정보를 검증하는 메서드
     public boolean validateRefreshToken(String token) {
         try {
-            Claims claims = Jwts.parser().setSigningKey(refreshKey).parseClaimsJws(token).getBody();
+            Jwts.parser().setSigningKey(refreshKey).parseClaimsJws(token).getBody();
             return true;
         } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
-            log.info("Invalid JWT Token", e);
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "Invalid JWT Token");
         } catch (ExpiredJwtException e) {
-            log.info("Expired JWT Token", e);
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "Expired JWT Token");
         } catch (UnsupportedJwtException e) {
-            log.info("Unsupported JWT Token", e);
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "Unsupported JWT Token");
         } catch (IllegalArgumentException e) {
-            log.info("JWT claims string is empty.", e);
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "JWT claims string is empty.");
         }
-        return false;
     }
 
     /**
@@ -142,7 +142,11 @@ public class JwtTokenProvider {
      * refresh token의 Claim 에서 sub 가져오기
      */
     public String getRefreshSubFromToken(String token) {
-        String username = String.valueOf(getRefreshAllClaims(token).get("sub"));
+        log.info("ref");
+        log.info(token);
+        log.info(getRefreshAllClaims(token));
+        log.info(getRefreshAllClaims(token).getSubject());
+        String username = getRefreshAllClaims(token).getSubject();
         return username;
     }
 
@@ -150,7 +154,10 @@ public class JwtTokenProvider {
      * access token의 Claim 에서 sub 가져오기
      */
     public String getAccessSubFromToken(String token) {
-        String username = String.valueOf(getAccessAllClaims(token).get("sub"));
+        log.info("acc");
+        log.info(token);
+        log.info(getAccessAllClaims(token).getSubject());
+        String username = getAccessAllClaims(token).getSubject();
         return username;
     }
 

@@ -1,13 +1,17 @@
 package com.example.let.controller;
 
+import com.example.let.JwtTokenProvider;
+import com.example.let.domain.Card;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
+import com.example.let.exception.GlobalException;
 import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,23 +22,24 @@ import org.springframework.web.bind.annotation.*;
 @Log4j2
 public class RestUserController {
     private final UserService userService;
-    private final PasswordEncoder passwordEncoder;
+    private final JwtTokenProvider jwtTokenProvider;
 
     /**
-     * @Name 프로필 수정
+     * @Name 프로필 열람
      * @Path "api/user/profile"
-     * @Request RequestBody(Json) : User[id, password, name, user_type]
      *
      * @text
      * DB에 존재하는 유저 프로필 정보를 변환한다.
      *
-     * @Return String(학번)
+     * @Return User
      */
-    @Operation(summary = "프로필 수정", description = "프로필을 변경합니다")
-    @PostMapping("/signup.do")
-    public String Signup(@RequestBody User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setUserType('S');
-        return userService.register(user);
+    @Operation(summary = "프로필 가져오기", description = "프로필을 반환합니다")
+    @PostMapping("/profile")
+    public User Signup(@RequestHeader("Authorization") String token) {
+        String id = jwtTokenProvider.getAccessSubFromToken(token.substring(7));
+        log.info("> " + id);
+        if(!id.isEmpty()) {
+            return userService.get(id);
+        } else throw new GlobalException(HttpStatus.BAD_REQUEST, "can not find user");
     }
 }

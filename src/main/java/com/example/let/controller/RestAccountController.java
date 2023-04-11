@@ -78,9 +78,9 @@ public class RestAccountController {
      */
     @Operation(summary = "재발급", description = "refresh token을 이용하여 access와 refresh 토큰을 재발급 받습니다")
     @PostMapping("/refresh.do")
-    public TokenInfo Refresh(@RequestHeader("AccessAuthorization") String accessToken, @RequestHeader("RefreshAuthorization") String refreshToken) {
+    public TokenInfo Refresh(@RequestHeader("Authorization") String token) {
 
-        TokenInfo tokenInfo = userService.refresh(accessToken, refreshToken);
+        TokenInfo tokenInfo = userService.refresh(token.substring(7));
         return tokenInfo;
     }
 
