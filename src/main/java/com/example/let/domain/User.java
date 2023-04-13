@@ -71,5 +71,6 @@ public class User {
     /**
      * refresh 토큰
      */
+    @JsonIgnore
     private String refreshToken;
 }
