@@ -11,6 +11,19 @@
         <result property="status" column="status" />
         <result property="mealType" column="meal_type" />
     </resultMap>
+    <resultMap type="com.example.let.domain.res.CardCheckResponse" id="res">
+        <result property="idx" column="idx" />
+        <result property="userId" column="user_id" />
+        <result property="entryTime" column="entry_time" />
+        <result property="status" column="status" />
+        <result property="mealType" column="meal_type" />
+        <result property="image" column="image" />
+        <result property="name" column="name" />
+        <result property="userType" column="user_type" />
+        <result property="grade" column="grade" />
+        <result property="className" column="class_name" />
+        <result property="classNo" column="class_no" />
+    </resultMap>
 
     <sql id="sql_select">
         SELECT
@@ -40,14 +53,12 @@
         FROM entry
         WHERE date_format(entryTime, '%Y-%m-%d') = #{date};
     </select>
-
-    <insert id="register" parameterType="com.example.let.domain.Entry"
-            keyProperty="idx">
+    <insert id="register" parameterType="com.example.let.domain.Entry" useGeneratedKeys="true"
+            keyProperty="idx" >
 
         INSERT INTO entry
         (
-            idx
-            , user_id
+            user_id
             , card_id
             , entry_time
             , status
@@ -55,13 +66,28 @@
         )
         VALUES
         (
-            #{idx}
-            , #{userId}
+            #{userId}
             , #{cardId}
             , now()
             , #{status}
             , #{mealType}
-        )
+        );
     </insert>
 
+    <select id="getJoinUser" parameterType="long" resultMap="res">
+        SELECT
+            entry.idx
+             , entry.user_id
+             , DATE_FORMAT(entry.entry_time, '%Y-%m-%dT%T+09:00')
+             , entry.status
+             , entry.meal_type
+             , user.image
+             , user.name
+             , user.user_type
+             , user.grade
+             , user.class_name
+             , user.class_no
+        FROM (SELECT * FROM entry WHERE idx = #{idx}) AS entry LEFT OUTER JOIN user
+        ON entry.user_id = user.idx
+    </select>
 </mapper>
