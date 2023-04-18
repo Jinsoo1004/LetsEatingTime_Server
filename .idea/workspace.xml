@@ -4,43 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="refreshCode 무시하기">
-      <change afterPath="$PROJECT_DIR$/letkeystore.pkcs12" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lettrust.pkcs12" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/BCardLink.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="properties 변경">
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/config/StaticConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/LetsEatingTimeEmbedded.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/LetsEatingTimeEmbedded.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/LetsEatingTimeEmbedded.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/NanumGothic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/NanumGothicBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/NanumGothicExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/NanumGothicLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EntryServiceImpl.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/config/StaticConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/config/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/config/CorsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/LetsEatingTimeEmbedded.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/LetsEatingTimeEmbedded.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/LetsEatingTimeEmbedded.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/NanumGothic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/NanumGothicBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/NanumGothicExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/NanumGothicLight.ttf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,6 +193,9 @@
       <workItem from="1681352617524" duration="602000" />
       <workItem from="1681353729054" duration="2747000" />
       <workItem from="1681371472711" duration="5794000" />
+      <workItem from="1681429655409" duration="2566000" />
+      <workItem from="1681730954205" duration="653000" />
+      <workItem from="1681734359472" duration="5059000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1679399843168</created>
@@ -389,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681353038565</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="properties 변경">
+      <created>1681429717122</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681429717122</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +410,8 @@
     <MESSAGE value="jwt 만료시간 변경, cors 정책 변경" />
     <MESSAGE value="CardCheckRes 사용" />
     <MESSAGE value="refreshCode 무시하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="refreshCode 무시하기" />
+    <MESSAGE value="properties 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="properties 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
