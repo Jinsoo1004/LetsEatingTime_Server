@@ -7,6 +7,8 @@ import com.example.let.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CardServiceImpl implements CardService {
@@ -21,14 +23,14 @@ public class CardServiceImpl implements CardService {
         return card.getNfcId();
     }
     @Override
-    public Card[] get(String id) {
+    public List<Card> get(String id) {
         return cardMapper.getById(id);
     }
     public Card getByNfcId(Long nfcId) {
         return cardMapper.getByNfcId(nfcId);
     }
     @Override
-    public Card[] get() {
+    public List<Card> get() {
         return cardMapper.get();
     }
 }

@@ -32,7 +32,7 @@ public class Entry {
      */
     private char status;
     /**
-     * 식사 유형 (B:아침, L:점심, D:저녁, N:예외)
+     * 접근 제어자 정보
      */
-    private char mealType;
+    private String type;
 }

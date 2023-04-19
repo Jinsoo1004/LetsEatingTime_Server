@@ -28,9 +28,9 @@ public class CardCheckResponse {
      */
     private char status;
     /**
-     * 식사 형태
+     * 접근 제어자 정보
      */
-    private char mealType;
+    private String type;
     /**
      * 프로필 사진
      */

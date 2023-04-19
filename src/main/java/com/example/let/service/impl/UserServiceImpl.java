@@ -16,6 +16,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Log4j2
 @Service
 @RequiredArgsConstructor
@@ -67,7 +69,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.getByIdx(idx);
     }
     @Override
-    public User[] get() {
+    public List<User> get() {
         return userMapper.get();
     }
     public void setRefreshToken(String id, String refreshCode) {

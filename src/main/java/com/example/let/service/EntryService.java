@@ -4,9 +4,11 @@ import com.example.let.domain.Entry;
 import com.example.let.domain.res.CardCheckResponse;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public interface EntryService {
-    public CardCheckResponse register(Long nfcId);
-    public Entry[] get(String id);
-    public Entry[] getByDate(String Time);
-    public Entry[] get();
+    public CardCheckResponse register(Long nfcId, String type);
+    public List<Entry> get(String id);
+    public List<Entry> getByDate(String Time);
+    public List<Entry> get();
 }

@@ -34,7 +34,8 @@ public class RestDeviceController {
      */
     @Operation(summary = "태깅 작성", description = "출입시 태깅한 정보를 확인하고 저장합니다")
     @PostMapping("/check.do")
-    public CardCheckResponse CheckEntry(@RequestParam(name = "nfcId") Long nfcId) throws GlobalException {
-        return entryService.register(nfcId);
+    public CardCheckResponse CheckEntry(@RequestParam(name = "nfcId") Long nfcId
+            , @RequestParam(name = "type") String type) throws GlobalException {
+        return entryService.register(nfcId, type);
     }
 }

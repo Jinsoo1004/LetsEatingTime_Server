@@ -7,13 +7,16 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Mapper
 @Repository
 public interface EntryMapper {
     public void register(Entry entry);
     public CardCheckResponse getJoinUser(Long idx);
-    public Entry[] getById(String id);
-    public Entry[] getByDate(String date);
-    public Entry[] get();
+    public List<Entry> getById(String id);
+    public List<Entry> getByDate(String date);
+    public List<Entry> getByIdAndDate(String id, String date);
+    public List<Entry> get();
 }
