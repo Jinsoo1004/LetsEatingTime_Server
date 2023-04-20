@@ -1,0 +1,81 @@
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.let.mapper.AccessMapper">
+
+    <resultMap type="com.example.let.domain.Access" id="result">
+        <result property="idx" column="idx" />
+        <result property="userId" column="user_id" />
+        <result property="grantId" column="grant_id" />
+        <result property="type" column="type" />
+        <result property="grantTime" column="grant_time" />
+    </resultMap>
+
+    <sql id="sql_select">
+        SELECT
+            idx
+             , user_id
+             , grant_id
+             , type
+             , DATE_FORMAT(grant_time, '%Y-%m-%dT%T+09:00') AS grant_time
+    </sql>
+
+    <select id="getById" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM access
+        WHERE user_id =
+            (
+                SELECT idx FROM `user`
+                WHERE id = #{id}
+            )
+    </select>
+
+    <select id="getByGrantId" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM access
+        WHERE grant_id =
+        (
+            SELECT idx FROM `user`
+            WHERE id = #{id}
+        )
+    </select>
+
+    <select id="getByType" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM access
+        WHERE type = #{type}
+    </select>
+
+    <select id="getByIdAndType" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM access
+        WHERE grant_id =
+        (
+        SELECT idx FROM `user`
+        WHERE id = #{id}
+        )
+        AND type = #{type}
+    </select>
+
+    <insert id="register" parameterType="com.example.let.domain.Access"
+            keyProperty="idx">
+
+        INSERT INTO access
+        (
+            idx
+            , user_id
+            , grant_id
+            , type
+            , grant_time
+        )
+        VALUES
+        (
+            #{idx}
+            , #{userId}
+            , #{grantId}
+            , #{type}
+            , now()
+        )
+    </insert>
+</mapper>

@@ -1,7 +1,10 @@
 package com.example.let.service;
 
+import com.example.let.domain.Entry;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
+
+import java.util.List;
 
 public interface UserService {
     /**
@@ -31,7 +34,7 @@ public interface UserService {
      *
      * @return User[]
      */
-    public User[] get();
+    public List<User> get();
     /**
      * 로그인 한다.
      *
@@ -59,5 +62,5 @@ public interface UserService {
      * @param String token
      * @return User
      */
-    TokenInfo refresh(String token);
+    public TokenInfo refresh(String token);
 }

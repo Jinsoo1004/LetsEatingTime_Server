@@ -15,13 +15,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class EntryServiceImpl implements EntryService {
     private final EntryMapper entryMapper;
     private final CardService cardService;
     @Override
-    public CardCheckResponse register(Long nfcId) {
+    public CardCheckResponse register(Long nfcId, String type) {
         Entry entry = new Entry();
         Card card = cardService.getByNfcId(nfcId);
         entry.setUserId(card.getUserId());
@@ -29,15 +31,17 @@ public class EntryServiceImpl implements EntryService {
         switch (card.getStatus()) {
             case 'W':
                 entry.setStatus('B');
+                entry.setType(type);
                 entryMapper.register(entry);
                 throw new GlobalException(HttpStatus.BAD_REQUEST, "This card is awaiting approval.");
             case 'F':
                 entry.setStatus('B');
+                entry.setType(type);
                 entryMapper.register(entry);
                 throw new GlobalException(HttpStatus.BAD_REQUEST, "This card is frozen.");
             case 'U':
                 entry.setStatus('N');
-                entry.setMealType('B');
+                entry.setType(type);
                 entryMapper.register(entry);
                 Long entryIdx = entry.getIdx();
                 System.out.println(entryIdx);
@@ -46,20 +50,27 @@ public class EntryServiceImpl implements EntryService {
                 return cardCheckResponse;
             default:
                 entry.setStatus('B');
+                entry.setType(type);
                 entryMapper.register(entry);
                 throw new GlobalException(HttpStatus.BAD_REQUEST, "unknown card");
         }
     }
+
     @Override
-    public Entry[] get(String id) {
+    public List<Entry> get(String id, String date) {
+        return entryMapper.getByIdAndDate(id, date);
+    }
+
+    @Override
+    public List<Entry> get(String id) {
         return entryMapper.getById(id);
     }
     @Override
-    public Entry[] getByDate(String date) {
+    public List<Entry> getByDate(String date) {
         return entryMapper.getByDate(date);
     }
     @Override
-    public Entry[] get() {
+    public List<Entry> get() {
         return entryMapper.get();
     }
 }

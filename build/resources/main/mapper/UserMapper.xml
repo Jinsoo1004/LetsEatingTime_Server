@@ -11,7 +11,6 @@
         <result property="password" column="password" />
         <result property="name" column="name" />
         <result property="createTime" column="create_time" />
-        <result property="mealApplication" column="meal_application" />
         <result property="userType" column="user_type" />
         <result property="registerTime" column="register_time" />
         <result property="grade" column="grade" />
@@ -30,15 +29,14 @@
              , id
              , password
              , name
-             , DATE_FORMAT(create_time, '%Y-%m-%dT%T+09:00')
-             , meal_application
+             , DATE_FORMAT(create_time, '%Y-%m-%dT%T+09:00') AS create_time
              , user_type
              , grade
              , class_name
              , class_no
              , approved_yn
              , withdrawed_yn
-             , withdrawed_time
+             , DATE_FORMAT(withdrawed_time, '%Y-%m-%dT%T+09:00') AS withdrawed_time
     </sql>
 
     <select id="get" resultMap="result">

@@ -84,4 +84,9 @@ public class RestAccountController {
         return tokenInfo;
     }
 
+    @GetMapping("/text")
+    public String text(@RequestParam("text") String text) {
+        System.out.println(text);
+        return "send";
+    }
 }
