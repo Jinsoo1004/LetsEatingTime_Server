@@ -55,6 +55,12 @@ public class EntryServiceImpl implements EntryService {
                 throw new GlobalException(HttpStatus.BAD_REQUEST, "unknown card");
         }
     }
+
+    @Override
+    public List<Entry> get(String id, String date) {
+        return entryMapper.getByIdAndDate(id, date);
+    }
+
     @Override
     public List<Entry> get(String id) {
         return entryMapper.getById(id);

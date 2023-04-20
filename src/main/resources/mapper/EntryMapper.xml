@@ -30,7 +30,7 @@
             idx
              , user_id
              , card_id
-             , DATE_FORMAT(entry_time, '%Y-%m-%dT%T+09:00')
+             , DATE_FORMAT(entry_time, '%Y-%m-%dT%T+09:00') AS entry_time
              , status
              , type
     </sql>
@@ -88,7 +88,7 @@
         SELECT
             entry.idx
              , entry.user_id
-             , DATE_FORMAT(entry.entry_time, '%Y-%m-%dT%T+09:00')
+             , DATE_FORMAT(entry.entry_time, '%Y-%m-%dT%T+09:00') AS entry_time
              , entry.status
              , entry.type
              , user.image

@@ -18,7 +18,7 @@
              , user_id
              , grant_id
              , type
-             , DATE_FORMAT(grant_time, '%Y-%m-%dT%T+09:00')
+             , DATE_FORMAT(grant_time, '%Y-%m-%dT%T+09:00') AS grant_time
     </sql>
 
     <select id="getById" resultMap="result">

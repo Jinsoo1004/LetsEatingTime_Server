@@ -9,14 +9,14 @@
         <result property="cardId" column="card_id" />
         <result property="entryTime" column="entry_time" />
         <result property="status" column="status" />
-        <result property="mealType" column="meal_type" />
+        <result property="type" column="type" />
     </resultMap>
     <resultMap type="com.example.let.domain.res.CardCheckResponse" id="res">
         <result property="idx" column="idx" />
         <result property="userId" column="user_id" />
         <result property="entryTime" column="entry_time" />
         <result property="status" column="status" />
-        <result property="mealType" column="meal_type" />
+        <result property="type" column="type" />
         <result property="image" column="image" />
         <result property="name" column="name" />
         <result property="userType" column="user_type" />
@@ -30,9 +30,9 @@
             idx
              , user_id
              , card_id
-             , DATE_FORMAT(entry_time, '%Y-%m-%dT%T+09:00')
+             , DATE_FORMAT(entry_time, '%Y-%m-%dT%T+09:00') AS entry_time
              , status
-             , meal_type
+             , type
     </sql>
 
     <select id="get" resultMap="result">
@@ -51,7 +51,17 @@
     <select id="getByDate" resultMap="result">
         <include refid="sql_select"></include>
         FROM entry
-        WHERE date_format(entryTime, '%Y-%m-%d') = #{date};
+        WHERE date_format(entry_time, '%Y-%m-%d') = #{date};
+    </select>
+    <select id="getByIdAndDate" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM entry
+        WHERE user_id =
+        (
+        SELECT idx FROM `user`
+        WHERE id = #{id}
+        )
+        AND date_format(entry_time, '%Y-%m-%d') = #{date};
     </select>
     <insert id="register" parameterType="com.example.let.domain.Entry" useGeneratedKeys="true"
             keyProperty="idx" >
@@ -62,7 +72,7 @@
             , card_id
             , entry_time
             , status
-            , meal_type
+            , type
         )
         VALUES
         (
@@ -70,17 +80,17 @@
             , #{cardId}
             , now()
             , #{status}
-            , #{mealType}
-        );
+            , #{type}
+        )
     </insert>
 
     <select id="getJoinUser" parameterType="long" resultMap="res">
         SELECT
             entry.idx
              , entry.user_id
-             , DATE_FORMAT(entry.entry_time, '%Y-%m-%dT%T+09:00')
+             , DATE_FORMAT(entry.entry_time, '%Y-%m-%dT%T+09:00') AS entry_time
              , entry.status
-             , entry.meal_type
+             , entry.type
              , user.image
              , user.name
              , user.user_type

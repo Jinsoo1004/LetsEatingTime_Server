@@ -100,8 +100,7 @@ public class RestTeacherController {
     @PostMapping("/get/entry/id-date")
     public List<?> GetEntryForMeal(@RequestParam(name = "id") String id, @RequestParam(name = "date") String date) {
         List<Object> list = new ArrayList<>();
-        list.addAll(entryService.get(id));
-        list.addAll(entryService.getByDate(date));
+        list.addAll(entryService.get(id, date));
         return list;
     }
 }

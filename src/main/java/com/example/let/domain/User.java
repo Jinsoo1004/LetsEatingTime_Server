@@ -35,7 +35,7 @@ public class User {
     /**
      * 생성 시간
      */
-    private String entryTime;
+    private String createTime;
     /**
      * 유저 타입 (S:학생, T:교사, M:관리자, A:어드민, D:디바이스)
      */
