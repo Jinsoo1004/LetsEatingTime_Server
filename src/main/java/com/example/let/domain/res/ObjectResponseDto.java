@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class ObjectResponseDto {
-    String status;
-    Object data;
+    private int status;
+    private Object data;
 }

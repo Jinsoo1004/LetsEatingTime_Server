@@ -38,7 +38,7 @@ public class RestOpenController {
     public ObjectResponseDto GetMeal(@RequestParam(name = "date") String date
     ) throws IOException {
         return ObjectResponseDto.builder()
-                .status("200")
+                .status(200)
                 .data(mealService.get(date))
                 .build();
     }

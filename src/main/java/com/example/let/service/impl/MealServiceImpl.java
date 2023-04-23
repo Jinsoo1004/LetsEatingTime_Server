@@ -1,6 +1,7 @@
 package com.example.let.service.impl;
 
 import com.example.let.domain.Meal;
+import com.example.let.domain.res.MealResponse;
 import com.example.let.service.MealService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,7 +24,7 @@ public class MealServiceImpl implements MealService {
         this.url = url;
     }
 
-    public ArrayList<Meal> get(String date) throws IOException {
+    public MealResponse get(String date) throws IOException {
         StringBuilder result = new StringBuilder();
 
         HttpURLConnection httpURLConnection = (HttpURLConnection) (new URL(url + "&MLSV_YMD=" + date)).openConnection();
@@ -36,32 +37,43 @@ public class MealServiceImpl implements MealService {
         }
         httpURLConnection.disconnect();
         JsonNode rootNode = objectMapper.readTree(result.toString());
-        rootNode = rootNode.path("mealServiceDietInfo").get(1).path("row");
-        
-        ArrayList<Meal> mealData = new ArrayList<Meal>();
-        for(int JsonIndex = 0; JsonIndex < rootNode.size(); JsonIndex++) {
-            String[] menu = rootNode.path(0).get("DDISH_NM").asText().split("<br/>");
-            String[] nutrient = rootNode.path(0).get("NTR_INFO").asText().split("<br/>");
-            for(int nutrientIndex = 0; nutrientIndex < 9; nutrientIndex++) {
-                nutrient[nutrientIndex] = nutrient[nutrientIndex].substring(nutrient[nutrientIndex].indexOf(" : ") + 3);
+        System.out.println(rootNode);
+
+        MealResponse mealData = new MealResponse();
+
+        if(rootNode.hasNonNull("mealServiceDietInfo")) {
+            mealData.setExists(true);
+            rootNode = rootNode.path("mealServiceDietInfo").get(1).path("row");
+
+            for (int mealIndex = 0; mealIndex < rootNode.size(); mealIndex++) {
+                String[] menu = rootNode.path(mealIndex).get("DDISH_NM").asText().split("<br/>");
+                String[] nutrient = rootNode.path(mealIndex).get("NTR_INFO").asText().split("<br/>");
+                for (int nutrientIndex = 0; nutrientIndex < 9; nutrientIndex++) {
+                    nutrient[nutrientIndex] = nutrient[nutrientIndex].substring(nutrient[nutrientIndex].indexOf(" : ") + 3);
+                }
+                String cal = rootNode.path(mealIndex).get("CAL_INFO").asText();
+                Meal meal = new Meal(
+                        rootNode.path(mealIndex).get("MMEAL_SC_NM").asText(),
+                        menu,
+                        cal.substring(mealIndex, cal.indexOf(" Kcal")),
+                        nutrient[0],
+                        nutrient[1],
+                        nutrient[2],
+                        nutrient[3],
+                        nutrient[4],
+                        nutrient[5],
+                        nutrient[6],
+                        nutrient[7],
+                        nutrient[8]
+                );
+                switch (mealIndex) {
+                    case 0 -> mealData.setBreakfast(meal);
+                    case 1 -> mealData.setLunch(meal);
+                    case 2 -> mealData.setDinner(meal);
+                }
             }
-            String cal = rootNode.path(0).get("CAL_INFO").asText();
-            Meal meal = new Meal(
-                    true,
-                    rootNode.path(0).get("MMEAL_SC_NM").asText(),
-                    menu,
-                    cal.substring(0, cal.indexOf(" Kcal")),
-                    nutrient[0],
-                    nutrient[1],
-                    nutrient[2],
-                    nutrient[3],
-                    nutrient[4],
-                    nutrient[5],
-                    nutrient[6],
-                    nutrient[7],
-                    nutrient[8]
-            );
-            mealData.add(meal);
+        } else {
+            mealData.setExists(false);
         }
 
         return mealData;
