@@ -6,7 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Meal {
-    private boolean exists;
     private String MealType;
     private String[] Menu;
     private String Calorie;
