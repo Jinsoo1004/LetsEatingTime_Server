@@ -1,8 +1,6 @@
 package com.example.let.service;
 
-import com.example.let.domain.Entry;
 import com.example.let.domain.res.CardCheckResponse;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 

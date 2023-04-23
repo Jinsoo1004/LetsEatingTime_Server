@@ -5,17 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="정규화 변경 + 탐색 방식 변경">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestOpenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/domain/Meal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/domain/res/ObjectResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/MealService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/MealServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9aa4d2c7-b448-4d93-b45e-e0debf42485a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9aa4d2c7-b448-4d93-b45e-e0debf42485a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/BCardLink.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/file/Debug.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/file/Debug.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/file/dev.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EntryService.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EntryServiceImpl.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RestDeviceController.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RestTeacherController.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/domain/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/EntryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/EntryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/EntryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/EntryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/EntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/EntryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/file/Debug.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/file/Debug.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EntryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EntryMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,52 +112,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelOrder2": "2",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RequestMappingsPanelWidth2": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/git/LetsEatingTime_Server/src/main/resources/file",
-    "settings.editor.selected.configurable": "spring.boot",
-    "spring.configuration.checksum": "17278dbf3faffa600a4895f3f247a4ed"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/git/LetsEatingTime_Server/src/main/java/com/example/let/service/impl&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;spring.boot&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;17278dbf3faffa600a4895f3f247a4ed&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.let.domain" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\java\com\example\let\service\impl" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\file" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\mapper" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\java\com\example\let" />
-      <recent name="C:\Users\user\git\LETServer\src\main\resources\mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\file" />
+      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\java\com\example\let\module" />
+      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\java\com\example\let\domain" />
+      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\java\com\example\let\config" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\static" />
-      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\" />
-      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\static\file" />
-      <recent name="C:\Users\user\git\LetsEatingTime_Server" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.let.mapper" />
+      <recent name="com.example.let.service.impl" />
       <recent name="com.example.let.service" />
+      <recent name="com.example.let.controller" />
+      <recent name="com.example.let.mapper" />
       <recent name="com.example.let.config" />
-      <recent name="com.example.let.domain" />
-      <recent name="com.example.let.exception" />
     </key>
   </component>
   <component name="RunManager">
@@ -202,6 +223,8 @@
       <workItem from="1681872169262" duration="18158000" />
       <workItem from="1681952123746" duration="69000" />
       <workItem from="1681952585632" duration="5667000" />
+      <workItem from="1682038270950" duration="5346000" />
+      <workItem from="1682063599676" duration="11485000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1679399843168</created>

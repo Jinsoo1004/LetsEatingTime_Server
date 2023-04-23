@@ -1,6 +1,6 @@
 package com.example.let.controller;
 
-import com.example.let.domain.Entry;
+import com.example.let.service.Entry;
 import com.example.let.domain.User;
 import com.example.let.service.AccessService;
 import com.example.let.service.EntryService;
