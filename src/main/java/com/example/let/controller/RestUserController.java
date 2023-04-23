@@ -2,6 +2,7 @@ package com.example.let.controller;
 
 import com.example.let.JwtTokenProvider;
 import com.example.let.domain.Card;
+import com.example.let.domain.Meal;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.exception.GlobalException;
@@ -14,6 +15,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @Tag(name = "유저", description = "프로필 수정등 유저 권한 이상이 필요한 API")
 @RestController

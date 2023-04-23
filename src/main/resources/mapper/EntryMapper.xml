@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.let.mapper.EntryMapper">
-    <resultMap type="com.example.let.domain.Entry" id="result">
+    <resultMap type="com.example.let.service.Entry" id="result">
         <result property="idx" column="idx" />
         <result property="userId" column="user_id" />
         <result property="cardId" column="card_id" />
@@ -63,7 +63,7 @@
         )
         AND date_format(entry_time, '%Y-%m-%d') = #{date};
     </select>
-    <insert id="register" parameterType="com.example.let.domain.Entry" useGeneratedKeys="true"
+    <insert id="register" parameterType="com.example.let.service.Entry" useGeneratedKeys="true"
             keyProperty="idx" >
 
         INSERT INTO entry
