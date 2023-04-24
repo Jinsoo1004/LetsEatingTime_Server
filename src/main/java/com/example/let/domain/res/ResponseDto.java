@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class ObjectResponseDto {
+public class ResponseDto {
     private int status;
     private Object data;
 }

@@ -5,6 +5,7 @@ import com.example.let.domain.Card;
 import com.example.let.domain.Meal;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
+import com.example.let.domain.res.ResponseDto;
 import com.example.let.exception.GlobalException;
 import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -13,6 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,11 +40,17 @@ public class RestUserController {
      */
     @Operation(summary = "프로필 가져오기", description = "프로필을 반환합니다")
     @PostMapping("/profile")
-    public User Signup(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<?> Signup(@RequestHeader("Authorization") String token) {
         String id = jwtTokenProvider.getAccessSubFromToken(token.substring(7));
         log.info("> " + id);
         if(!id.isEmpty()) {
-            return userService.get(id);
+            return new ResponseEntity<>(
+                    ResponseDto.builder()
+                            .status(200)
+                            .data(userService.get(id))
+                            .build()
+                    , HttpStatus.OK
+            );
         } else throw new GlobalException(HttpStatus.BAD_REQUEST, "can not find user");
     }
 }

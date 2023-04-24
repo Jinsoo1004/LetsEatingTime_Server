@@ -1,13 +1,13 @@
 package com.example.let.controller;
 
+import com.example.let.domain.res.ResponseDto;
 import com.example.let.service.CardService;
-import com.example.let.service.EntryService;
-import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "카드", description = "카드를 생성, 삭제, 편집등을 하는 API")
@@ -31,8 +31,14 @@ public class RestCardController {
      */
     @Operation(summary = "카드 생성", description = "카드를 생성 합니다")
     @PostMapping("/create.do")
-    public Long RegisterCard(@RequestParam(name = "id") String id,
-                             @RequestParam(name = "nfcId") Long nfcId) {
-        return cardService.register(id, nfcId);
+    public ResponseEntity<?> RegisterCard(@RequestParam(name = "id") String id,
+                                    @RequestParam(name = "nfcId") Long nfcId) {
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(cardService.register(id, nfcId))
+                        .build()
+                , HttpStatus.OK
+        );
     }
 }
