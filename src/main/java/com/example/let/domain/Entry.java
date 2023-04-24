@@ -1,4 +1,4 @@
-package com.example.let.service;
+package com.example.let.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

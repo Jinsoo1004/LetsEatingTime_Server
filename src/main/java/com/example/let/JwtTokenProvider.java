@@ -90,7 +90,7 @@ public class JwtTokenProvider {
     }
 
 
-    public boolean validateToken(String token) throws GlobalException {
+    public boolean validateToken(String token) {
         try {
             Jwts.parser().setSigningKey(accessKey).parseClaimsJws(token);
             return true;
