@@ -52,10 +52,11 @@ public class MealServiceImpl implements MealService {
                     nutrient[nutrientIndex] = nutrient[nutrientIndex].substring(nutrient[nutrientIndex].indexOf(" : ") + 3);
                 }
                 String cal = rootNode.path(mealIndex).get("CAL_INFO").asText();
+                System.out.println(cal);
                 Meal meal = new Meal(
                         rootNode.path(mealIndex).get("MMEAL_SC_NM").asText(),
                         menu,
-                        cal.substring(mealIndex, cal.indexOf(" Kcal")),
+                        cal.substring(0, cal.indexOf(" Kcal")),
                         nutrient[0],
                         nutrient[1],
                         nutrient[2],
