@@ -1,28 +1,16 @@
 package com.example.let.controller;
 
-import com.example.let.domain.Card;
-import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
+import com.example.let.domain.res.ResponseDto;
 import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.extensions.Extension;
-import io.swagger.v3.oas.annotations.extensions.ExtensionProperty;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import io.swagger.v3.oas.models.examples.Example;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.Map;
 
 @Tag(name = "계정", description = "회원가입, 로그인등 계정을 다루는 API")
 @RestController
@@ -45,10 +33,16 @@ public class RestAccountController {
      */
     @Operation(summary = "회원가입", description = "회원가입을 요청 합니다")
     @PostMapping("/signup.do")
-    public String Signup(@RequestBody User user) {
+    public ResponseEntity<?> Signup(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setUserType('S');
-        return userService.register(user);
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(userService.register(user))
+                        .build()
+                , HttpStatus.OK
+        );
     }
     /**
      * @Name 로그인
@@ -62,9 +56,14 @@ public class RestAccountController {
      */
     @Operation(summary = "로그인", description = "로그인을 요청 합니다. id + pw 혹은 pw(refresh token)가 필요합니다")
     @PostMapping("/login.do")
-    public TokenInfo Login(@RequestBody User user) {
-        TokenInfo tokenInfo = userService.login(user.getId(), user.getPassword());
-        return tokenInfo;
+    public ResponseEntity<?> Login(@RequestBody User user) {
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(userService.login(user.getId(), user.getPassword()))
+                        .build()
+                , HttpStatus.OK
+        );
     }
     /**
      * @Name 재발급
@@ -78,15 +77,14 @@ public class RestAccountController {
      */
     @Operation(summary = "재발급", description = "refresh token을 이용하여 access와 refresh 토큰을 재발급 받습니다")
     @PostMapping("/refresh.do")
-    public TokenInfo Refresh(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<?> Refresh(@RequestHeader("Authorization") String token) {
 
-        TokenInfo tokenInfo = userService.refresh(token.substring(7));
-        return tokenInfo;
-    }
-
-    @GetMapping("/text")
-    public String text(@RequestParam("text") String text) {
-        System.out.println(text);
-        return "send";
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(userService.refresh(token.substring(7)))
+                        .build()
+                , HttpStatus.OK
+        );
     }
 }

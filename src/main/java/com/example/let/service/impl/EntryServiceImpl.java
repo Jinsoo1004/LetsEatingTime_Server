@@ -1,7 +1,7 @@
 package com.example.let.service.impl;
 
 import com.example.let.domain.Card;
-import com.example.let.service.Entry;
+import com.example.let.domain.Entry;
 import com.example.let.domain.res.CardCheckResponse;
 import com.example.let.exception.GlobalException;
 import com.example.let.mapper.EntryMapper;

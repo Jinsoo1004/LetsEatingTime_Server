@@ -1,6 +1,6 @@
 package com.example.let.controller;
 
-import com.example.let.service.Entry;
+import com.example.let.domain.res.ResponseDto;
 import com.example.let.domain.User;
 import com.example.let.service.AccessService;
 import com.example.let.service.EntryService;
@@ -9,6 +9,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,13 +41,25 @@ public class RestTeacherController {
      */
     @Operation(summary = "사용자 정보요청", description = "사용자 정보를 요청합니다. id param이 필요하지만, 값이 없을시 전부 가져옵니다")
     @PostMapping("/get/user")
-    public List<User> GetUser(@RequestParam(name = "id") String id) {
+    public ResponseEntity<?> GetUser(@RequestParam(name = "id") String id) {
         if(id.equals("")) {
-            return userService.get();
+            return new ResponseEntity<>(
+                    ResponseDto.builder()
+                            .status(200)
+                            .data(userService.get())
+                            .build()
+                    , HttpStatus.OK
+            );
         } else {
             List<User> res = new ArrayList<User>();
             res.add(userService.get(id));
-            return res;
+            return new ResponseEntity<>(
+                    ResponseDto.builder()
+                            .status(200)
+                            .data(res)
+                            .build()
+                    , HttpStatus.OK
+            );
         }
     }
 
@@ -62,11 +76,23 @@ public class RestTeacherController {
      */
     @Operation(summary = "출입 정보요청", description = "nfc 태깅 기록을 가져옵니다. id param이 필요하지만, 값이 없을시 전부 가져옵니다")
     @PostMapping("/get/entry")
-    public List<Entry> GetEntry(@RequestParam(name = "id") String id) {
+    public ResponseEntity<?> GetEntry(@RequestParam(name = "id") String id) {
         if(id.equals("")) {
-            return entryService.get();
+            return new ResponseEntity<>(
+                    ResponseDto.builder()
+                            .status(200)
+                            .data(entryService.get())
+                            .build()
+                    , HttpStatus.OK
+            );
         } else {
-            return entryService.get(id);
+            return new ResponseEntity<>(
+                    ResponseDto.builder()
+                            .status(200)
+                            .data(entryService.get(id))
+                            .build()
+                    , HttpStatus.OK
+            );
         }
     }
 
@@ -82,8 +108,14 @@ public class RestTeacherController {
      */
     @Operation(summary = "출입 정보요청(날짜)", description = "출입 정보를 요청합니다, YYYY-MM-DD 로 포멧 된 date가 필요합니다")
     @PostMapping("/get/entry/date")
-    public List<Entry> GetEntryByTime(@RequestParam(name = "date") String date) {
-        return entryService.getByDate(date);
+    public ResponseEntity<?> GetEntryByTime(@RequestParam(name = "date") String date) {
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(entryService.getByDate(date))
+                        .build()
+                , HttpStatus.OK
+        );
     }
 
     /**
@@ -98,9 +130,15 @@ public class RestTeacherController {
      */
     @Operation(summary = "출입 정보요청(날짜)", description = "출입 정보를 요청합니다, YYYY-MM-DD 로 포멧 된 date가 필요합니다")
     @PostMapping("/get/entry/id-date")
-    public List<?> GetEntryForMeal(@RequestParam(name = "id") String id, @RequestParam(name = "date") String date) {
+    public ResponseEntity<?> GetEntryForMeal(@RequestParam(name = "id") String id, @RequestParam(name = "date") String date) {
         List<Object> list = new ArrayList<>();
         list.addAll(entryService.get(id, date));
-        return list;
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(list)
+                        .build()
+                , HttpStatus.OK
+        );
     }
 }

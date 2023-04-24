@@ -37,7 +37,7 @@ public class User {
      */
     private String createTime;
     /**
-     * 유저 타입 (S:학생, T:교사, M:관리자, A:어드민, D:디바이스)
+     * 유저 타입 (S:학생, T:교사, A:관리자, A:어드민, D:디바이스)
      */
     private char userType;
     /**
