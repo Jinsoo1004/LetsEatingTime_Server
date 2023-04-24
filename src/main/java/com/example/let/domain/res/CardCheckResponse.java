@@ -1,5 +1,6 @@
 package com.example.let.domain.res;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "카드체크(응답 도메인)")
 public class CardCheckResponse {
     /**
      * idx
