@@ -1,6 +1,7 @@
 package com.example.let.config;
 
 import com.example.let.JwtTokenProvider;
+import com.example.let.filter.ExceptionHandlerFilter;
 import com.example.let.filter.JwtAuthenticationFilter;
 import com.example.let.service.CustomUserDetailsService;
 import lombok.AllArgsConstructor;
@@ -44,7 +45,8 @@ public class SecurityConfig {
                 .antMatchers("/api/device/**").hasRole("DEVICE")
                 .anyRequest().permitAll()
                 .and()
-                .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new ExceptionHandlerFilter(), JwtAuthenticationFilter.class);
         http.cors();
 
         return http.build();
