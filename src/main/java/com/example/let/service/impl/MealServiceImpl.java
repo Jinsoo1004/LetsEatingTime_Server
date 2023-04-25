@@ -37,7 +37,6 @@ public class MealServiceImpl implements MealService {
         }
         httpURLConnection.disconnect();
         JsonNode rootNode = objectMapper.readTree(result.toString());
-        System.out.println(rootNode);
 
         MealResponse mealData = new MealResponse();
 
@@ -52,7 +51,6 @@ public class MealServiceImpl implements MealService {
                     nutrient[nutrientIndex] = nutrient[nutrientIndex].substring(nutrient[nutrientIndex].indexOf(" : ") + 3);
                 }
                 String cal = rootNode.path(mealIndex).get("CAL_INFO").asText();
-                System.out.println(cal);
                 Meal meal = new Meal(
                         rootNode.path(mealIndex).get("MMEAL_SC_NM").asText(),
                         menu,
