@@ -17,7 +17,7 @@ public class CardServiceImpl implements CardService {
     @Override
     public Long register(String id, Long nfcId) {
         Card card = new Card();
-        card.setUserId(userService.get(id).getIdx());
+        card.setUserId(userService.get(id).getUser().getIdx());
         card.setNfcId(nfcId);
         cardMapper.register(card);
         return card.getNfcId();

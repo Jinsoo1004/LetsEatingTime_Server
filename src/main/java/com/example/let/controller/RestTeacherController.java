@@ -52,7 +52,7 @@ public class RestTeacherController {
             );
         } else {
             List<User> res = new ArrayList<User>();
-            res.add(userService.get(id));
+            //res.add(userService.get(id));
             return new ResponseEntity<>(
                     ResponseDto.builder()
                             .status(200)

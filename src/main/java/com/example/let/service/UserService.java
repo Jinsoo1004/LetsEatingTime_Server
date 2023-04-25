@@ -2,6 +2,7 @@ package com.example.let.service;
 
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
+import com.example.let.domain.UserForMeal;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public interface UserService {
      * @param Long idx
      * @return User
      */
-    public User get(Long idx);
+    public UserForMeal get(Long idx);
 
     /**
      * 해당 학번을 갖는 학생을 가져온다.
@@ -27,13 +28,13 @@ public interface UserService {
      * @param String id
      * @return User
      */
-    public User get(String id);
+    public UserForMeal get(String id);
     /**
      * 모든 유저를 가져온다.
      *
      * @return User[]
      */
-    public List<User> get();
+    public List<UserForMeal> get();
     /**
      * 로그인 한다.
      *

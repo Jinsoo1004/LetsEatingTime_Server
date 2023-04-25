@@ -1,13 +1,19 @@
 package com.example.let.service.impl;
 
 import com.example.let.JwtTokenProvider;
-import com.example.let.domain.TokenInfo;
-import com.example.let.domain.User;
-import com.example.let.domain.UserForSecurity;
+import com.example.let.domain.*;
 import com.example.let.exception.GlobalException;
+import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.UserMapper;
 import com.example.let.module.RandomStringGenerator;
 import com.example.let.service.UserService;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -17,15 +23,21 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Log4j2
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
+    private final EntryMapper entryMapper;
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final RandomStringGenerator randomStringGenerator;
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
+
+
     @Override
     public String register(User user) {
         userMapper.register(user);
@@ -61,16 +73,40 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User get(String id) {
-        return userMapper.getById(id);
+    public UserForMeal get(String id) {
+        User user = userMapper.getById(id);
+        List<Entry> entry = entryMapper.getByIdAndDate(user.getId(), LocalDateTime.now().toLocalDate().toString());
+        for(int entryIndex = 0; entryIndex < entry.size(); entryIndex++) {
+            if(LocalDateTime.parse(entry.get(entryIndex).getEntryTime(), formatter).isBefore(LocalDateTime.now())) {
+                System.out.println(entryIndex);
+            }
+        }
+        UserForMeal userForMeal = UserForMeal.builder()
+                .user(user)
+                //.breakfast(entry.)
+                .build();
+        return userForMeal;
     }
     @Override
-    public User get(Long idx) {
-        return userMapper.getByIdx(idx);
+    public UserForMeal get(Long idx) {
+        return new UserForMeal();//userMapper.getByIdx(idx);
     }
     @Override
-    public List<User> get() {
-        return userMapper.get();
+    public List<UserForMeal> get() {
+        List<User> user = userMapper.get();
+        List<Entry> entry;
+        List<UserForMeal> userForMeal = new ArrayList<>();
+        for(int userIndex = 0; userIndex < user.size(); userIndex++) {
+            entry = entryMapper.getByIdAndDate(user.get(userIndex).getId(), LocalDateTime.now().toLocalDate().toString());
+            List<String> time = entry.stream().map(Entry::getEntryTime).toList();
+            userForMeal.add(UserForMeal.builder()
+                    .user(user.get(userIndex))
+                    .mealTime(time)
+
+                    .build()
+            );
+        }
+        return userForMeal;
     }
     public void setRefreshToken(String id, String refreshCode) {
         userMapper.setRefreshToken(id, refreshCode);
