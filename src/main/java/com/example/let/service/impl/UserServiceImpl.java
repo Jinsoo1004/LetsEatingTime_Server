@@ -8,12 +8,9 @@ import com.example.let.mapper.UserMapper;
 import com.example.let.module.RandomStringGenerator;
 import com.example.let.service.UserService;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -23,8 +20,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
 @Log4j2
 @Service
 @RequiredArgsConstructor
@@ -35,8 +30,8 @@ public class UserServiceImpl implements UserService {
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final RandomStringGenerator randomStringGenerator;
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
-
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
+    //private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ssXXX");
 
     @Override
     public String register(User user) {
@@ -48,10 +43,9 @@ public class UserServiceImpl implements UserService {
         log.info("login trial : " + id + " " + password);
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(id, password);
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
-        String refreshCode = randomStringGenerator.generateRandomString(64);
+        String refreshCode = RandomStringGenerator.generateRandomString(64);
         userMapper.setRefreshToken(id, refreshCode);
-        TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication, refreshCode);
-        return tokenInfo;
+        return jwtTokenProvider.generateToken(authentication, refreshCode);
     }
 
     @Override
@@ -61,13 +55,12 @@ public class UserServiceImpl implements UserService {
             String code = jwtTokenProvider.getRefreshCodeFromToken(refreshToken);
 
             if(userMapper.getRefreshTokenById(id).equals(code)) {
-                String refreshCode = randomStringGenerator.generateRandomString(64);
+                String refreshCode = RandomStringGenerator.generateRandomString(64);
                 userMapper.setRefreshToken(id, refreshCode);
                 Authentication authentication = new UsernamePasswordAuthenticationToken(id, "", UserForSecurity.builder()
                         .user(userMapper.getById(id))
                         .build().getAuthorities());
-                TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication, refreshCode);
-                return tokenInfo;
+                return jwtTokenProvider.generateToken(authentication, refreshCode);
             } else throw new GlobalException(HttpStatus.BAD_REQUEST, "different code");
         } return null;
     }
@@ -77,15 +70,14 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.getById(id);
         List<Entry> entry = entryMapper.getByIdAndDate(user.getId(), LocalDateTime.now().toLocalDate().toString());
         for(int entryIndex = 0; entryIndex < entry.size(); entryIndex++) {
-            if(LocalDateTime.parse(entry.get(entryIndex).getEntryTime(), formatter).isBefore(LocalDateTime.now())) {
+            if(LocalDateTime.parse(entry.get(entryIndex).getEntryTime(), dateTimeFormatter).isBefore(LocalDateTime.now())) {
                 System.out.println(entryIndex);
             }
         }
-        UserForMeal userForMeal = UserForMeal.builder()
+        return UserForMeal.builder()
                 .user(user)
                 //.breakfast(entry.)
                 .build();
-        return userForMeal;
     }
     @Override
     public UserForMeal get(Long idx) {
@@ -98,10 +90,11 @@ public class UserServiceImpl implements UserService {
         List<UserForMeal> userForMeal = new ArrayList<>();
         for(int userIndex = 0; userIndex < user.size(); userIndex++) {
             entry = entryMapper.getByIdAndDate(user.get(userIndex).getId(), LocalDateTime.now().toLocalDate().toString());
-            List<String> time = entry.stream().map(Entry::getEntryTime).toList();
+            List<String> info = entry.stream().map(Entry::getInfo).toList();
+
             userForMeal.add(UserForMeal.builder()
                     .user(user.get(userIndex))
-                    .mealTime(time)
+                    .mealTime(info)
 
                     .build()
             );
