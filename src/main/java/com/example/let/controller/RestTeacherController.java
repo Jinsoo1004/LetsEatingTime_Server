@@ -1,9 +1,12 @@
 package com.example.let.controller;
 
+import com.example.let.domain.Opening;
 import com.example.let.domain.res.ResponseDto;
 import com.example.let.domain.User;
+import com.example.let.mapper.OpeningMapper;
 import com.example.let.service.AccessService;
 import com.example.let.service.EntryService;
+import com.example.let.service.OpeningService;
 import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -11,10 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +28,7 @@ public class RestTeacherController {
     private final AccessService accessService;
     private final UserService userService;
     private final EntryService entryService;
+    private final OpeningService openingService;
     /**
      * @Name 사용자 정보 가져오기
      * @Path "api/teacher/get/user"
@@ -137,6 +138,69 @@ public class RestTeacherController {
                 ResponseDto.builder()
                         .status(200)
                         .data(list)
+                        .build()
+                , HttpStatus.OK
+        );
+    }
+
+    /**
+     * @Name 개방 요청
+     * @Path "api/teacher/opening"
+     * @Request RequestParam(opening) : Opening
+     *
+     * @text
+     * 특정 개체의 개방을 요청합니다. openTime에 대한 명시가 없으면 현시간부터로 판단합니다.
+     *
+     * @Return Opening[]
+     */
+    @Operation(summary = "개방 요청",
+            description = "특정 개체의 개방을 요청합니다." +
+                    "openTime에 대한 명시가 없으면 현시간부터로 판단합니다.")
+    @PostMapping("/opening")
+    public ResponseEntity<?> ReqOpening(@RequestBody Opening opening) {
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(openingService.register(opening))
+                        .build()
+                , HttpStatus.OK
+        );
+    }
+
+    /**
+     * @Name 개방 정보 확인
+     * @Path "api/teacher/get/opening"
+     * @Request RequestParam(opening) : Opening
+     *
+     * @text
+     * 모든 개체의 개방 정보를 요청합니다. type에 대한 명시가 없을시 모두 가져오며, 마찬가지로 date에 관한 명시가 없으면 모두 가져옵니다.
+     *
+     * @Return Opening[]
+     */
+    @Operation(summary = "개방 정보 요청",
+            description = "모든 개체의 개방 정보를 요청합니다." +
+                    "type에 대한 명시가 없을시 모두 가져오며," +
+                    "마찬가지로 date에 관한 명시가 없으면 모두 가져옵니다.")
+    @PostMapping("/get/opening")
+    public ResponseEntity<?> GetOpening(@RequestParam(name = "type") String type,
+                                        @RequestParam(name = "date") String date) {
+        List<Opening> openings;
+        if(type.isEmpty()) {
+            if(date.isEmpty()) {
+                openings = openingService.get();
+            } else {
+                openings = openingService.getByDate(date);
+            }
+        } else if(date.isEmpty()) {
+            openings = openingService.get(type);
+        } else {
+            openings = openingService.getByTypeAndDate(type, date);
+        }
+
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(openings)
                         .build()
                 , HttpStatus.OK
         );

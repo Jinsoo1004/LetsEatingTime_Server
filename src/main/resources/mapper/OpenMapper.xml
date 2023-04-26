@@ -1,0 +1,90 @@
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.let.mapper.OpeningMapper">
+    <resultMap type="com.example.let.domain.Opening" id="result">
+        <result property="idx" column="idx" />
+        <result property="type" column="type" />
+        <result property="info" column="info" />
+        <result property="date" column="date" />
+        <result property="openTime" column="open_time" />
+        <result property="closeTime" column="close_time" />
+    </resultMap>
+
+    <sql id="sql_select">
+        SELECT
+            idx
+             , type
+             , info
+             , DATE_FORMAT(date, '%Y-%m-%d') AS date
+             , DATE_FORMAT(open_time, '%T+09:00') AS open_time
+             , DATE_FORMAT(close_time, '%T+09:00') AS close_time
+    </sql>
+
+    <select id="get" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM opening
+    </select>
+    <select id="getByIdx" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM opening
+        WHERE idx = #{idx}
+    </select>
+    <select id="getByType" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM opening
+        WHERE type = #{type}
+    </select>
+    <select id="getByDate" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM opening
+        WHERE date_format(open_time, '%Y-%m-%d') = #{openTime};
+    </select>
+    <select id="getByTypeAndDate" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM opening
+        WHERE type = #{type}
+        AND DATE_FORMAT(open_time, '%Y-%m-%d') = #{openTime};
+    </select>
+    <insert id="register" parameterType="com.example.let.domain.Opening" useGeneratedKeys="true"
+            keyProperty="idx" >
+
+        INSERT INTO opening
+        (
+            type
+            , info
+            , date
+            , open_time
+            , close_time
+        )
+        VALUES
+        (
+            #{type}
+            , #{info}
+            , DATE_FORMAT(now(), '%Y-%m-%d')
+            , #{openTime}
+            , #{closeTime}
+        )
+    </insert>
+    <insert id="registerNow" parameterType="com.example.let.domain.Opening" useGeneratedKeys="true"
+            keyProperty="idx" >
+
+        INSERT INTO opening
+        (
+            type
+            , info
+            , date
+            , open_time
+            , close_time
+        )
+        VALUES
+        (
+            #{type}
+            , #{info}
+            , DATE_FORMAT(now(), '%Y-%m-%d')
+            , DATE_FORMAT(now(), '%T')
+            , #{closeTime}
+        )
+    </insert>
+</mapper>

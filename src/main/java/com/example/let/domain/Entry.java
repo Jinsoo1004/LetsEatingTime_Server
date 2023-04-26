@@ -35,4 +35,8 @@ public class Entry {
      * 접근 제어자 정보
      */
     private String type;
+    /**
+     * 추가적인 정보
+     */
+    private String info;
 }

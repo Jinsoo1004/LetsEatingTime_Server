@@ -46,6 +46,9 @@ public class MealServiceImpl implements MealService {
 
             for (int mealIndex = 0; mealIndex < rootNode.size(); mealIndex++) {
                 String[] menu = rootNode.path(mealIndex).get("DDISH_NM").asText().split("<br/>");
+                for(int menuIndex = 0; menuIndex < menu.length; menuIndex++) {
+                    menu[menuIndex] = menu[menuIndex].substring(0, menu[menuIndex].indexOf(' '));
+                }
                 String[] nutrient = rootNode.path(mealIndex).get("NTR_INFO").asText().split("<br/>");
                 for (int nutrientIndex = 0; nutrientIndex < 9; nutrientIndex++) {
                     nutrient[nutrientIndex] = nutrient[nutrientIndex].substring(nutrient[nutrientIndex].indexOf(" : ") + 3);

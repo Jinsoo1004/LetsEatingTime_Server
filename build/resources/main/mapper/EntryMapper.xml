@@ -10,6 +10,7 @@
         <result property="entryTime" column="entry_time" />
         <result property="status" column="status" />
         <result property="type" column="type" />
+        <result property="info" column="info" />
     </resultMap>
     <resultMap type="com.example.let.domain.res.CardCheckResponse" id="res">
         <result property="idx" column="idx" />
@@ -17,6 +18,7 @@
         <result property="entryTime" column="entry_time" />
         <result property="status" column="status" />
         <result property="type" column="type" />
+        <result property="info" column="info" />
         <result property="image" column="image" />
         <result property="name" column="name" />
         <result property="userType" column="user_type" />
@@ -33,6 +35,7 @@
              , DATE_FORMAT(entry_time, '%Y-%m-%dT%T+09:00') AS entry_time
              , status
              , type
+             , info
     </sql>
 
     <select id="get" resultMap="result">
@@ -73,6 +76,7 @@
             , entry_time
             , status
             , type
+            , info
         )
         VALUES
         (
@@ -81,6 +85,7 @@
             , now()
             , #{status}
             , #{type}
+            , #{info}
         )
     </insert>
 
@@ -91,6 +96,7 @@
              , DATE_FORMAT(entry.entry_time, '%Y-%m-%dT%T+09:00') AS entry_time
              , entry.status
              , entry.type
+             , entry.info
              , user.image
              , user.name
              , user.user_type
