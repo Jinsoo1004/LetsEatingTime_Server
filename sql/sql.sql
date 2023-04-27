@@ -68,3 +68,13 @@ CREATE TABLE `access` (
                           CONSTRAINT `fk_account_user_idx_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`idx`),
                           CONSTRAINT `fk_account_user_idx_2` FOREIGN KEY (`grant_id`) REFERENCES `user` (`idx`)
 ) DEFAULT CHARSET=utf8mb3;
+
+CREATE TABLE `opening` (
+                           `idx` int NOT NULL AUTO_INCREMENT,
+                           `type` varchar(32) NOT NULL,
+                           `info` varchar(128) DEFAULT NULL,
+                           `date` date DEFAULT NULL,
+                           `open_time` time DEFAULT NULL,
+                           `close_time` time DEFAULT NULL,
+                           PRIMARY KEY (`idx`)
+) DEFAULT CHARSET=utf8mb3;
