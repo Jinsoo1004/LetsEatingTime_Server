@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="git ignore">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="sql 변경">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/sql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/sql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/file/Debug.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/file/Debug.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/file/Debug.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +206,7 @@
       <workItem from="1682341171160" duration="30345000" />
       <workItem from="1682466381296" duration="4455000" />
       <workItem from="1682494139387" duration="5390000" />
-      <workItem from="1682561800372" duration="1257000" />
+      <workItem from="1682561800372" duration="2632000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1679399843168</created>
@@ -470,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682474521070</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="sql 변경">
+      <created>1682564518715</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1682564518715</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sql mapper - object attribute change" />
     <MESSAGE value="maria db -&gt; mysql" />
     <MESSAGE value="PropertySource Partization" />
     <MESSAGE value="swagger doc edit" />
@@ -513,7 +516,8 @@
     <MESSAGE value="user 정보 요청시 급식 정보도 같이 응답" />
     <MESSAGE value="Opening 서비스 추가" />
     <MESSAGE value="git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="git ignore" />
+    <MESSAGE value="sql 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="sql 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
