@@ -46,10 +46,10 @@
         <include refid="sql_select"></include>
         FROM entry
         WHERE user_id =
-            (
-                SELECT idx FROM `user`
-                WHERE id = #{id}
-            )
+        (
+            SELECT idx FROM `user`
+            WHERE id = #{id}
+        )
     </select>
     <select id="getByDate" resultMap="result">
         <include refid="sql_select"></include>

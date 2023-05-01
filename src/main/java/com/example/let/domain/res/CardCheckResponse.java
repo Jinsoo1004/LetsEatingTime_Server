@@ -34,6 +34,10 @@ public class CardCheckResponse {
      */
     private String type;
     /**
+     * 접근 제어자 정보
+     */
+    private String info;
+    /**
      * 프로필 사진
      */
     private Long image;
