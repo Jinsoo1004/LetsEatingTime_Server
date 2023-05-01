@@ -3,6 +3,7 @@ package com.example.let.service;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.domain.UserForMeal;
+import com.example.let.domain.res.ChartResponse;
 
 import java.util.List;
 
@@ -63,4 +64,11 @@ public interface UserService {
      * @return User
      */
     public TokenInfo refresh(String token);
+    /**
+     * 급식 신청 현황 통계를 가져온다.
+     *
+     * @param
+     * @return ChartResponse
+     */
+    public List<ChartResponse> getChartByMealApplication();
 }

@@ -1,16 +1,18 @@
 package com.example.let.controller;
 
+import com.example.let.domain.Opening;
 import com.example.let.domain.User;
+import com.example.let.domain.res.ResponseDto;
 import com.example.let.mapper.AccessMapper;
 import com.example.let.service.AccessService;
+import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,5 +23,28 @@ import java.util.List;
 @AllArgsConstructor
 @Log4j2
 public class RestStatisticsController {
-    private final AccessService accessService;
+    private final UserService userService;
+
+    /**
+     * @Name 급식 신청 통계 요청
+     * @Path "api/statistic/meal-application"
+     * @Request
+     *
+     * @text
+     * 급식 신청 현황을 확인합니다.
+     *
+     * @Return
+     */
+    @Operation(summary = "급식 신청 통계 요청",
+               description = "급식 신청 현황을 확인합니다.")
+    @PostMapping("/meal-application")
+    public ResponseEntity<?> resMealApp() {
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(userService.getChartByMealApplication())
+                        .build()
+                , HttpStatus.OK
+        );
+    }
 }

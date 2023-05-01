@@ -2,6 +2,7 @@ package com.example.let.service.impl;
 
 import com.example.let.JwtTokenProvider;
 import com.example.let.domain.*;
+import com.example.let.domain.res.ChartResponse;
 import com.example.let.exception.GlobalException;
 import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.UserMapper;
@@ -106,5 +107,8 @@ public class UserServiceImpl implements UserService {
     }
     public String getRefreshToken(String id) {
         return userMapper.getRefreshTokenById(id);
+    }
+    public List<ChartResponse> getChartByMealApplication() {
+        return userMapper.getChartByMealApplication();
     }
 }
