@@ -5,21 +5,23 @@
 <mapper namespace="com.example.let.mapper.OpeningMapper">
     <resultMap type="com.example.let.domain.Opening" id="result">
         <result property="idx" column="idx" />
-        <result property="type" column="type" />
+        <result property="device" column="device" />
         <result property="info" column="info" />
         <result property="date" column="date" />
         <result property="openTime" column="open_time" />
         <result property="closeTime" column="close_time" />
+        <result property="createTime" column="create_time" />
     </resultMap>
 
     <sql id="sql_select">
         SELECT
             idx
-             , type
+             , device
              , info
              , DATE_FORMAT(date, '%Y-%m-%d') AS date
              , DATE_FORMAT(open_time, '%T+09:00') AS open_time
              , DATE_FORMAT(close_time, '%T+09:00') AS close_time
+             , DATE_FORMAT(create_time, '%T+09:00') AS create_time
     </sql>
 
     <select id="get" resultMap="result">
@@ -31,40 +33,48 @@
         FROM opening
         WHERE idx = #{idx}
     </select>
-    <select id="getByType" resultMap="result">
+    <select id="getByDevice" resultMap="result">
         <include refid="sql_select"></include>
         FROM opening
-        WHERE type = #{type}
+        WHERE device = #{device}
+    </select>
+    <select id="getOriginByDevice" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM opening
+        WHERE device = #{device}
+        AND date = NULL
     </select>
     <select id="getByDate" resultMap="result">
         <include refid="sql_select"></include>
         FROM opening
         WHERE date_format(open_time, '%Y-%m-%d') = #{openTime};
     </select>
-    <select id="getByTypeAndDate" resultMap="result">
+    <select id="getByDeviceAndDate" resultMap="result">
         <include refid="sql_select"></include>
         FROM opening
-        WHERE type = #{type}
-        AND DATE_FORMAT(open_time, '%Y-%m-%d') = #{openTime};
+        WHERE device = #{device}
+        AND DATE_FORMAT(date, '%Y-%m-%d') = #{date};
     </select>
     <insert id="register" parameterType="com.example.let.domain.Opening" useGeneratedKeys="true"
             keyProperty="idx" >
 
         INSERT INTO opening
         (
-            type
+            device
             , info
             , date
             , open_time
             , close_time
+            , create_time
         )
         VALUES
         (
-            #{type}
+            #{device}
             , #{info}
             , DATE_FORMAT(now(), '%Y-%m-%d')
             , #{openTime}
             , #{closeTime}
+            , now()
         )
     </insert>
     <insert id="registerNow" parameterType="com.example.let.domain.Opening" useGeneratedKeys="true"
@@ -72,19 +82,21 @@
 
         INSERT INTO opening
         (
-            type
+              device
             , info
             , date
             , open_time
             , close_time
+            , create_time
         )
         VALUES
         (
-            #{type}
+            #{device}
             , #{info}
             , DATE_FORMAT(now(), '%Y-%m-%d')
             , DATE_FORMAT(now(), '%T')
             , #{closeTime}
+            , now()
         )
     </insert>
 </mapper>

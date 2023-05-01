@@ -157,11 +157,12 @@ public class RestTeacherController {
             description = "특정 개체의 개방을 요청합니다." +
                     "openTime에 대한 명시가 없으면 현시간부터로 판단합니다.")
     @PostMapping("/opening")
-    public ResponseEntity<?> ReqOpening(@RequestBody Opening opening) {
+    public ResponseEntity<?> ReqOpening(@RequestBody Opening opening
+                                       ,@RequestParam(name = "id") String id) {
         return new ResponseEntity<>(
                 ResponseDto.builder()
                         .status(200)
-                        .data(openingService.register(opening))
+                        .data(openingService.register(opening, id))
                         .build()
                 , HttpStatus.OK
         );
@@ -194,7 +195,7 @@ public class RestTeacherController {
         } else if(date.isEmpty()) {
             openings = openingService.get(type);
         } else {
-            openings = openingService.getByTypeAndDate(type, date);
+            openings = openingService.getByDeviceAndDate(type, date);
         }
 
         return new ResponseEntity<>(

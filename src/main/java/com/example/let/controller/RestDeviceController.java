@@ -37,11 +37,12 @@ public class RestDeviceController {
     @Operation(summary = "태깅 작성", description = "출입시 태깅한 정보를 확인하고 저장합니다")
     @PostMapping("/check.do")
     public ResponseEntity<?> CheckEntry(@RequestParam(name = "nfcId") Long nfcId
-            , @RequestParam(name = "type") String type) throws GlobalException {
+                                      , @RequestParam(name = "type") String type
+                                      , @RequestParam(name = "device") String device) throws GlobalException {
         return new ResponseEntity<>(
                 ResponseDto.builder()
                         .status(200)
-                        .data(entryService.register(nfcId, type))
+                        .data(entryService.register(device, nfcId, type))
                         .build()
                 , HttpStatus.OK
         );

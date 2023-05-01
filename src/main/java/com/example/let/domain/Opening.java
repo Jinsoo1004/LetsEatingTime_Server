@@ -18,7 +18,7 @@ public class Opening {
     /**
      * 접근 제어자 정보
      */
-    private String type;
+    private Long device;
     /**
      * 추가적인 정보
      */
@@ -35,4 +35,8 @@ public class Opening {
      * 패쇄 시간
      */
     private String closeTime;
+    /**
+     * 생성 시간
+     */
+    private String createTime;
 }
