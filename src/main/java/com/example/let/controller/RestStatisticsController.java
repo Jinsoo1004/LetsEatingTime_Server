@@ -37,7 +37,7 @@ public class RestStatisticsController {
      */
     @Operation(summary = "급식 신청 통계 요청",
                description = "급식 신청 현황을 확인합니다.")
-    @PostMapping("/meal-application")
+    @GetMapping("/meal-application")
     public ResponseEntity<?> resMealApp() {
         return new ResponseEntity<>(
                 ResponseDto.builder()

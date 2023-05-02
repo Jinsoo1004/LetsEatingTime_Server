@@ -30,7 +30,7 @@ public class RestOpenController {
      * @Return User
      */
     @Operation(summary = "급식 가져오기", description = "해당일 급식을 모두 반환합니다")
-    @PostMapping("/meal")
+    @GetMapping("/meal")
     public ResponseEntity<ResponseDto> GetMeal(@RequestParam(name = "date") String date
     ) throws IOException {
         return new ResponseEntity<>(
