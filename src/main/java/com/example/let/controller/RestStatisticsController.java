@@ -21,7 +21,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/statistic")
 @AllArgsConstructor
-@Log4j2
 public class RestStatisticsController {
     private final UserService userService;
 

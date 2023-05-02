@@ -24,7 +24,6 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/api/user")
 @AllArgsConstructor
-@Log4j2
 public class RestUserController {
     private final UserService userService;
     private final JwtTokenProvider jwtTokenProvider;
@@ -40,9 +39,8 @@ public class RestUserController {
      */
     @Operation(summary = "프로필 가져오기", description = "프로필을 반환합니다")
     @GetMapping("/profile")
-    public ResponseEntity<?> Signup(@RequestHeader("Authorization") String token) {
+    public ResponseEntity<?> getProfile(@RequestHeader("Authorization") String token) {
         String id = jwtTokenProvider.getAccessSubFromToken(token.substring(7));
-        log.info("> " + id);
         if(!id.isEmpty()) {
             return new ResponseEntity<>(
                     ResponseDto.builder()

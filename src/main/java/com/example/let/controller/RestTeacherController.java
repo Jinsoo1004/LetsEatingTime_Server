@@ -23,7 +23,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/teacher")
 @AllArgsConstructor
-@Log4j2
 public class RestTeacherController {
     private final AccessService accessService;
     private final UserService userService;

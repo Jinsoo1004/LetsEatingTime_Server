@@ -17,7 +17,6 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/openapi")
 @AllArgsConstructor
-@Log4j2
 public class RestOpenController {
     private final MealService mealService;
     /**

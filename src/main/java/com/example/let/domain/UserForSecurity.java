@@ -15,7 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.ArrayList;
 import java.util.Collection;
 
-@Log4j2
 @AllArgsConstructor
 @Builder
 @Data
@@ -49,7 +48,6 @@ public class UserForSecurity implements UserDetails {
             authorities.add(authority);
         }
 
-        log.info(authorities.toString());
         return authorities;
     }
 
