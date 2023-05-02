@@ -24,7 +24,6 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
 
-@Log4j2
 @Component
 public class JwtTokenProvider {
     private final Key accessKey;
@@ -142,10 +141,6 @@ public class JwtTokenProvider {
      * refresh token의 Claim 에서 sub 가져오기
      */
     public String getRefreshSubFromToken(String token) {
-        log.info("ref");
-        log.info(token);
-        log.info(getRefreshAllClaims(token));
-        log.info(getRefreshAllClaims(token).getSubject());
         String username = getRefreshAllClaims(token).getSubject();
         return username;
     }
@@ -154,9 +149,6 @@ public class JwtTokenProvider {
      * access token의 Claim 에서 sub 가져오기
      */
     public String getAccessSubFromToken(String token) {
-        log.info("acc");
-        log.info(token);
-        log.info(getAccessAllClaims(token).getSubject());
         String username = getAccessAllClaims(token).getSubject();
         return username;
     }

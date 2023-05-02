@@ -21,7 +21,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Log4j2
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -41,7 +41,6 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public TokenInfo login(String id, String password) {
-        log.info("login trial : " + id + " " + password);
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(id, password);
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         String refreshCode = RandomStringGenerator.generateRandomString(64);

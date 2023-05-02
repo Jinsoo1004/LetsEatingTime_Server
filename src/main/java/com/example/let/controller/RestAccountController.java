@@ -16,7 +16,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RestController
 @RequestMapping("/api/account")
 @AllArgsConstructor
-@Log4j2
 public class RestAccountController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;

@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/device")
 @AllArgsConstructor
-@Log4j2
 public class RestDeviceController {
     private final EntryService entryService;
     /**

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/card")
 @AllArgsConstructor
-@Log4j2
 public class RestCardController {
     private final CardService cardService;
 

@@ -23,7 +23,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/teacher")
 @AllArgsConstructor
-@Log4j2
 public class RestTeacherController {
     private final AccessService accessService;
     private final UserService userService;
@@ -41,7 +40,7 @@ public class RestTeacherController {
      * @Return List<User>
      */
     @Operation(summary = "사용자 정보요청", description = "사용자 정보를 요청합니다. id param이 필요하지만, 값이 없을시 전부 가져옵니다")
-    @PostMapping("/get/user")
+    @GetMapping("/get/user")
     public ResponseEntity<?> GetUser(@RequestParam(name = "id") String id) {
         if(id.equals("")) {
             return new ResponseEntity<>(
@@ -76,7 +75,7 @@ public class RestTeacherController {
      * @Return List<User>
      */
     @Operation(summary = "출입 정보요청", description = "nfc 태깅 기록을 가져옵니다. id param이 필요하지만, 값이 없을시 전부 가져옵니다")
-    @PostMapping("/get/entry")
+    @GetMapping("/get/entry")
     public ResponseEntity<?> GetEntry(@RequestParam(name = "id") String id) {
         if(id.equals("")) {
             return new ResponseEntity<>(
@@ -108,7 +107,7 @@ public class RestTeacherController {
      * @Return List<Object>
      */
     @Operation(summary = "출입 정보요청(날짜)", description = "출입 정보를 요청합니다, YYYY-MM-DD 로 포멧 된 date가 필요합니다")
-    @PostMapping("/get/entry/date")
+    @GetMapping("/get/entry/date")
     public ResponseEntity<?> GetEntryByTime(@RequestParam(name = "date") String date) {
         return new ResponseEntity<>(
                 ResponseDto.builder()
@@ -130,7 +129,7 @@ public class RestTeacherController {
      * @Return Entry[]
      */
     @Operation(summary = "출입 정보요청(날짜)", description = "출입 정보를 요청합니다, YYYY-MM-DD 로 포멧 된 date가 필요합니다")
-    @PostMapping("/get/entry/id-date")
+    @GetMapping("/get/entry/id-date")
     public ResponseEntity<?> GetEntryForMeal(@RequestParam(name = "id") String id, @RequestParam(name = "date") String date) {
         List<Object> list = new ArrayList<>();
         list.addAll(entryService.get(id, date));
@@ -182,7 +181,7 @@ public class RestTeacherController {
             description = "모든 개체의 개방 정보를 요청합니다." +
                     "type에 대한 명시가 없을시 모두 가져오며," +
                     "마찬가지로 date에 관한 명시가 없으면 모두 가져옵니다.")
-    @PostMapping("/get/opening")
+    @GetMapping("/get/opening")
     public ResponseEntity<?> GetOpening(@RequestParam(name = "type") String type,
                                         @RequestParam(name = "date") String date) {
         List<Opening> openings;
