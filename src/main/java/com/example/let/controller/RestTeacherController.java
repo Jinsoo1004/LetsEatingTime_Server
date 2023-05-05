@@ -51,12 +51,10 @@ public class RestTeacherController {
                     , HttpStatus.OK
             );
         } else {
-            List<User> res = new ArrayList<User>();
-            //res.add(userService.get(id));
             return new ResponseEntity<>(
                     ResponseDto.builder()
                             .status(200)
-                            .data(res)
+                            .data(userService.get(id))
                             .build()
                     , HttpStatus.OK
             );
