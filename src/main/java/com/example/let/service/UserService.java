@@ -71,4 +71,11 @@ public interface UserService {
      * @return ChartResponse
      */
     public List<ChartResponse> getChartByMealApplication();
+    /**
+     * 급식 참석 현황 통계를 가져온다.
+     *
+     * @param
+     * @return ChartResponse
+     */
+    public List<ChartResponse> getChartByMealAttend(String type);
 }

@@ -41,11 +41,18 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public TokenInfo login(String id, String password) {
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(id, password);
-        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
-        String refreshCode = RandomStringGenerator.generateRandomString(64);
-        userMapper.setRefreshToken(id, refreshCode);
-        return jwtTokenProvider.generateToken(authentication, refreshCode);
+        if(userMapper.getById(id) == null) {
+            throw new GlobalException(HttpStatus.FORBIDDEN, "Account without");
+        }
+        try {
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(id, password);
+            Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
+            String refreshCode = RandomStringGenerator.generateRandomString(64);
+            userMapper.setRefreshToken(id, refreshCode);
+            return jwtTokenProvider.generateToken(authentication, refreshCode);
+        } catch (Exception e) {
+            throw new GlobalException(HttpStatus.FORBIDDEN, "Credentials failed.");
+        }
     }
 
     @Override
@@ -69,13 +76,16 @@ public class UserServiceImpl implements UserService {
     public UserForMeal get(String id) {
         User user = userMapper.getById(id);
         List<Entry> entry = entryMapper.getByIdAndDate(user.getId(), LocalDateTime.now().toLocalDate().toString());
+        System.out.println(entry);
+        List<String> meal = new ArrayList<>();
         for(int entryIndex = 0; entryIndex < entry.size(); entryIndex++) {
             if(LocalDateTime.parse(entry.get(entryIndex).getEntryTime(), dateTimeFormatter).isBefore(LocalDateTime.now())) {
-                System.out.println(entryIndex);
+                meal.add(entry.get(entryIndex).getInfo());
             }
         }
         return UserForMeal.builder()
                 .user(user)
+                .mealTime(meal)
                 //.breakfast(entry.)
                 .build();
     }
@@ -107,7 +117,20 @@ public class UserServiceImpl implements UserService {
     public String getRefreshToken(String id) {
         return userMapper.getRefreshTokenById(id);
     }
+    @Override
     public List<ChartResponse> getChartByMealApplication() {
         return userMapper.getChartByMealApplication();
+    }
+    @Override
+    public List<ChartResponse> getChartByMealAttend(String type) {
+        if(type.equals("breakfast")) {
+            return userMapper.getChartByMealAttendBreakfast();
+        } else if(type.equals("lunch")) {
+            return userMapper.getChartByMealAttendLunch();
+        } else if(type.equals("dinner")) {
+            return userMapper.getChartByMealAttendDinner();
+        } else {
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "type is not defined");
+        }
     }
 }
