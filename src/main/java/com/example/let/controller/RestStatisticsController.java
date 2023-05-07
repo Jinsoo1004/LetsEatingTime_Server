@@ -46,4 +46,27 @@ public class RestStatisticsController {
                 , HttpStatus.OK
         );
     }
+
+    /**
+     * @Name 급식 참석 통계 요청
+     * @Path "api/statistic/meal-attend"
+     * @Request
+     *
+     * @text
+     * 급식 참석 현황을 확인합니다.
+     *
+     * @Return
+     */
+    @Operation(summary = "급식 참석 통계 요청",
+            description = "급식 참석 현황을 확인합니다.")
+    @GetMapping("/meal-attend")
+    public ResponseEntity<?> resMealAttend(@RequestParam String type) {
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(userService.getChartByMealAttend(type))
+                        .build()
+                , HttpStatus.OK
+        );
+    }
 }

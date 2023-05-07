@@ -113,4 +113,76 @@
                       AND meal_application = 'Y')
                ) AS value;
     </select>
+    <select id="getChartByMealAttendBreakfast" resultMap="chart">
+        SELECT ("참석") AS id,
+               (
+                   (SELECT count(*)
+                    FROM entry
+                    WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                    AND status = 'N'
+                    AND info = "breakfast")
+               ) AS value
+        UNION ALL
+        SELECT ("미참석") AS id,
+               (
+                   (SELECT count(*)
+                    FROM user
+                    WHERE user_type = 'S'
+                    AND meal_application = 'Y')
+                    -
+                   (SELECT count(*)
+                    FROM entry
+                    WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                    AND status = 'N'
+                    AND info = "breakfast")
+               ) AS value
+    </select>
+    <select id="getChartByMealAttendLunch" resultMap="chart">
+        SELECT ("참석") AS id,
+               (
+                   (SELECT count(*)
+                    FROM entry
+                    WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                      AND status = 'N'
+                      AND info = "lunch")
+               ) AS value
+        UNION ALL
+        SELECT ("미참석") AS id,
+               (
+                       (SELECT count(*)
+                        FROM user
+                        WHERE user_type = 'S'
+                          AND meal_application = 'Y')
+                       -
+                       (SELECT count(*)
+                        FROM entry
+                        WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                          AND status = 'N'
+                          AND info = "lunch")
+                   ) AS value
+    </select>
+    <select id="getChartByMealAttendDinner" resultMap="chart">
+        SELECT ("참석") AS id,
+               (
+                   (SELECT count(*)
+                    FROM entry
+                    WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                      AND status = 'N'
+                      AND info = "dinner")
+               ) AS value
+        UNION ALL
+        SELECT ("미참석") AS id,
+               (
+                       (SELECT count(*)
+                        FROM user
+                        WHERE user_type = 'S'
+                          AND meal_application = 'Y')
+                       -
+                       (SELECT count(*)
+                        FROM entry
+                        WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                          AND status = 'N'
+                          AND info = "dinner")
+                   ) AS value
+    </select>
 </mapper>
