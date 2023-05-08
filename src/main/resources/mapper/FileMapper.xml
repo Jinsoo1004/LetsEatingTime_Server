@@ -1,0 +1,59 @@
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.let.mapper.FileMapper">
+
+ 	<resultMap type="com.example.let.domain.UploadedFile" id="result">
+		<result property="fileIdx" column="file_idx"/>
+		<result property="originalFileName" column="file_name"/>
+		<result property="fileName" column="path"/>
+		<result property="size" column="size"/>
+		<result property="contentType" column="content_type"/>
+		<result property="registerTime" column="register_time"/>
+	</resultMap>
+ 
+	<sql id="sql_select">
+		SELECT a.file_idx
+			 , a.file_name
+			 , a.path
+			 , a.content_type
+			 , a.size
+			 , DATE_FORMAT(a.register_time, '%Y-%m-%dT%T+09:00') AS register_time
+		  FROM file AS a
+	</sql>
+ 
+ 	<select id="selectFile" resultMap="result">
+ 		<include refid="sql_select"></include>
+		 WHERE a.file_idx = #{idx} 
+    </select>
+ 
+    <insert id="insertFile" parameterType="com.example.let.domain.UploadedFile"
+    	useGeneratedKeys="true" keyProperty="fileIdx">
+
+		INSERT INTO file
+		(
+			file_name
+			, path
+			, content_type
+			, size
+			, register_time
+		)
+		VALUES
+		(
+			#{originalFileName}
+			, #{fileName}
+			, #{contentType}	
+			, #{size}
+			, now()	
+		);
+	</insert>
+
+	<delete id="deleteFile">
+	
+		DELETE FROM writing_file
+		 WHERE file_idx = #{fileIdx}
+		 
+	</delete>
+ 
+</mapper>

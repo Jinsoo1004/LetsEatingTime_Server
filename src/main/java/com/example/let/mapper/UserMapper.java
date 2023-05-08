@@ -17,6 +17,7 @@ public interface UserMapper {
     public User getByIdx(Long idx);
     public List<User> get();
     public void setRefreshToken(String id, String refreshCode);
+    public void setImage(String id, Long image);
     public String getRefreshTokenById(String id);
     public List<ChartResponse> getChartByMealApplication();
     public List<ChartResponse> getChartByMealAttendBreakfast();

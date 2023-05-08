@@ -28,6 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'commons-io:commons-io:2.11.0'
 
 	implementation 'mysql:mysql-connector-java'
 
