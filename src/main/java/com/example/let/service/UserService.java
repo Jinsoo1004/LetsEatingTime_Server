@@ -4,7 +4,9 @@ import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.domain.UserForMeal;
 import com.example.let.domain.res.ChartResponse;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.InputStream;
 import java.util.List;
 
 public interface UserService {

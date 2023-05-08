@@ -1,13 +1,11 @@
 package com.example.let.controller;
 
 import com.example.let.domain.Opening;
+import com.example.let.domain.UploadedFile;
 import com.example.let.domain.res.ResponseDto;
 import com.example.let.domain.User;
 import com.example.let.mapper.OpeningMapper;
-import com.example.let.service.AccessService;
-import com.example.let.service.EntryService;
-import com.example.let.service.OpeningService;
-import com.example.let.service.UserService;
+import com.example.let.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -15,6 +13,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +27,7 @@ public class RestTeacherController {
     private final UserService userService;
     private final EntryService entryService;
     private final OpeningService openingService;
+    private final FileUploadService fileUploadService;
     /**
      * @Name 사용자 정보 가져오기
      * @Path "api/teacher/get/user"
@@ -199,6 +199,31 @@ public class RestTeacherController {
                 ResponseDto.builder()
                         .status(200)
                         .data(openings)
+                        .build()
+                , HttpStatus.OK
+        );
+    }
+
+    /**
+     * @Name 증명 사진 등록
+     * @Path "api/teacher/id-photo/upload"
+     * @Request RequestParam(form) : Form
+     *
+     * @text
+     * 증명 이미지를 등록합니다.
+     *
+     * @Return Opening[]
+     */
+    @Operation(summary = "증명 사진 등록",
+            description = "증명 사진을 등록합니다.")
+    @PostMapping("/id-photo/upload")
+    public ResponseEntity<?> idPhoto(@RequestParam("image") MultipartFile multipartFile
+            ,@RequestParam(name = "id") String id) {
+        fileUploadService.registerFile(multipartFile, id);
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data("successfully completed")
                         .build()
                 , HttpStatus.OK
         );
