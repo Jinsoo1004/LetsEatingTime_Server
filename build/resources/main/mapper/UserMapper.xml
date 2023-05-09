@@ -61,6 +61,11 @@
         SET refresh_token = #{refreshCode}
         WHERE id = #{id}
     </update>
+    <update id="setImage">
+        UPDATE user
+        SET image = #{image}
+        WHERE id = #{id}
+    </update>
     <select id="getRefreshTokenById" resultType="String">
         SELECT refresh_token
         FROM user
