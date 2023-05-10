@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserService {
     public UserForMeal get(String id) {
         User user = userMapper.getById(id);
         List<Entry> entry = entryMapper.getByIdAndDate(user.getId(), LocalDateTime.now().toLocalDate().toString());
-        System.out.println(entry);
+
         List<String> meal = new ArrayList<>();
         for(int entryIndex = 0; entryIndex < entry.size(); entryIndex++) {
             if(LocalDateTime.parse(entry.get(entryIndex).getEntryTime(), dateTimeFormatter).isBefore(LocalDateTime.now())) {

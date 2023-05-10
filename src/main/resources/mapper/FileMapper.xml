@@ -50,10 +50,8 @@
 	</insert>
 
 	<delete id="deleteFile">
-	
 		DELETE FROM writing_file
 		 WHERE file_idx = #{fileIdx}
-		 
 	</delete>
  
 </mapper>
