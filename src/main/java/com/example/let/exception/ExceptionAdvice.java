@@ -9,7 +9,6 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 @RestControllerAdvice
 public class ExceptionAdvice {
-
     @ExceptionHandler(GlobalException.class)
     protected ResponseEntity<ExceptionResponseDto> GlobalException(GlobalException e){
         ExceptionResponseDto responseDto = ExceptionResponseDto.builder()
