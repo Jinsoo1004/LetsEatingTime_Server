@@ -46,7 +46,7 @@ public class JwtTokenProvider {
 
         long now = (new Date()).getTime();
         // Access Token 생성
-        Date accessTokenExpiresIn = new Date(now + (60000 * 30           * 2 * 24 * 12));  // 30분 + 12일
+        Date accessTokenExpiresIn = new Date(now + (60000 * 60));  // 1시간
         String accessToken = Jwts.builder()
                 .setSubject(authentication.getName())
                 .claim("auth", authorities)

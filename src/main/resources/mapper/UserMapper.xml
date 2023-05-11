@@ -45,6 +45,7 @@
     <select id="get" resultMap="result">
         <include refid="sql_select"></include>
         FROM user
+        ORDER BY grade, class_name, class_no
     </select>
     <select id="getByIdx" resultMap="result">
         <include refid="sql_select"></include>
