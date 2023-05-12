@@ -229,4 +229,31 @@ public class RestTeacherController {
                 , HttpStatus.OK
         );
     }
+
+    /**
+     * @Name 접근 권한 추가
+     * @Path "api/teacher/access/add"
+     * @Request RequestParam(form) : Form
+     *
+     * @text
+     * 특정 사용자에 대한 접근 권한을 상속합니다.
+     *
+     * @Return
+     */
+    @Operation(summary = "접근 권한 추가",
+            description = "특정 사용자에 대한 접근 권한을 상속합니다.")
+    @PostMapping("/access/add")
+    public ResponseEntity<?> accessAdd(
+            @RequestParam(name = "targetId") String targetId
+            ,@RequestParam(name = "grantId") String grantId
+            ,@RequestParam(name = "type") String type) {
+        accessService.register(targetId, grantId, type);
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data("successfully completed")
+                        .build()
+                , HttpStatus.OK
+        );
+    }
 }

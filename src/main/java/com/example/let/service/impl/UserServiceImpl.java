@@ -4,6 +4,7 @@ import com.example.let.JwtTokenProvider;
 import com.example.let.domain.*;
 import com.example.let.domain.res.ChartResponse;
 import com.example.let.exception.GlobalException;
+import com.example.let.mapper.AccessMapper;
 import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.UserMapper;
 import com.example.let.module.RandomStringGenerator;
@@ -35,6 +36,7 @@ import java.util.UUID;
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final EntryMapper entryMapper;
+    private final AccessMapper accessMapper;
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final RandomStringGenerator randomStringGenerator;

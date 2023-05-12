@@ -7,7 +7,7 @@ import com.example.let.domain.res.CardCheckResponse;
 import java.util.List;
 
 public interface AccessService {
-    public Long register(Access access);
+    public Long register(String targetId, String grantId, String type);
     public List<Access> getById(String id);
     public List<Access> getByType(String type);
 }

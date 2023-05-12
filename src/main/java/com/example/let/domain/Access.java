@@ -1,12 +1,14 @@
 package com.example.let.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 /**
  * 접근 권한
  */
 @Data
+@Builder
 @AllArgsConstructor
 public class Access {
     /**
