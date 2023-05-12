@@ -15,6 +15,6 @@ public interface AccessMapper {
     public List<Access> getById(String id);
     public List<Access> getByGrantId(String id);
     public List<Access> getByType(String type);
-    public List<Access> getByIdAndType(String id, String type);
+    public Access getByIdAndType(String id, String type);
     public List<Access> getByIdAndTypeAndDate(String id, String type, String date);
 }

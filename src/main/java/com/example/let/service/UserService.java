@@ -39,6 +39,14 @@ public interface UserService {
      */
     public List<UserForMeal> get();
     /**
+     * 사용자를 승인한다.
+     *
+     * @param String id
+     * @return id
+     */
+    public void approve(String id);
+
+    /**
      * 로그인 한다.
      *
      * @param String id, String password

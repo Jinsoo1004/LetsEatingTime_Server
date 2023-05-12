@@ -13,6 +13,7 @@ import java.util.List;
 @Repository
 public interface UserMapper {
     public void register(User user);
+    public void approve(String id);
     public User getById(String id);
     public User getByIdx(Long idx);
     public List<User> get();

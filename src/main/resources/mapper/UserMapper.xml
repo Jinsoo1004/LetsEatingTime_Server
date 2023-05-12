@@ -62,6 +62,11 @@
         SET refresh_token = #{refreshCode}
         WHERE id = #{id}
     </update>
+    <update id="approve">
+        UPDATE user
+        SET approved_yn = 'Y'
+        WHERE id = #{id}
+    </update>
     <update id="setImage">
         UPDATE user
         SET image = #{image}

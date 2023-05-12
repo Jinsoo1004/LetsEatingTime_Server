@@ -4,37 +4,30 @@ import com.example.let.JwtTokenProvider;
 import com.example.let.domain.*;
 import com.example.let.domain.res.ChartResponse;
 import com.example.let.exception.GlobalException;
+import com.example.let.mapper.AccessMapper;
 import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.UserMapper;
 import com.example.let.module.RandomStringGenerator;
 import com.example.let.service.UserService;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final EntryMapper entryMapper;
+    private final AccessMapper accessMapper;
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final RandomStringGenerator randomStringGenerator;
@@ -44,8 +37,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String register(User user) {
+        if(user.getId().equals("null")) throw new GlobalException(HttpStatus.BAD_REQUEST, "id can't \"null\"");
         userMapper.register(user);
         return user.getId();
+    }
+    @Override
+    public void approve(String id) {
+        userMapper.approve(id);
     }
     @Override
     public TokenInfo login(String id, String password) {
