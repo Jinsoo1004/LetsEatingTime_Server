@@ -8,6 +8,7 @@ import lombok.*;
  * 사용자
  */
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {

@@ -42,7 +42,7 @@
         <include refid="sql_select"></include>
         FROM opening
         WHERE device = #{device}
-        AND date = NULL
+        AND date IS NULL
     </select>
     <select id="getByDate" resultMap="result">
         <include refid="sql_select"></include>

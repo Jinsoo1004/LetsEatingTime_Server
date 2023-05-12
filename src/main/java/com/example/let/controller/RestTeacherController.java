@@ -256,4 +256,28 @@ public class RestTeacherController {
                 , HttpStatus.OK
         );
     }
+    /**
+     * @Name 회원 승인
+     * @Path "api/teacher/approve"
+     * @Request RequestParam(form) : Form
+     *
+     * @text
+     * 새로운 유저를 승인합니다.
+     *
+     * @Return
+     */
+    @Operation(summary = "회원 승인",
+            description = "새로운 유저를 승인합니다.")
+    @PostMapping("/approve")
+    public ResponseEntity<?> accessAdd(
+            @RequestParam(name = "id") String id) {
+        userService.approve(id);
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data("successfully completed")
+                        .build()
+                , HttpStatus.OK
+        );
+    }
 }
