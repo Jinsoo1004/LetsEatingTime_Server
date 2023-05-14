@@ -1,7 +1,6 @@
 package com.example.let.service.impl;
 
 import com.example.let.domain.Access;
-import com.example.let.domain.User;
 import com.example.let.exception.GlobalException;
 import com.example.let.mapper.AccessMapper;
 import com.example.let.mapper.UserMapper;

@@ -7,7 +7,6 @@ import com.example.let.domain.User;
 import com.example.let.domain.res.CardCheckResponse;
 import com.example.let.exception.GlobalException;
 import com.example.let.mapper.*;
-import com.example.let.service.CardService;
 import com.example.let.service.EntryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

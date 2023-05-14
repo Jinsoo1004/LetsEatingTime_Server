@@ -3,10 +3,7 @@ package com.example.let.filter;
 import com.example.let.exception.ExceptionResponseDto;
 import com.example.let.exception.GlobalException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.JwtException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.filter.OncePerRequestFilter;
 

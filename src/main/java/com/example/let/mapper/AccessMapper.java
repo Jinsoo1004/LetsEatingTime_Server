@@ -1,7 +1,6 @@
 package com.example.let.mapper;
 
 import com.example.let.domain.Access;
-import com.example.let.domain.Card;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

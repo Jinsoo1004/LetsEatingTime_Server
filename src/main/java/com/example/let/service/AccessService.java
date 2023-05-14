@@ -1,8 +1,6 @@
 package com.example.let.service;
 
 import com.example.let.domain.Access;
-import com.example.let.domain.Card;
-import com.example.let.domain.res.CardCheckResponse;
 
 import java.util.List;
 

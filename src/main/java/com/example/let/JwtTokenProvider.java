@@ -2,12 +2,9 @@ package com.example.let;
 
 import com.example.let.domain.TokenInfo;
 import com.example.let.exception.GlobalException;
-import com.example.let.module.RandomStringGenerator;
-import com.example.let.service.UserService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,8 +13,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.Collection;

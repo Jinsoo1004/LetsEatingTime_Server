@@ -1,12 +1,7 @@
 package com.example.let.service;
 
-import com.example.let.domain.Meal;
-import com.example.let.domain.User;
 import com.example.let.domain.res.MealResponse;
-
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
 
 public interface MealService {
     /**
