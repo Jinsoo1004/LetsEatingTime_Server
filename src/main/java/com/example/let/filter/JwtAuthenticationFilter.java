@@ -1,9 +1,7 @@
 package com.example.let.filter;
 
 import com.example.let.JwtTokenProvider;
-import com.example.let.domain.TokenInfo;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;

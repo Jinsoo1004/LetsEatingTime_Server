@@ -1,10 +1,7 @@
 package com.example.let.mapper;
 
-import com.example.let.domain.Entry;
 import com.example.let.domain.Opening;
-import com.example.let.domain.res.CardCheckResponse;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

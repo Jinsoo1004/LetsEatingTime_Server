@@ -50,7 +50,7 @@
     <select id="getByIdAndType" resultMap="result">
         <include refid="sql_select"></include>
         FROM access
-        WHERE grant_id =
+        WHERE user_id =
         (
         SELECT idx FROM `user`
         WHERE id = #{id}

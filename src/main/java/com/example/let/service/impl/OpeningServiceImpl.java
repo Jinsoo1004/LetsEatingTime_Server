@@ -1,16 +1,10 @@
 package com.example.let.service.impl;
 
-import com.example.let.domain.Card;
-import com.example.let.domain.Entry;
 import com.example.let.domain.Opening;
 import com.example.let.domain.User;
-import com.example.let.domain.res.CardCheckResponse;
 import com.example.let.exception.GlobalException;
-import com.example.let.mapper.EntryMapper;
 import com.example.let.mapper.OpeningMapper;
 import com.example.let.mapper.UserMapper;
-import com.example.let.service.CardService;
-import com.example.let.service.EntryService;
 import com.example.let.service.OpeningService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

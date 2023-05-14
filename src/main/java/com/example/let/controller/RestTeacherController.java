@@ -1,22 +1,17 @@
 package com.example.let.controller;
 
 import com.example.let.domain.Opening;
-import com.example.let.domain.UploadedFile;
 import com.example.let.domain.res.ResponseDto;
-import com.example.let.domain.User;
-import com.example.let.mapper.OpeningMapper;
 import com.example.let.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Tag(name = "교사", description = "정보 열람등 교사 권한이 필요한 api")

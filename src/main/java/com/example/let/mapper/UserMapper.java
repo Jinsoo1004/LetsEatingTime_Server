@@ -1,7 +1,6 @@
 package com.example.let.mapper;
 
 import com.example.let.domain.User;
-import com.example.let.domain.UserForMeal;
 import com.example.let.domain.res.ChartResponse;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
