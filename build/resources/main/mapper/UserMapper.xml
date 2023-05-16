@@ -141,6 +141,7 @@
                    (SELECT count(*)
                     FROM user
                     WHERE user_type = 'S'
+                      AND approved_yn = 'Y'
                     AND meal_application = 'Y')
                     -
                    (SELECT count(*)
@@ -165,6 +166,7 @@
                        (SELECT count(*)
                         FROM user
                         WHERE user_type = 'S'
+                          AND approved_yn = 'Y'
                           AND meal_application = 'Y')
                        -
                        (SELECT count(*)
@@ -189,6 +191,7 @@
                        (SELECT count(*)
                         FROM user
                         WHERE user_type = 'S'
+                          AND approved_yn = 'Y'
                           AND meal_application = 'Y')
                        -
                        (SELECT count(*)
@@ -198,4 +201,33 @@
                           AND info = "dinner")
                    ) AS value
     </select>
+    <select id="getChartByMealAttend" resultMap="chart">
+        SELECT ("참석")                    AS id,
+               (
+                   (SELECT count(*)
+                    FROM entry
+                    WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                      AND status = 'N')) AS value
+        UNION ALL
+        SELECT ("미참석") AS id,
+               (
+                       (
+                           (SELECT count(*)
+                            FROM user
+                            WHERE user_type = 'S'
+                              AND approved_yn = 'Y'
+                              AND meal_application = 'Y')
+                            * 3
+                       )
+                       -
+                       (SELECT count(*)
+                        FROM entry
+                        WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                          AND status = 'N')
+                   )   AS value
+    </select>
+    <delete id="delete">
+        DELETE FROM user
+        WHERE id = #{id};
+    </delete>
 </mapper>

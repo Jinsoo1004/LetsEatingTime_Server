@@ -33,7 +33,6 @@ public class RestAccountController {
     @PostMapping("/signup.do")
     public ResponseEntity<?> Signup(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setUserType('S');
         return new ResponseEntity<>(
                 ResponseDto.builder()
                         .status(200)

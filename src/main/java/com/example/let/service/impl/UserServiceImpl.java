@@ -139,4 +139,8 @@ public class UserServiceImpl implements UserService {
             return userMapper.getChartByMealAttend();
         }
     }
+    @Override
+    public void delete(String id) {
+        userMapper.delete(id);
+    }
 }

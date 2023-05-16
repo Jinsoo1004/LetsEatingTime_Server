@@ -24,4 +24,5 @@ public interface UserMapper {
     public List<ChartResponse> getChartByMealAttendLunch();
     public List<ChartResponse> getChartByMealAttendDinner();
     public List<ChartResponse> getChartByMealAttend();
+    public void delete(String id);
 }

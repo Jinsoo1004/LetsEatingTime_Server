@@ -85,4 +85,11 @@ public interface UserService {
      * @return ChartResponse
      */
     public List<ChartResponse> getChartByMealAttend(String type);
+    /**
+     * 회원을 삭제합니다.
+     *
+     * @param
+     * @return ChartResponse
+     */
+    public void delete(String id);
 }
