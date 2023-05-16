@@ -226,4 +226,8 @@
                           AND status = 'N')
                    )   AS value
     </select>
+    <delete id="delete">
+        DELETE FROM user
+        WHERE id = #{id};
+    </delete>
 </mapper>

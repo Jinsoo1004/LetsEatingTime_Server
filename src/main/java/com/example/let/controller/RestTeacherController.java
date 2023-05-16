@@ -122,7 +122,7 @@ public class RestTeacherController {
      *
      * @Return Entry[]
      */
-    @Operation(summary = "출입 정보요청(날짜)", description = "출입 정보를 요청합니다, YYYY-MM-DD 로 포멧 된 date가 필요합니다")
+    @Operation(summary = "출입 정보요청(id/날짜)", description = "출입 정보를 요청합니다, YYYY-MM-DD 로 포멧 된 date와 id가 필요합니다")
     @GetMapping("/get/entry/id-date")
     public ResponseEntity<?> GetEntryForMeal(@RequestParam(name = "id") String id, @RequestParam(name = "date") String date) {
         List<Object> list = new ArrayList<>();
@@ -267,6 +267,30 @@ public class RestTeacherController {
     public ResponseEntity<?> accessAdd(
             @RequestParam(name = "id") String id) {
         userService.approve(id);
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data("successfully completed")
+                        .build()
+                , HttpStatus.OK
+        );
+    }
+    /**
+     * @Name 회원 삭제
+     * @Path "api/teacher/approve"
+     * @Request RequestParam(form) : Form
+     *
+     * @text
+     * 새로운 유저를 승인합니다.
+     *
+     * @Return
+     */
+    @Operation(summary = "회원 삭제",
+            description = "유저를 삭제합니다.")
+    @DeleteMapping("/delete-user")
+    public ResponseEntity<?> userDelete(
+            @RequestParam(name = "id") String id) {
+        userService.delete(id);
         return new ResponseEntity<>(
                 ResponseDto.builder()
                         .status(200)
