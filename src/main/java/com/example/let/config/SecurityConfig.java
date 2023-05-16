@@ -35,6 +35,7 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/api/account/**").permitAll()
+                .antMatchers("/api/user/image/**").permitAll()
                 .antMatchers("/api/user/**").hasRole("USER")
                 .antMatchers("/api/card/**").hasRole("USER")
                 .antMatchers("/api/teacher/**").hasRole("TEACHER")
