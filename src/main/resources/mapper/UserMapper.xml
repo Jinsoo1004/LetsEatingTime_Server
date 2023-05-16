@@ -113,6 +113,7 @@
                    (SELECT count(*)
                     FROM user
                     WHERE user_type = 'S'
+                      AND approved_yn = 'Y'
                       AND meal_application = 'N')
                ) AS value
         UNION ALL
@@ -121,6 +122,7 @@
                    (SELECT count(*)
                     FROM user
                     WHERE user_type = 'S'
+                      AND approved_yn = 'Y'
                       AND meal_application = 'Y')
                ) AS value;
     </select>
@@ -139,6 +141,7 @@
                    (SELECT count(*)
                     FROM user
                     WHERE user_type = 'S'
+                      AND approved_yn = 'Y'
                     AND meal_application = 'Y')
                     -
                    (SELECT count(*)
@@ -163,6 +166,7 @@
                        (SELECT count(*)
                         FROM user
                         WHERE user_type = 'S'
+                          AND approved_yn = 'Y'
                           AND meal_application = 'Y')
                        -
                        (SELECT count(*)
@@ -187,6 +191,7 @@
                        (SELECT count(*)
                         FROM user
                         WHERE user_type = 'S'
+                          AND approved_yn = 'Y'
                           AND meal_application = 'Y')
                        -
                        (SELECT count(*)
