@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="유저 타입 고정 해제">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="이미지 요청 늘 허용">
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestAccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,14 +272,7 @@
       <workItem from="1684147418860" duration="1143000" />
       <workItem from="1684205007972" duration="1357000" />
       <workItem from="1684214129368" duration="3099000" />
-      <workItem from="1684227720186" duration="1136000" />
-    </task>
-    <task id="LOCAL-00011" summary="Account/user change">
-      <created>1679925481242</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1679925481242</updated>
+      <workItem from="1684227720186" duration="5754000" />
     </task>
     <task id="LOCAL-00012" summary="sql mapper - object attribute change">
       <created>1680011645525</created>
@@ -618,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684226747471</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="이미지 요청 늘 허용">
+      <created>1684228886359</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1684228886359</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +635,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user 정보 요청시 급식 정보도 같이 응답" />
     <MESSAGE value="Opening 서비스 추가" />
     <MESSAGE value="git ignore" />
     <MESSAGE value="sql 변경" />
@@ -661,7 +659,8 @@
     <MESSAGE value="전체 급식 참석 통계" />
     <MESSAGE value="유저 삭제 기능" />
     <MESSAGE value="유저 타입 고정 해제" />
-    <option name="LAST_COMMIT_MESSAGE" value="유저 타입 고정 해제" />
+    <MESSAGE value="이미지 요청 늘 허용" />
+    <option name="LAST_COMMIT_MESSAGE" value="이미지 요청 늘 허용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

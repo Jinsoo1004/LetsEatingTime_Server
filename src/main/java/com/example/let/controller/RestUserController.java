@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -66,15 +67,9 @@ public class RestUserController {
      */
     @Operation(summary = "사진 가져오기", description = "사진을 반환합니다")
     @GetMapping(value="/image/{idx}")
-    public void image(HttpServletRequest request,
-                      HttpServletResponse response,
-                      Model model,
+    public ResponseEntity image(
                       @PathVariable("idx") Long idx)
     {
-        if (idx > 0) {
-            model.addAttribute("idx",idx);
-        }
-
         UploadedFile fileInfo = fileUploadService.getFile(idx);
         if (fileInfo == null) {
             throw new NullPointerException("File not found");
@@ -84,16 +79,12 @@ public class RestUserController {
             File file = fileUploadService.getPhysicalFile(fileInfo);
             byte[] bytes = FileUtils.readFileToByteArray(file);
 
-            response.setContentType(fileInfo.getContentType());
-            response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(fileInfo.getOriginalFileName(), "UTF-8")+"\";");
-            response.setHeader("Content-Transfer-Encoding", "binary");
-
-            response.getOutputStream().write(bytes);
-            response.getOutputStream().flush();
-            response.getOutputStream().close();
-        } catch (FileNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .contentType(MediaType.valueOf("image/png"))
+                    .body(bytes);
         } catch (Exception e) {
             LoggerFactory.getLogger(getClass()).error(e.getMessage(), e);
         }
+        throw new GlobalException(HttpStatus.BAD_REQUEST, "unknown error");
     }
 }
