@@ -136,7 +136,7 @@ public class UserServiceImpl implements UserService {
         } else if(type.equals("dinner")) {
             return userMapper.getChartByMealAttendDinner();
         } else {
-            throw new GlobalException(HttpStatus.BAD_REQUEST, "type is not defined");
+            return userMapper.getChartByMealAttend();
         }
     }
 }

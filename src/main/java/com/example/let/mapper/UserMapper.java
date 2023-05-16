@@ -23,4 +23,5 @@ public interface UserMapper {
     public List<ChartResponse> getChartByMealAttendBreakfast();
     public List<ChartResponse> getChartByMealAttendLunch();
     public List<ChartResponse> getChartByMealAttendDinner();
+    public List<ChartResponse> getChartByMealAttend();
 }
