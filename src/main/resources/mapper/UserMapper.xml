@@ -113,43 +113,45 @@
                    (SELECT count(*)
                     FROM user
                     WHERE user_type = 'S'
-                      AND approved_yn = 'Y'
-                      AND meal_application = 'N')
+                      AND approved_yn = 'Y')
                ) AS value
         UNION ALL
         SELECT ("신청") AS id,
                (
                    (SELECT count(*)
-                    FROM user
-                    WHERE user_type = 'S'
-                      AND approved_yn = 'Y'
-                      AND meal_application = 'Y')
+                    FROM access
+                    WHERE type = "breakfast_weekend")
                ) AS value;
     </select>
     <select id="getChartByMealAttendBreakfast" resultMap="chart">
-        SELECT ("참석") AS id,
+        SELECT ("참석")                                                          AS id,
                (
                    (SELECT count(*)
                     FROM entry
                     WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
-                    AND status = 'N'
-                    AND info = "breakfast")
-               ) AS value
+                      AND status = 'N'
+                      AND (info = "breakfast" OR info = "breakfast_weekend"))) AS value
         UNION ALL
         SELECT ("미참석") AS id,
                (
-                   (SELECT count(*)
-                    FROM user
-                    WHERE user_type = 'S'
-                      AND approved_yn = 'Y'
-                    AND meal_application = 'Y')
-                    -
-                   (SELECT count(*)
-                    FROM entry
-                    WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
-                    AND status = 'N'
-                    AND info = "breakfast")
-               ) AS value
+                       IF(DAYOFWEEK(NOW()) = 7,
+                            (
+                            SELECT count(*)
+                            FROM access
+                            WHERE type = "breakfast_weekend")
+                            ,
+                            (
+                            SELECT count(*)
+                            FROM access
+                            WHERE type = "breakfast")
+                          )
+                       -
+                       (SELECT count(*)
+                        FROM entry
+                        WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
+                          AND status = 'N'
+                          AND (info = "breakfast" OR info = "breakfast_weekend"))
+                   )   AS value
     </select>
     <select id="getChartByMealAttendLunch" resultMap="chart">
         SELECT ("참석") AS id,
@@ -158,22 +160,28 @@
                     FROM entry
                     WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
                       AND status = 'N'
-                      AND info = "lunch")
+                      AND (info = "lunch" OR info = "lunch_weekend"))
                ) AS value
         UNION ALL
         SELECT ("미참석") AS id,
                (
-                       (SELECT count(*)
-                        FROM user
-                        WHERE user_type = 'S'
-                          AND approved_yn = 'Y'
-                          AND meal_application = 'Y')
+                       IF(DAYOFWEEK(NOW()) = 7,
+                          (
+                              SELECT count(*)
+                              FROM access
+                              WHERE type = "lunch_weekend")
+                           ,
+                          (
+                              SELECT count(*)
+                              FROM access
+                              WHERE type = "lunch")
+                           )
                        -
                        (SELECT count(*)
                         FROM entry
                         WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
                           AND status = 'N'
-                          AND info = "lunch")
+                          AND (info = "lunch" OR info = "lunch_weekend"))
                    ) AS value
     </select>
     <select id="getChartByMealAttendDinner" resultMap="chart">
@@ -183,22 +191,28 @@
                     FROM entry
                     WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
                       AND status = 'N'
-                      AND info = "dinner")
+                      AND (info = "dinner" OR info = "dinner_weekend"))
                ) AS value
         UNION ALL
         SELECT ("미참석") AS id,
                (
-                       (SELECT count(*)
-                        FROM user
-                        WHERE user_type = 'S'
-                          AND approved_yn = 'Y'
-                          AND meal_application = 'Y')
+                       IF(DAYOFWEEK(NOW()) = 7,
+                          (
+                              SELECT count(*)
+                              FROM access
+                              WHERE type = "dinner_weekend")
+                           ,
+                          (
+                              SELECT count(*)
+                              FROM access
+                              WHERE type = "dinner")
+                           )
                        -
                        (SELECT count(*)
                         FROM entry
                         WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
                           AND status = 'N'
-                          AND info = "dinner")
+                          AND (info = "dinner" OR info = "dinner_weekend"))
                    ) AS value
     </select>
     <select id="getChartByMealAttend" resultMap="chart">
@@ -212,12 +226,41 @@
         SELECT ("미참석") AS id,
                (
                        (
-                           (SELECT count(*)
-                            FROM user
-                            WHERE user_type = 'S'
-                              AND approved_yn = 'Y'
-                              AND meal_application = 'Y')
-                            * 3
+                           IF(DAYOFWEEK(NOW()) = 7,
+                              (
+                                  SELECT count(*)
+                                  FROM access
+                                  WHERE type = "breakfast_weekend")
+                               ,
+                              (
+                                  SELECT count(*)
+                                  FROM access
+                                  WHERE type = "breakfast")
+                               )
+                               +
+                           IF(DAYOFWEEK(NOW()) = 7,
+                          (
+                              SELECT count(*)
+                              FROM access
+                              WHERE type = "lunch_weekend")
+                           ,
+                          (
+                              SELECT count(*)
+                              FROM access
+                              WHERE type = "lunch")
+                           )
+                               +
+                           IF(DAYOFWEEK(NOW()) = 7,
+                              (
+                                  SELECT count(*)
+                                  FROM access
+                                  WHERE type = "dinner_weekend")
+                               ,
+                              (
+                                  SELECT count(*)
+                                  FROM access
+                                  WHERE type = "dinner")
+                               )
                        )
                        -
                        (SELECT count(*)

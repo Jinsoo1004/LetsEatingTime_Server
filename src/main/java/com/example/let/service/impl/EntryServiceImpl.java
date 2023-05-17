@@ -9,14 +9,18 @@ import com.example.let.exception.GlobalException;
 import com.example.let.mapper.*;
 import com.example.let.service.EntryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cglib.core.Local;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 @RequiredArgsConstructor
@@ -50,6 +54,19 @@ public class EntryServiceImpl implements EntryService {
             if(LocalTime.parse(targetOpening.getOpenTime(), TimeFormatter).isBefore(LocalTime.now()) &&
                LocalTime.parse(targetOpening.getCloseTime(), TimeFormatter).isAfter(LocalTime.now()) ) {
                 if(accessMapper.getByIdAndType(user.getId(), targetOpening.getInfo()) != null) {
+                    if(targetOpening.getInfo().split("_").length > 1) {
+                        if(targetOpening.getInfo().split("_")[1].equals("weekend")) {
+                            String week = LocalDate.now().getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.US);
+                            if(!week.equals("Sunday")) {
+                                continue;
+                            }
+                        }
+                    } else {
+                        String week = LocalDate.now().getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.US);
+                        if(week.equals("Sunday")) {
+                            continue;
+                        }
+                    }
                     entry.setInfo(targetOpening.getInfo());
                     switch (card.getStatus()) {
                         case 'W':
