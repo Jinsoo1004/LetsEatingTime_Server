@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="etc 로 변경">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestMainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/alt_keystore.p12" afterDir="false" />
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="공식 인증서 적용">
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/MealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,13 +283,11 @@
       <workItem from="1685435839394" duration="5417000" />
       <workItem from="1685503074360" duration="2273000" />
       <workItem from="1685509938966" duration="453000" />
-    </task>
-    <task id="LOCAL-00015" summary="swagger doc edit">
-      <created>1680594817001</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1680594817001</updated>
+      <workItem from="1685511492478" duration="963000" />
+      <workItem from="1685514858926" duration="3001000" />
+      <workItem from="1685536870137" duration="669000" />
+      <workItem from="1685541987098" duration="120000" />
+      <workItem from="1685581462553" duration="147000" />
     </task>
     <task id="LOCAL-00016" summary="swagger doc edit/access withdraw mode edit">
       <created>1680595911265</created>
@@ -630,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685440835195</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="공식 인증서 적용">
+      <created>1685511560067</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1685511560067</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +650,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="debug.exe 변경" />
     <MESSAGE value="Opening/Entry 영속성 조정" />
     <MESSAGE value="급식 신청 현황 통계" />
     <MESSAGE value="요청 메서드 변경" />
@@ -673,7 +674,8 @@
     <MESSAGE value="이미지 binary 리턴 -&gt; image/png 리턴" />
     <MESSAGE value="인덱스 초과 에러 해결" />
     <MESSAGE value="ssl 설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="ssl 설정" />
+    <MESSAGE value="공식 인증서 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="공식 인증서 적용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
