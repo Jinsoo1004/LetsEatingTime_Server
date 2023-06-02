@@ -20,10 +20,6 @@
         <result property="withdrawedTime" column="withdrawed_time" />
         <result property="refreshToken" column="refresh_token" />
     </resultMap>
-    <resultMap type="com.example.let.domain.res.ChartResponse" id="chart">
-        <result property="id" column="id" />
-        <result property="value" column="value" />
-    </resultMap>
 
     <sql id="sql_select">
         SELECT
@@ -107,33 +103,29 @@
         )
     </insert>
 
-    <select id="getChartByMealApplication" resultMap="chart">
-        SELECT ("신청 안함") AS id,
-               (
+    <select id="getChartByMealApplication" resultType="long">
+        SELECT (
                    (SELECT count(*)
                     FROM user
                     WHERE user_type = 'S'
                       AND approved_yn = 'Y')
-               ) AS value
+               )
         UNION ALL
-        SELECT ("신청") AS id,
-               (
+        SELECT (
                    (SELECT count(*)
                     FROM access
                     WHERE type = "breakfast_weekend")
-               ) AS value;
+               );
     </select>
-    <select id="getChartByMealAttendBreakfast" resultMap="chart">
-        SELECT ("참석")                                                          AS id,
-               (
+    <select id="getChartByMealAttendBreakfast" resultType="long">
+        SELECT (
                    (SELECT count(*)
                     FROM entry
                     WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
                       AND status = 'N'
                       AND (info = "breakfast" OR info = "breakfast_weekend"))) AS value
         UNION ALL
-        SELECT ("미참석") AS id,
-               (
+        SELECT (
                        IF(DAYOFWEEK(NOW()) = 7,
                             (
                             SELECT count(*)
@@ -153,9 +145,8 @@
                           AND (info = "breakfast" OR info = "breakfast_weekend"))
                    )   AS value
     </select>
-    <select id="getChartByMealAttendLunch" resultMap="chart">
-        SELECT ("참석") AS id,
-               (
+    <select id="getChartByMealAttendLunch" resultType="long">
+        SELECT (
                    (SELECT count(*)
                     FROM entry
                     WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
@@ -163,8 +154,7 @@
                       AND (info = "lunch" OR info = "lunch_weekend"))
                ) AS value
         UNION ALL
-        SELECT ("미참석") AS id,
-               (
+        SELECT (
                        IF(DAYOFWEEK(NOW()) = 7,
                           (
                               SELECT count(*)
@@ -184,9 +174,8 @@
                           AND (info = "lunch" OR info = "lunch_weekend"))
                    ) AS value
     </select>
-    <select id="getChartByMealAttendDinner" resultMap="chart">
-        SELECT ("참석") AS id,
-               (
+    <select id="getChartByMealAttendDinner" resultType="long">
+        SELECT (
                    (SELECT count(*)
                     FROM entry
                     WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
@@ -194,8 +183,7 @@
                       AND (info = "dinner" OR info = "dinner_weekend"))
                ) AS value
         UNION ALL
-        SELECT ("미참석") AS id,
-               (
+        SELECT (
                        IF(DAYOFWEEK(NOW()) = 7,
                           (
                               SELECT count(*)
@@ -215,16 +203,14 @@
                           AND (info = "dinner" OR info = "dinner_weekend"))
                    ) AS value
     </select>
-    <select id="getChartByMealAttend" resultMap="chart">
-        SELECT ("참석")                    AS id,
-               (
+    <select id="getChartByMealAttend" resultType="long">
+        SELECT (
                    (SELECT count(*)
                     FROM entry
                     WHERE DATE_FORMAT(entry_time, '%Y-%m-%d') = DATE_FORMAT(now(), '%Y-%m-%d')
                       AND status = 'N')) AS value
         UNION ALL
-        SELECT ("미참석") AS id,
-               (
+        SELECT (
                        (
                            IF(DAYOFWEEK(NOW()) = 7,
                               (

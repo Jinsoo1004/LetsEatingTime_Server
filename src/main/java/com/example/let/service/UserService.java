@@ -3,7 +3,7 @@ package com.example.let.service;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.domain.UserForMeal;
-import com.example.let.domain.res.ChartResponse;
+
 import java.util.List;
 
 public interface UserService {
@@ -77,14 +77,14 @@ public interface UserService {
      * @param
      * @return ChartResponse
      */
-    public List<ChartResponse> getChartByMealApplication();
+    public List<Long> getChartByMealApplication();
     /**
      * 급식 참석 현황 통계를 가져온다.
      *
      * @param
      * @return ChartResponse
      */
-    public List<ChartResponse> getChartByMealAttend(String type);
+    public List<Long> getChartByMealAttend(String type);
     /**
      * 회원을 삭제합니다.
      *
