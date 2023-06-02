@@ -1,7 +1,6 @@
 package com.example.let.mapper;
 
 import com.example.let.domain.User;
-import com.example.let.domain.res.ChartResponse;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -19,10 +18,10 @@ public interface UserMapper {
     public void setRefreshToken(String id, String refreshCode);
     public void setImage(String id, Long image);
     public String getRefreshTokenById(String id);
-    public List<ChartResponse> getChartByMealApplication();
-    public List<ChartResponse> getChartByMealAttendBreakfast();
-    public List<ChartResponse> getChartByMealAttendLunch();
-    public List<ChartResponse> getChartByMealAttendDinner();
-    public List<ChartResponse> getChartByMealAttend();
+    public List<Long> getChartByMealApplication();
+    public List<Long> getChartByMealAttendBreakfast();
+    public List<Long> getChartByMealAttendLunch();
+    public List<Long> getChartByMealAttendDinner();
+    public List<Long> getChartByMealAttend();
     public void delete(String id);
 }

@@ -2,7 +2,6 @@ package com.example.let.service.impl;
 
 import com.example.let.JwtTokenProvider;
 import com.example.let.domain.*;
-import com.example.let.domain.res.ChartResponse;
 import com.example.let.exception.GlobalException;
 import com.example.let.mapper.AccessMapper;
 import com.example.let.mapper.EntryMapper;
@@ -124,11 +123,11 @@ public class UserServiceImpl implements UserService {
         return userMapper.getRefreshTokenById(id);
     }
     @Override
-    public List<ChartResponse> getChartByMealApplication() {
+    public List<Long> getChartByMealApplication() {
         return userMapper.getChartByMealApplication();
     }
     @Override
-    public List<ChartResponse> getChartByMealAttend(String type) {
+    public List<Long> getChartByMealAttend(String type) {
         if(type.equals("breakfast")) {
             return userMapper.getChartByMealAttendBreakfast();
         } else if(type.equals("lunch")) {
