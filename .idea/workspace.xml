@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="access 확인 api">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="비밀번호 변경 api">
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -288,14 +287,7 @@
       <workItem from="1685670638629" duration="111000" />
       <workItem from="1685672293992" duration="725000" />
       <workItem from="1685854412434" duration="111000" />
-      <workItem from="1686531252976" duration="1954000" />
-    </task>
-    <task id="LOCAL-00019" summary="cors 설정">
-      <created>1680654680664</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1680654680664</updated>
+      <workItem from="1686531252976" duration="2881000" />
     </task>
     <task id="LOCAL-00020" summary="jwt refresh token 재발급">
       <created>1680671873185</created>
@@ -633,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685665652606</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="비밀번호 변경 api">
+      <created>1686533412214</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1686533412215</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +650,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="모든 log4j2 제거" />
     <MESSAGE value="jwt 토큰 말료 시간증가" />
     <MESSAGE value="사용자 정보 요청 - id검색 수정" />
     <MESSAGE value="통계 api 추가" />
@@ -676,7 +674,8 @@
     <MESSAGE value="aws rds 사용" />
     <MESSAGE value="통계 response List&lt;Long&gt; 으로 바꿈" />
     <MESSAGE value="access 확인 api" />
-    <option name="LAST_COMMIT_MESSAGE" value="access 확인 api" />
+    <MESSAGE value="비밀번호 변경 api" />
+    <option name="LAST_COMMIT_MESSAGE" value="비밀번호 변경 api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

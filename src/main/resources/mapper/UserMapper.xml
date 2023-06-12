@@ -259,7 +259,7 @@
         DELETE FROM user
         WHERE id = #{id};
     </delete>
-    <update id="passwordUpdate" parameterType="result">
+    <update id="passwordUpdate" parameterType="com.example.let.domain.User">
         UPDATE user
         SET password = #{password}
         WHERE id = #{id}

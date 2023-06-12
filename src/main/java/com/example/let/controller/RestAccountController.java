@@ -84,4 +84,20 @@ public class RestAccountController {
                 , HttpStatus.OK
         );
     }
+    @Operation(summary = "비밀번호 변경", description = "비밀번호를 변경합니다.")
+    @PostMapping(value="/pw-change")
+    public ResponseEntity<?> changePassword(
+            String id
+            , String password
+            , String newPassword)
+    {
+        userService.passwordChange(id, password, newPassword);
+        return new ResponseEntity<> (
+                ResponseDto.builder()
+                        .status(200)
+                        .data("change success")
+                        .build()
+                , HttpStatus.OK
+        );
+    }
 }
