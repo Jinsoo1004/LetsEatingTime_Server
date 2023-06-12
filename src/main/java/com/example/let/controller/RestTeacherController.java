@@ -1,5 +1,6 @@
 package com.example.let.controller;
 
+import com.example.let.domain.Access;
 import com.example.let.domain.Opening;
 import com.example.let.domain.res.ResponseDto;
 import com.example.let.service.*;
@@ -55,6 +56,18 @@ public class RestTeacherController {
                     , HttpStatus.OK
             );
         }
+    }
+
+    @Operation(summary = "사용자 권한 정보요청", description = "사용자 권한 정보를 요청합니다. id param이 필요합니다")
+    @GetMapping("/get/user/access")
+    public ResponseEntity<?> GetAccess(@RequestParam(name = "id") String id) {
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data(accessService.getById(id))
+                        .build()
+                , HttpStatus.OK
+        );
     }
 
     /**

@@ -3,6 +3,7 @@ package com.example.let.service;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.domain.UserForMeal;
+import com.example.let.domain.req.PasswordChangeRequest;
 
 import java.util.List;
 
@@ -92,4 +93,11 @@ public interface UserService {
      * @return ChartResponse
      */
     public void delete(String id);
+    /**
+     * 비밀번호를 변경합니다.
+     *
+     * @param
+     * @return
+     */
+    public void passwordChange(PasswordChangeRequest request);
 }

@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="aws rds 사용">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="비밀번호 변경 dto 사용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/domain/res/ChartResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/domain/res/ChartResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,42 +280,11 @@
       <workItem from="1685536870137" duration="669000" />
       <workItem from="1685541987098" duration="120000" />
       <workItem from="1685581462553" duration="2059000" />
-      <workItem from="1685664060178" duration="581000" />
-    </task>
-    <task id="LOCAL-00017" summary="refresh token 성공!">
-      <created>1680608365694</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1680608365694</updated>
-    </task>
-    <task id="LOCAL-00018" summary="cors 설정">
-      <created>1680654666261</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1680654666261</updated>
-    </task>
-    <task id="LOCAL-00019" summary="cors 설정">
-      <created>1680654680664</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1680654680664</updated>
-    </task>
-    <task id="LOCAL-00020" summary="jwt refresh token 재발급">
-      <created>1680671873185</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1680671873185</updated>
-    </task>
-    <task id="LOCAL-00021" summary="프로필 가져오기">
-      <created>1681178377956</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1681178377956</updated>
+      <workItem from="1685664060178" duration="1696000" />
+      <workItem from="1685670638629" duration="111000" />
+      <workItem from="1685672293992" duration="725000" />
+      <workItem from="1685854412434" duration="111000" />
+      <workItem from="1686531252976" duration="4396000" />
     </task>
     <task id="LOCAL-00022" summary="jwt 만료시간 변경, cors 정책 변경">
       <created>1681201952699</created>
@@ -643,7 +594,42 @@
       <option name="project" value="LOCAL" />
       <updated>1685581915666</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="통계 response List&lt;Long&gt; 으로 바꿈">
+      <created>1685664682184</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1685664682184</updated>
+    </task>
+    <task id="LOCAL-00067" summary="access 확인 api">
+      <created>1685665652606</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1685665652606</updated>
+    </task>
+    <task id="LOCAL-00068" summary="비밀번호 변경 api">
+      <created>1686533412214</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1686533412215</updated>
+    </task>
+    <task id="LOCAL-00069" summary="비밀번호 변경 api 메소드 변경">
+      <created>1686534338719</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1686534338719</updated>
+    </task>
+    <task id="LOCAL-00070" summary="비밀번호 변경 dto 사용">
+      <created>1686535378446</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1686535378446</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,11 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="급식 신청 현황 통계" />
-    <MESSAGE value="요청 메서드 변경" />
-    <MESSAGE value="모든 log4j2 제거" />
-    <MESSAGE value="jwt 토큰 말료 시간증가" />
-    <MESSAGE value="사용자 정보 요청 - id검색 수정" />
     <MESSAGE value="통계 api 추가" />
     <MESSAGE value="commons-io 종속성 추가" />
     <MESSAGE value="이미지 업로드/다운로드" />
@@ -686,7 +667,12 @@
     <MESSAGE value="ssl 설정" />
     <MESSAGE value="공식 인증서 적용" />
     <MESSAGE value="aws rds 사용" />
-    <option name="LAST_COMMIT_MESSAGE" value="aws rds 사용" />
+    <MESSAGE value="통계 response List&lt;Long&gt; 으로 바꿈" />
+    <MESSAGE value="access 확인 api" />
+    <MESSAGE value="비밀번호 변경 api" />
+    <MESSAGE value="비밀번호 변경 api 메소드 변경" />
+    <MESSAGE value="비밀번호 변경 dto 사용" />
+    <option name="LAST_COMMIT_MESSAGE" value="비밀번호 변경 dto 사용" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
