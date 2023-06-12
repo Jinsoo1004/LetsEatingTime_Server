@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="통계 response List&lt;Long&gt; 으로 바꿈">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="access 확인 api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,14 +284,11 @@
       <workItem from="1685536870137" duration="669000" />
       <workItem from="1685541987098" duration="120000" />
       <workItem from="1685581462553" duration="2059000" />
-      <workItem from="1685664060178" duration="1493000" />
-    </task>
-    <task id="LOCAL-00018" summary="cors 설정">
-      <created>1680654666261</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1680654666261</updated>
+      <workItem from="1685664060178" duration="1696000" />
+      <workItem from="1685670638629" duration="111000" />
+      <workItem from="1685672293992" duration="725000" />
+      <workItem from="1685854412434" duration="111000" />
+      <workItem from="1686531252976" duration="1954000" />
     </task>
     <task id="LOCAL-00019" summary="cors 설정">
       <created>1680654680664</created>
@@ -633,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685664682184</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="access 확인 api">
+      <created>1685665652606</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1685665652606</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="요청 메서드 변경" />
     <MESSAGE value="모든 log4j2 제거" />
     <MESSAGE value="jwt 토큰 말료 시간증가" />
     <MESSAGE value="사용자 정보 요청 - id검색 수정" />
@@ -676,7 +675,8 @@
     <MESSAGE value="공식 인증서 적용" />
     <MESSAGE value="aws rds 사용" />
     <MESSAGE value="통계 response List&lt;Long&gt; 으로 바꿈" />
-    <option name="LAST_COMMIT_MESSAGE" value="통계 response List&lt;Long&gt; 으로 바꿈" />
+    <MESSAGE value="access 확인 api" />
+    <option name="LAST_COMMIT_MESSAGE" value="access 확인 api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -259,4 +259,9 @@
         DELETE FROM user
         WHERE id = #{id};
     </delete>
+    <update id="passwordUpdate" parameterType="result">
+        UPDATE user
+        SET password = #{password}
+        WHERE id = #{id}
+    </update>
 </mapper>

@@ -17,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final EntryMapper entryMapper;
     private final AccessMapper accessMapper;
+    private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final RandomStringGenerator randomStringGenerator;
@@ -141,5 +143,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(String id) {
         userMapper.delete(id);
+    }
+
+    @Override
+    public void passwordChange(String id, String password, String newPassword) {
+        User user = userMapper.getById(id);
+        if(user == null) {
+            throw new GlobalException(HttpStatus.BAD_REQUEST, "not user");
+        }
+        if(passwordEncoder.matches(password, user.getPassword())) {
+            userMapper.passwordUpdate(id, newPassword);
+        } else throw new GlobalException(HttpStatus.BAD_REQUEST, "password not match");
     }
 }

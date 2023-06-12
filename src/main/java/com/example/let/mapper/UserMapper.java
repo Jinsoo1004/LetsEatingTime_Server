@@ -24,4 +24,5 @@ public interface UserMapper {
     public List<Long> getChartByMealAttendDinner();
     public List<Long> getChartByMealAttend();
     public void delete(String id);
+    public void passwordUpdate(String id, String password);
 }

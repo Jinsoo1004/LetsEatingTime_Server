@@ -92,4 +92,11 @@ public interface UserService {
      * @return ChartResponse
      */
     public void delete(String id);
+    /**
+     * 비밀번호를 변경합니다.
+     *
+     * @param
+     * @return
+     */
+    public void passwordChange(String id, String password, String newPassword);
 }
