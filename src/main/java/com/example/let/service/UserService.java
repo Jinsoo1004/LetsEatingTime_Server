@@ -3,6 +3,7 @@ package com.example.let.service;
 import com.example.let.domain.TokenInfo;
 import com.example.let.domain.User;
 import com.example.let.domain.UserForMeal;
+import com.example.let.domain.req.PasswordChangeRequest;
 
 import java.util.List;
 
@@ -98,5 +99,5 @@ public interface UserService {
      * @param
      * @return
      */
-    public void passwordChange(String id, String password, String newPassword);
+    public void passwordChange(PasswordChangeRequest request);
 }

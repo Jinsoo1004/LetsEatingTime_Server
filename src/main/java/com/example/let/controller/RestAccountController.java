@@ -1,6 +1,7 @@
 package com.example.let.controller;
 
 import com.example.let.domain.User;
+import com.example.let.domain.req.PasswordChangeRequest;
 import com.example.let.domain.res.ResponseDto;
 import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -87,11 +88,10 @@ public class RestAccountController {
     @Operation(summary = "비밀번호 변경", description = "비밀번호를 변경합니다.")
     @PostMapping(value="/pw-change")
     public ResponseEntity<?> changePassword(
-            String id
-            , String password
-            , String newPassword)
+            @RequestBody PasswordChangeRequest request
+    )
     {
-        userService.passwordChange(id, password, newPassword);
+        userService.passwordChange(request);
         return new ResponseEntity<> (
                 ResponseDto.builder()
                         .status(200)

@@ -2,6 +2,7 @@ package com.example.let.service.impl;
 
 import com.example.let.JwtTokenProvider;
 import com.example.let.domain.*;
+import com.example.let.domain.req.PasswordChangeRequest;
 import com.example.let.exception.GlobalException;
 import com.example.let.mapper.AccessMapper;
 import com.example.let.mapper.EntryMapper;
@@ -146,13 +147,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void passwordChange(String id, String password, String newPassword) {
-        User user = userMapper.getById(id);
+    public void passwordChange(PasswordChangeRequest request) {
+        User user = userMapper.getById(request.getId());
         if(user == null) {
             throw new GlobalException(HttpStatus.BAD_REQUEST, "not user");
         }
-        if(passwordEncoder.matches(password, user.getPassword())) {
-            userMapper.passwordUpdate(id, newPassword);
+        if(passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            userMapper.passwordUpdate(request.getId(), request.getNewPassword());
         } else throw new GlobalException(HttpStatus.BAD_REQUEST, "password not match");
     }
 }
