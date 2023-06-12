@@ -153,7 +153,7 @@ public class UserServiceImpl implements UserService {
             throw new GlobalException(HttpStatus.BAD_REQUEST, "not user");
         }
         if(passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-            userMapper.passwordUpdate(request.getId(), request.getNewPassword());
+            userMapper.passwordUpdate(request.getId(), passwordEncoder.encode(request.getNewPassword()));
         } else throw new GlobalException(HttpStatus.BAD_REQUEST, "password not match");
     }
 }
