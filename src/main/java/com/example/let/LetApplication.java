@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
+@PropertySource(value = "classpath:/database.properties")
 public class LetApplication {
 
 	public static void main(String[] args) {
