@@ -37,7 +37,7 @@ public class SecurityConfig {
                 .antMatchers("/api/account/**").permitAll()
                 .antMatchers("/api/user/image/**").permitAll()
                 .antMatchers("/api/user/**").hasRole("USER")
-                .antMatchers("/api/card/**").hasRole("USER")
+                .antMatchers("/api/card/**").hasAnyRole("DEVICE", "TEACHER")
                 .antMatchers("/api/teacher/**").hasRole("TEACHER")
                 .antMatchers("/api/device/**").hasRole("DEVICE")
                 .anyRequest().permitAll()
