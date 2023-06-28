@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @Tag(name = "오픈 API", description = "누구든 사용 가능한 OpenAPI")
 @RestController
-@RequestMapping("/openapi")
+@RequestMapping("/v2/openapi")
 @AllArgsConstructor
 public class RestOpenController {
     private final MealService mealService;

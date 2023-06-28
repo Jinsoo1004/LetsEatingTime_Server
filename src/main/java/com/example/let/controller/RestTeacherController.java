@@ -17,7 +17,7 @@ import java.util.List;
 
 @Tag(name = "교사", description = "정보 열람등 교사 권한이 필요한 api")
 @RestController
-@RequestMapping("/api/teacher")
+@RequestMapping("/v2/teacher")
 @AllArgsConstructor
 public class RestTeacherController {
     private final AccessService accessService;

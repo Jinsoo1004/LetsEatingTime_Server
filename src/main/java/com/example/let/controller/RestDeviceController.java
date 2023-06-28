@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "디바이스", description = "임베디드 단말장치의 요청 응답 API")
 @RestController
-@RequestMapping("/api/device")
+@RequestMapping("/v2/device")
 @AllArgsConstructor
 public class RestDeviceController {
     private final EntryService entryService;

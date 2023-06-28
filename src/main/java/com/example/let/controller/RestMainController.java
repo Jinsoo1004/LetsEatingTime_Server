@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "일반", description = "기타 api")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/v2")
 @AllArgsConstructor
 public class RestMainController {
     @GetMapping("/")

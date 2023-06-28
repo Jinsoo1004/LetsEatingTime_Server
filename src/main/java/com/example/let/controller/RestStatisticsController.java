@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "통계", description = "통계에 대한 정보를 요청한다.")
 @RestController
-@RequestMapping("/api/statistic")
+@RequestMapping("/v2/statistic")
 @AllArgsConstructor
 public class RestStatisticsController {
     private final UserService userService;
