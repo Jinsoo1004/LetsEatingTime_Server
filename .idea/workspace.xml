@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="경로 제설정">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="긱그노어 무시">
       <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,8 +136,8 @@
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\file" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server" />
+      <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\build\libs" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\file" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\java\com\example\let\module" />
@@ -332,13 +334,6 @@
       <workItem from="1687135324720" duration="1887000" />
       <workItem from="1687870202338" duration="591000" />
       <workItem from="1687922843796" duration="2966000" />
-    </task>
-    <task id="LOCAL-00031" summary="집나간놈 잡아옴">
-      <created>1682302760073</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1682302760073</updated>
     </task>
     <task id="LOCAL-00032" summary="filter 예외 처리">
       <created>1682306323913</created>
@@ -676,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687927083896</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="긱그노어 무시">
+      <created>1687927572995</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1687927572995</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +696,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="import 최적화" />
     <MESSAGE value="통계에서 미승인 유저 배제" />
     <MESSAGE value="전체 급식 참석 통계" />
     <MESSAGE value="유저 삭제 기능" />
@@ -719,7 +720,8 @@
     <MESSAGE value="단계 생략" />
     <MESSAGE value="password 아웃라인화" />
     <MESSAGE value="경로 제설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="경로 제설정" />
+    <MESSAGE value="긱그노어 무시" />
+    <option name="LAST_COMMIT_MESSAGE" value="긱그노어 무시" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
