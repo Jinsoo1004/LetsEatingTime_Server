@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "카드", description = "카드를 생성, 삭제, 편집등을 하는 API")
 @RestController
-@RequestMapping("/v2/card")
+@RequestMapping("/api/card")
 @AllArgsConstructor
 public class RestCardController {
     private final CardService cardService;

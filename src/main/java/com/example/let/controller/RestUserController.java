@@ -25,7 +25,7 @@ import java.net.URLEncoder;
 
 @Tag(name = "유저", description = "프로필 수정등 유저 권한 이상이 필요한 API")
 @RestController
-@RequestMapping("/v2/user")
+@RequestMapping("/api/user")
 @AllArgsConstructor
 public class RestUserController {
     private final UserService userService;

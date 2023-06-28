@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Tag(name = "계정", description = "회원가입, 로그인등 계정을 다루는 API")
 @RestController
-@RequestMapping("/v2/account")
+@RequestMapping("/api/account")
 @AllArgsConstructor
 public class RestAccountController {
     private final UserService userService;
