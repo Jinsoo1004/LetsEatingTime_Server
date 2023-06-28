@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="로그인을 안했네">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="chmod">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,13 +332,6 @@
       <workItem from="1687135324720" duration="1887000" />
       <workItem from="1687870202338" duration="591000" />
       <workItem from="1687922843796" duration="2966000" />
-    </task>
-    <task id="LOCAL-00040" summary="Opening/Entry 영속성 조정">
-      <created>1682935720427</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1682935720427</updated>
     </task>
     <task id="LOCAL-00041" summary="급식 신청 현황 통계">
       <created>1682946341643</created>
@@ -677,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687936110539</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="chmod">
+      <created>1687938219119</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1687938219119</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="공식 인증서 적용" />
     <MESSAGE value="aws rds 사용" />
     <MESSAGE value="통계 response List&lt;Long&gt; 으로 바꿈" />
     <MESSAGE value="access 확인 api" />
@@ -720,7 +718,8 @@
     <MESSAGE value="sudo 지우기" />
     <MESSAGE value="no sudo su" />
     <MESSAGE value="로그인을 안했네" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그인을 안했네" />
+    <MESSAGE value="chmod" />
+    <option name="LAST_COMMIT_MESSAGE" value="chmod" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
