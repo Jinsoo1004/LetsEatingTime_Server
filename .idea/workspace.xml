@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="dockerfile 위치 바꾸기">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="hub url">
       <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,13 +333,6 @@
       <workItem from="1687135324720" duration="1887000" />
       <workItem from="1687870202338" duration="591000" />
       <workItem from="1687922843796" duration="2966000" />
-    </task>
-    <task id="LOCAL-00033" summary="급식 api 잘못된 칼로리 정보 수정">
-      <created>1682307012352</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1682307012352</updated>
     </task>
     <task id="LOCAL-00034" summary="sql 수정">
       <created>1682343939597</created>
@@ -676,7 +670,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687927915166</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="hub url">
+      <created>1687928222659</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1687928222659</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +695,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="전체 급식 참석 통계" />
     <MESSAGE value="유저 삭제 기능" />
     <MESSAGE value="유저 타입 고정 해제" />
     <MESSAGE value="이미지 요청 늘 허용" />
@@ -719,7 +719,8 @@
     <MESSAGE value="경로 제설정" />
     <MESSAGE value="긱그노어 무시" />
     <MESSAGE value="dockerfile 위치 바꾸기" />
-    <option name="LAST_COMMIT_MESSAGE" value="dockerfile 위치 바꾸기" />
+    <MESSAGE value="hub url" />
+    <option name="LAST_COMMIT_MESSAGE" value="hub url" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
