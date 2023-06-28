@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="cicd">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="줄바ㅃ꿈">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +159,7 @@
       <recent name="com.example.let.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.LetApplication">
+  <component name="RunManager" selected="Gradle.LetsEatingTime_Server [bootJar]">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -332,14 +339,7 @@
       <workItem from="1687134348362" duration="125000" />
       <workItem from="1687135324720" duration="1887000" />
       <workItem from="1687870202338" duration="591000" />
-      <workItem from="1687922843796" duration="2083000" />
-    </task>
-    <task id="LOCAL-00025" summary="properties 변경">
-      <created>1681429717122</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1681429717122</updated>
+      <workItem from="1687922843796" duration="2149000" />
     </task>
     <task id="LOCAL-00026" summary="https disable">
       <created>1681793010781</created>
@@ -677,7 +677,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687925641782</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="줄바ㅃ꿈">
+      <created>1687926345514</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1687926345514</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +702,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="테스트 이미지 추가" />
     <MESSAGE value="토큰만료 시간 추가" />
     <MESSAGE value="entry 출력 제거" />
     <MESSAGE value="user-get 정렬" />
@@ -720,7 +726,8 @@
     <MESSAGE value="비밀번호 변경 인코딩" />
     <MESSAGE value="dbs 주소 변경" />
     <MESSAGE value="cicd" />
-    <option name="LAST_COMMIT_MESSAGE" value="cicd" />
+    <MESSAGE value="줄바ㅃ꿈" />
+    <option name="LAST_COMMIT_MESSAGE" value="줄바ㅃ꿈" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
