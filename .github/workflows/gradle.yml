@@ -34,7 +34,10 @@ jobs:
       - name: back docker build and push
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          pwd
           cd build/libs/
+          pwd
+          ls
           docker build -t ${{ secrets.DOCKER_REPO }}/lets-eating-time-server .
           docker push ${{ secrets.DOCKER_REPO }}/lets-eating-time-server
 
