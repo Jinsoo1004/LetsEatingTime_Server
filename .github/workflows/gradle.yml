@@ -45,7 +45,6 @@ jobs:
           username: ubuntu
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
-            sudo su
             cd let
             ls
             docker rm -f $(docker ps -qa)

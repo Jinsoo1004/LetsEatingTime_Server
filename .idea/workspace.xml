@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="다꺼봐">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="sudo 지우기">
       <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,13 +332,6 @@
       <workItem from="1687135324720" duration="1887000" />
       <workItem from="1687870202338" duration="591000" />
       <workItem from="1687922843796" duration="2966000" />
-    </task>
-    <task id="LOCAL-00037" summary="git ignore">
-      <created>1682474521070</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1682474521070</updated>
     </task>
     <task id="LOCAL-00038" summary="sql 변경">
       <created>1682564518715</created>
@@ -677,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687929649481</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="sudo 지우기">
+      <created>1687935403365</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1687935403365</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="이미지 binary 리턴 -&gt; image/png 리턴" />
     <MESSAGE value="인덱스 초과 에러 해결" />
     <MESSAGE value="ssl 설정" />
     <MESSAGE value="공식 인증서 적용" />
@@ -720,7 +718,8 @@
     <MESSAGE value="관리자 권한" />
     <MESSAGE value="ssh 확인" />
     <MESSAGE value="다꺼봐" />
-    <option name="LAST_COMMIT_MESSAGE" value="다꺼봐" />
+    <MESSAGE value="sudo 지우기" />
+    <option name="LAST_COMMIT_MESSAGE" value="sudo 지우기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
