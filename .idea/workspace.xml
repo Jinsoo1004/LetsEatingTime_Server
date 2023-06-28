@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="관리자 권한">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="ssh 확인">
       <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -332,13 +332,6 @@
       <workItem from="1687135324720" duration="1887000" />
       <workItem from="1687870202338" duration="591000" />
       <workItem from="1687922843796" duration="2966000" />
-    </task>
-    <task id="LOCAL-00035" summary="user 정보 요청시 급식 정보도 같이 응답">
-      <created>1682397172557</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1682397172557</updated>
     </task>
     <task id="LOCAL-00036" summary="Opening 서비스 추가">
       <created>1682474202943</created>
@@ -676,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687929208147</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="ssh 확인">
+      <created>1687929474294</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1687929474294</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +694,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="유저 타입 고정 해제" />
     <MESSAGE value="이미지 요청 늘 허용" />
     <MESSAGE value="이미지 binary 리턴 -&gt; image/png 리턴" />
     <MESSAGE value="인덱스 초과 에러 해결" />
@@ -719,7 +718,8 @@
     <MESSAGE value="dockerfile 위치 바꾸기" />
     <MESSAGE value="hub url" />
     <MESSAGE value="관리자 권한" />
-    <option name="LAST_COMMIT_MESSAGE" value="관리자 권한" />
+    <MESSAGE value="ssh 확인" />
+    <option name="LAST_COMMIT_MESSAGE" value="ssh 확인" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
