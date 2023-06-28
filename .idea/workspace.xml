@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="uses 정의">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="password 아웃라인화">
       <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -331,21 +332,7 @@
       <workItem from="1687134348362" duration="125000" />
       <workItem from="1687135324720" duration="1887000" />
       <workItem from="1687870202338" duration="591000" />
-      <workItem from="1687922843796" duration="2335000" />
-    </task>
-    <task id="LOCAL-00028" summary="정규화 변경 + 탐색 방식 변경">
-      <created>1681915849514</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1681915849514</updated>
-    </task>
-    <task id="LOCAL-00029" summary="급식 api 방식 변경">
-      <created>1682256012287</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1682256012287</updated>
+      <workItem from="1687922843796" duration="2815000" />
     </task>
     <task id="LOCAL-00030" summary="모든 요청에 status 명시">
       <created>1682300774913</created>
@@ -676,7 +663,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687926523911</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="단계 생략">
+      <created>1687926595603</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1687926595603</updated>
+    </task>
+    <task id="LOCAL-00078" summary="password 아웃라인화">
+      <created>1687926860226</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1687926860226</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,8 +695,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user-get 정렬" />
-    <MESSAGE value="access 추가 api" />
     <MESSAGE value="회원 승인" />
     <MESSAGE value="import 최적화" />
     <MESSAGE value="통계에서 미승인 유저 배제" />
@@ -719,7 +718,9 @@
     <MESSAGE value="줄바ㅃ꿈" />
     <MESSAGE value="빌드 제외 해제" />
     <MESSAGE value="uses 정의" />
-    <option name="LAST_COMMIT_MESSAGE" value="uses 정의" />
+    <MESSAGE value="단계 생략" />
+    <MESSAGE value="password 아웃라인화" />
+    <option name="LAST_COMMIT_MESSAGE" value="password 아웃라인화" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -33,7 +33,8 @@ jobs:
       # 웹 이미지 빌드 및 도커허브에 push
       - name: back docker build and push
         run: |
-          docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin ${{ secrets.DOCKER_PASSWORD }}
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          cd build/libs/
           docker build -t ${{ secrets.DOCKER_REPO }}/lets-eating-time-server .
           docker push ${{ secrets.DOCKER_REPO }}/lets-eating-time-server
 
