@@ -34,10 +34,8 @@ jobs:
       - name: back docker build and push
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          pwd
-          ls
-          docker build -t ${{ secrets.DOCKER_REPO }}/lets-eating-time-server .
-          docker push ${{ secrets.DOCKER_REPO }}/lets-eating-time-server
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }} .
+          docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}
 
       # docker compose up
       - name: executing remote ssh commands using password
@@ -48,6 +46,6 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
             sudo docker rm -f $(docker ps -qa)
-            sudo docker pull ${{ secrets.DOCKER_REPO }}/lets-eating-time-server
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}
             docker-compose up -d
             docker image prune -f
