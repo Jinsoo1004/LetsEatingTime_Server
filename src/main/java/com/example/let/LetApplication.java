@@ -20,10 +20,4 @@ public class LetApplication {
 		System.out.println("Server start!");
 		SpringApplication.run(LetApplication.class, args);
 	}
-
-	@Bean
-	RouterFunction<ServerResponse> routerFunction() {
-		return route(GET("/api/swagger"), req ->
-				ServerResponse.temporaryRedirect(URI.create("swagger-ui.html")).build());
-	}
 }
