@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="swagger 주소 변경">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/LetApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/LetApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="증명사진 저장 위치 변경" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,38 +88,44 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2NJrjDirENUGfB6y1kk0cVNbm37" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/git/LetsEatingTime_Server/src/main/resources&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;spring.boot&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;17278dbf3faffa600a4895f3f247a4ed&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelOrder2": "2",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RequestMappingsPanelWidth2": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "lch",
+    "last_opened_file_path": "C:/Users/cksgu/git/LetsEatingTime_Server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "spring.boot",
+    "spring.configuration.checksum": "17278dbf3faffa600a4895f3f247a4ed",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.let.domain" />
@@ -145,8 +138,8 @@
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\file" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\git\LetsEatingTime_Server" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources" />
+      <recent name="C:\Users\user\git\LetsEatingTime_Server" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\build\libs" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\resources\file" />
       <recent name="C:\Users\user\git\LetsEatingTime_Server\src\main\java\com\example\let\module" />
@@ -162,38 +155,7 @@
       <recent name="com.example.let.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.LetApplication">
-    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
-      <option name="appName" />
-      <option name="appServicePlanName" />
-      <option name="appServicePlanResourceGroup" />
-      <option name="appSettingsKey" value="300dd27f-3746-47be-898d-36de22cb00df" />
-      <option name="artifact" />
-      <option name="autoPort" value="true" />
-      <option name="debugOptions" />
-      <option name="deployment" />
-      <option name="deploymentStagingDirectoryPath" />
-      <option name="funcPath" />
-      <option name="funcPort" value="0" />
-      <option name="hostJsonPath" />
-      <option name="insightsName" />
-      <option name="instrumentationKey" />
-      <option name="javaVersion" />
-      <option name="localSettingsJsonPath" />
-      <option name="moduleName" />
-      <option name="os" />
-      <option name="pricingTier" />
-      <option name="providerMap">
-        <map />
-      </option>
-      <option name="region" />
-      <option name="resourceGroup" />
-      <option name="stagingFolder" />
-      <option name="subscription" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.LetsEatingTime_Server [bootJar]">
     <configuration name="LetsEatingTime_Server [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -213,6 +175,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="LetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -331,23 +294,203 @@
       <workItem from="1686531252976" duration="5075000" />
       <workItem from="1686540670149" duration="749000" />
       <workItem from="1686546852543" duration="213000" />
-      <workItem from="1686547149312" duration="1077000" />
-      <workItem from="1686548617778" duration="12000" />
-      <workItem from="1686660465868" duration="790000" />
-      <workItem from="1686661554803" duration="584000" />
-      <workItem from="1686662324559" duration="28000" />
-      <workItem from="1686664611508" duration="14000" />
-      <workItem from="1686664926957" duration="477000" />
-      <workItem from="1686740593198" duration="624000" />
-      <workItem from="1687134348362" duration="125000" />
-      <workItem from="1687135324720" duration="1887000" />
-      <workItem from="1687870202338" duration="591000" />
-      <workItem from="1687922843796" duration="2966000" />
-      <workItem from="1687961960032" duration="3318000" />
-      <workItem from="1688013818521" duration="2412000" />
-      <workItem from="1688361059354" duration="223000" />
-      <workItem from="1688362717060" duration="925000" />
-      <workItem from="1688371039584" duration="802000" />
+      <workItem from="1691373597502" duration="1143000" />
+    </task>
+    <task id="LOCAL-00023" summary="CardCheckRes 사용">
+      <created>1681213929760</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1681213929760</updated>
+    </task>
+    <task id="LOCAL-00024" summary="refreshCode 무시하기">
+      <created>1681353038565</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1681353038565</updated>
+    </task>
+    <task id="LOCAL-00025" summary="properties 변경">
+      <created>1681429717122</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681429717122</updated>
+    </task>
+    <task id="LOCAL-00026" summary="https disable">
+      <created>1681793010781</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1681793010781</updated>
+    </task>
+    <task id="LOCAL-00027" summary="static 해제">
+      <created>1681874618829</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1681874618829</updated>
+    </task>
+    <task id="LOCAL-00028" summary="정규화 변경 + 탐색 방식 변경">
+      <created>1681915849514</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1681915849514</updated>
+    </task>
+    <task id="LOCAL-00029" summary="급식 api 방식 변경">
+      <created>1682256012287</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1682256012287</updated>
+    </task>
+    <task id="LOCAL-00030" summary="모든 요청에 status 명시">
+      <created>1682300774913</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1682300774913</updated>
+    </task>
+    <task id="LOCAL-00031" summary="집나간놈 잡아옴">
+      <created>1682302760073</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1682302760073</updated>
+    </task>
+    <task id="LOCAL-00032" summary="filter 예외 처리">
+      <created>1682306323913</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1682306323913</updated>
+    </task>
+    <task id="LOCAL-00033" summary="급식 api 잘못된 칼로리 정보 수정">
+      <created>1682307012352</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1682307012352</updated>
+    </task>
+    <task id="LOCAL-00034" summary="sql 수정">
+      <created>1682343939597</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1682343939597</updated>
+    </task>
+    <task id="LOCAL-00035" summary="user 정보 요청시 급식 정보도 같이 응답">
+      <created>1682397172557</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1682397172557</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Opening 서비스 추가">
+      <created>1682474202943</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1682474202943</updated>
+    </task>
+    <task id="LOCAL-00037" summary="git ignore">
+      <created>1682474521070</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1682474521070</updated>
+    </task>
+    <task id="LOCAL-00038" summary="sql 변경">
+      <created>1682564518715</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1682564518715</updated>
+    </task>
+    <task id="LOCAL-00039" summary="debug.exe 변경">
+      <created>1682855977993</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1682855977993</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Opening/Entry 영속성 조정">
+      <created>1682935720427</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1682935720427</updated>
+    </task>
+    <task id="LOCAL-00041" summary="급식 신청 현황 통계">
+      <created>1682946341643</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1682946341643</updated>
+    </task>
+    <task id="LOCAL-00042" summary="요청 메서드 변경">
+      <created>1682998268867</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1682998268867</updated>
+    </task>
+    <task id="LOCAL-00043" summary="모든 log4j2 제거">
+      <created>1683008258609</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1683008258609</updated>
+    </task>
+    <task id="LOCAL-00044" summary="jwt 토큰 말료 시간증가">
+      <created>1683071982702</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1683071982702</updated>
+    </task>
+    <task id="LOCAL-00045" summary="사용자 정보 요청 - id검색 수정">
+      <created>1683307627963</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1683307627963</updated>
+    </task>
+    <task id="LOCAL-00046" summary="통계 api 추가">
+      <created>1683449332366</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1683449332366</updated>
+    </task>
+    <task id="LOCAL-00047" summary="commons-io 종속성 추가">
+      <created>1683514052259</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1683514052259</updated>
+    </task>
+    <task id="LOCAL-00048" summary="이미지 업로드/다운로드">
+      <created>1683541610024</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1683541610024</updated>
+    </task>
+    <task id="LOCAL-00049" summary="테스트 이미지 추가">
+      <created>1683596570112</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1683596570112</updated>
+    </task>
+    <task id="LOCAL-00050" summary="토큰만료 시간 추가">
+      <created>1683599316382</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1683599316383</updated>
     </task>
     <task id="LOCAL-00051" summary="entry 출력 제거">
       <created>1683677861826</created>
@@ -496,203 +639,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686535865539</updated>
     </task>
-    <task id="LOCAL-00072" summary="dbs 주소 변경">
-      <created>1686547353768</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1686547353768</updated>
-    </task>
-    <task id="LOCAL-00073" summary="cicd">
-      <created>1687925641782</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1687925641782</updated>
-    </task>
-    <task id="LOCAL-00074" summary="줄바ㅃ꿈">
-      <created>1687926345514</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1687926345514</updated>
-    </task>
-    <task id="LOCAL-00075" summary="빌드 제외 해제">
-      <created>1687926415215</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1687926415215</updated>
-    </task>
-    <task id="LOCAL-00076" summary="uses 정의">
-      <created>1687926523911</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1687926523911</updated>
-    </task>
-    <task id="LOCAL-00077" summary="단계 생략">
-      <created>1687926595603</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1687926595603</updated>
-    </task>
-    <task id="LOCAL-00078" summary="password 아웃라인화">
-      <created>1687926860226</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1687926860226</updated>
-    </task>
-    <task id="LOCAL-00079" summary="경로 제설정">
-      <created>1687927083896</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1687927083896</updated>
-    </task>
-    <task id="LOCAL-00080" summary="긱그노어 무시">
-      <created>1687927572995</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1687927572995</updated>
-    </task>
-    <task id="LOCAL-00081" summary="dockerfile 위치 바꾸기">
-      <created>1687927915166</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1687927915166</updated>
-    </task>
-    <task id="LOCAL-00082" summary="hub url">
-      <created>1687928222659</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1687928222659</updated>
-    </task>
-    <task id="LOCAL-00083" summary="관리자 권한">
-      <created>1687929208147</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1687929208147</updated>
-    </task>
-    <task id="LOCAL-00084" summary="ssh 확인">
-      <created>1687929474294</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1687929474294</updated>
-    </task>
-    <task id="LOCAL-00085" summary="다꺼봐">
-      <created>1687929649481</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1687929649481</updated>
-    </task>
-    <task id="LOCAL-00086" summary="sudo 지우기">
-      <created>1687935403365</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1687935403365</updated>
-    </task>
-    <task id="LOCAL-00087" summary="no sudo su">
-      <created>1687935548883</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1687935548883</updated>
-    </task>
-    <task id="LOCAL-00088" summary="로그인을 안했네">
-      <created>1687936110539</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1687936110539</updated>
-    </task>
-    <task id="LOCAL-00089" summary="chmod">
-      <created>1687938219119</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1687938219119</updated>
-    </task>
-    <task id="LOCAL-00090" summary="sudo">
-      <created>1687940603744</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1687940603744</updated>
-    </task>
-    <task id="LOCAL-00091" summary="sudo">
-      <created>1687941025799</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1687941025799</updated>
-    </task>
-    <task id="LOCAL-00092" summary="security로">
-      <created>1687949334731</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1687949334731</updated>
-    </task>
-    <task id="LOCAL-00093" summary="숨길것만">
-      <created>1687949776696</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1687949776696</updated>
-    </task>
-    <task id="LOCAL-00094" summary="api -&gt; v2">
-      <created>1687962092385</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1687962092386</updated>
-    </task>
-    <task id="LOCAL-00095" summary="생각해보니 내일 발표">
-      <created>1687962278944</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1687962278944</updated>
-    </task>
-    <task id="LOCAL-00096" summary="성공! ssl 제거">
-      <created>1688014077402</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1688014077405</updated>
-    </task>
-    <task id="LOCAL-00097" summary="swagger 주소 변경">
-      <created>1688362805442</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1688362805442</updated>
-    </task>
-    <task id="LOCAL-00098" summary="swagger 주소 변경">
-      <created>1688363256075</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1688363256075</updated>
-    </task>
-    <task id="LOCAL-00099" summary="swagger 주소 변경">
-      <created>1688363279389</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1688363279389</updated>
-    </task>
-    <option name="localTasksCounter" value="100" />
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,32 +657,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dbs 주소 변경" />
-    <MESSAGE value="cicd" />
-    <MESSAGE value="줄바ㅃ꿈" />
-    <MESSAGE value="빌드 제외 해제" />
-    <MESSAGE value="uses 정의" />
-    <MESSAGE value="단계 생략" />
-    <MESSAGE value="password 아웃라인화" />
-    <MESSAGE value="경로 제설정" />
-    <MESSAGE value="긱그노어 무시" />
-    <MESSAGE value="dockerfile 위치 바꾸기" />
-    <MESSAGE value="hub url" />
-    <MESSAGE value="관리자 권한" />
-    <MESSAGE value="ssh 확인" />
-    <MESSAGE value="다꺼봐" />
-    <MESSAGE value="sudo 지우기" />
-    <MESSAGE value="no sudo su" />
-    <MESSAGE value="로그인을 안했네" />
-    <MESSAGE value="chmod" />
-    <MESSAGE value="sudo" />
-    <MESSAGE value="security로" />
-    <MESSAGE value="숨길것만" />
-    <MESSAGE value="api -&gt; v2" />
-    <MESSAGE value="생각해보니 내일 발표" />
-    <MESSAGE value="성공! ssl 제거" />
-    <MESSAGE value="swagger 주소 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="swagger 주소 변경" />
+    <MESSAGE value="이미지 업로드/다운로드" />
+    <MESSAGE value="테스트 이미지 추가" />
+    <MESSAGE value="토큰만료 시간 추가" />
+    <MESSAGE value="entry 출력 제거" />
+    <MESSAGE value="user-get 정렬" />
+    <MESSAGE value="access 추가 api" />
+    <MESSAGE value="회원 승인" />
+    <MESSAGE value="import 최적화" />
+    <MESSAGE value="통계에서 미승인 유저 배제" />
+    <MESSAGE value="전체 급식 참석 통계" />
+    <MESSAGE value="유저 삭제 기능" />
+    <MESSAGE value="유저 타입 고정 해제" />
+    <MESSAGE value="이미지 요청 늘 허용" />
+    <MESSAGE value="이미지 binary 리턴 -&gt; image/png 리턴" />
+    <MESSAGE value="인덱스 초과 에러 해결" />
+    <MESSAGE value="ssl 설정" />
+    <MESSAGE value="공식 인증서 적용" />
+    <MESSAGE value="aws rds 사용" />
+    <MESSAGE value="통계 response List&lt;Long&gt; 으로 바꿈" />
+    <MESSAGE value="access 확인 api" />
+    <MESSAGE value="비밀번호 변경 api" />
+    <MESSAGE value="비밀번호 변경 api 메소드 변경" />
+    <MESSAGE value="비밀번호 변경 dto 사용" />
+    <MESSAGE value="비밀번호 변경 인코딩" />
+    <MESSAGE value="증명사진 저장 위치 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="증명사진 저장 위치 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
