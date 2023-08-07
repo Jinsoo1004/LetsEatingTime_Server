@@ -49,5 +49,6 @@ jobs:
             sudo chmod 666 /var/run/docker.sock
             sudo docker rm -f $(docker ps -qa)
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}
+            cd let
             sudo docker-compose up -d
             sudo docker image prune -f
