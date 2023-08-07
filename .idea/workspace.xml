@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="비밀번호 변경 인코딩">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9aa4d2c7-b448-4d93-b45e-e0debf42485a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9aa4d2c7-b448-4d93-b45e-e0debf42485a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="증명사진 저장 위치 변경" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,7 +294,7 @@
       <workItem from="1686531252976" duration="5075000" />
       <workItem from="1686540670149" duration="749000" />
       <workItem from="1686546852543" duration="213000" />
-      <workItem from="1691373597502" duration="1047000" />
+      <workItem from="1691373597502" duration="1143000" />
     </task>
     <task id="LOCAL-00023" summary="CardCheckRes 사용">
       <created>1681213929760</created>
@@ -648,7 +639,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686535865539</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +657,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commons-io 종속성 추가" />
     <MESSAGE value="이미지 업로드/다운로드" />
     <MESSAGE value="테스트 이미지 추가" />
     <MESSAGE value="토큰만료 시간 추가" />
@@ -691,7 +681,8 @@
     <MESSAGE value="비밀번호 변경 api 메소드 변경" />
     <MESSAGE value="비밀번호 변경 dto 사용" />
     <MESSAGE value="비밀번호 변경 인코딩" />
-    <option name="LAST_COMMIT_MESSAGE" value="비밀번호 변경 인코딩" />
+    <MESSAGE value="증명사진 저장 위치 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="증명사진 저장 위치 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
