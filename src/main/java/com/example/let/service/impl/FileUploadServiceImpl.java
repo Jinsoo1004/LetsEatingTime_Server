@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -150,6 +151,12 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
     @Override
     public File getMealBundleForm() throws IOException {
+        FileOutputStream fos = new FileOutputStream(new File("bundle/output.xlsx"));
+        File file = new File("bundle/meal.xlsx");
+        XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
+        XSSFSheet sheet = workbook.getSheetAt(0);
+        workbook.write(fos);
+        fos.close();
         return new ClassPathResource("bundle/meal.xlsx").getFile();
     }
 }
