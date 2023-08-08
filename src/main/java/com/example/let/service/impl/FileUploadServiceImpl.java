@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -40,8 +41,6 @@ public class FileUploadServiceImpl implements FileUploadService {
 
     @Value("${resource.path}")
     private String location;
-    @Value("${form.path}")
-    private String formLocation;
     @Value("${dateFormat.yyyyMM}")
     private String dateFormatMonth;
 
@@ -151,6 +150,6 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
     @Override
     public File getMealBundleForm() throws IOException {
-        return new File("C:/Users/cksgu/git/LetsEatingTime_Server/src/main/resources/bundle/meal.xlsx");
+        return new ClassPathResource("bundle/meal.xlsx").getFile();
     }
 }

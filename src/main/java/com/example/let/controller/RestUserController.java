@@ -4,6 +4,7 @@ import com.example.let.JwtTokenProvider;
 import com.example.let.domain.*;
 import com.example.let.domain.res.ResponseDto;
 import com.example.let.exception.GlobalException;
+import com.example.let.service.EntryService;
 import com.example.let.service.FileUploadService;
 import com.example.let.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -29,6 +30,7 @@ import java.net.URLEncoder;
 @AllArgsConstructor
 public class RestUserController {
     private final UserService userService;
+    private final EntryService entryService;
     private final FileUploadService fileUploadService;
     private final JwtTokenProvider jwtTokenProvider;
 
@@ -50,6 +52,32 @@ public class RestUserController {
                     ResponseDto.builder()
                             .status(200)
                             .data(userService.get(id))
+                            .build()
+                    , HttpStatus.OK
+            );
+        } else throw new GlobalException(HttpStatus.BAD_REQUEST, "can not find user");
+    }
+
+    /**
+     * @Name 급식 접근 가져오기(날짜)
+     * @Path "api/user/meal-entry"
+     *
+     * @text
+     * 특정 날짜의 사용자 급식실 접근 여부를 반환합니다
+     *
+     * @Return User
+     */
+    @Operation(summary = "급식 접근 가져오기(날짜)", description = "특정 날짜의 사용자 급식실 접근 여부를 반환합니다")
+    @GetMapping("/meal-entry")
+    public ResponseEntity<?> getMealDate(
+            @RequestParam("id") String id,
+            @RequestParam("date") String date
+    ) {
+        if(!id.isEmpty()) {
+            return new ResponseEntity<>(
+                    ResponseDto.builder()
+                            .status(200)
+                            .data(entryService.getMealByIdAndDate(id, date))
                             .build()
                     , HttpStatus.OK
             );
