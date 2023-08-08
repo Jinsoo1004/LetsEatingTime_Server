@@ -1,9 +1,14 @@
 package com.example.let.service;
 
 import com.example.let.domain.UploadedFile;
+import com.example.let.domain.User;
+import com.example.let.domain.UserForMeal;
+import com.example.let.domain.req.PasswordChangeRequest;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 public interface FileUploadService {
 
@@ -38,4 +43,18 @@ public interface FileUploadService {
 	 * @param fileIdx 파일 idx
 	 */
 	public void deleteFile(Long fileIdx);
+	/**
+	 * excel을 통한 신청 일괄 등록
+	 *
+	 * @param
+	 * @return
+	 */
+	public List<User> setMealBundle(MultipartFile multipartFile) throws IOException;
+	/**
+	 * excel을 통한 신청 일괄 등록 양식 반환
+	 *
+	 * @param
+	 * @return
+	 */
+	public File getMealBundleForm() throws IOException;
 }
