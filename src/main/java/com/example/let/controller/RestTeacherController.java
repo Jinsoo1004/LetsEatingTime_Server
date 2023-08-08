@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -353,13 +354,16 @@ public class RestTeacherController {
     public ResponseEntity<byte[]> getMealApplicationForm()
     {
         try {
-            File file = fileUploadService.getMealBundleForm();
-            byte[] bytes = FileUtils.readFileToByteArray(file);
+            byte[] bytes = fileUploadService.getMealBundleForm();
 
             return ResponseEntity.status(HttpStatus.OK)
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .header("Content-Disposition",
-                            "attachment; filename=\"주말 급식 신청 양식.xlsx\"")
+                            "attachment; filename=\"" +
+                                    URLEncoder.encode("주말 급식 신청 양식.xlsx",
+                                            "UTF-8") +
+                                    "\""
+                    )
                     .body(bytes);
         } catch (Exception e) {
             LoggerFactory.getLogger(getClass()).error(e.getMessage(), e);

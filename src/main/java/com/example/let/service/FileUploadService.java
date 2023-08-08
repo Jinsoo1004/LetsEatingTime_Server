@@ -56,5 +56,5 @@ public interface FileUploadService {
 	 * @param
 	 * @return
 	 */
-	public File getMealBundleForm() throws IOException;
+	public byte[] getMealBundleForm() throws IOException;
 }
