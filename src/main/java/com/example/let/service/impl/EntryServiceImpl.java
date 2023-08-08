@@ -119,4 +119,9 @@ public class EntryServiceImpl implements EntryService {
     public List<Entry> get() {
         return entryMapper.get();
     }
+
+    @Override
+    public List<Entry> getMealByIdAndDate(String id, String date) {
+        return entryMapper.getMealByIdAndDate(id, date);
+    }
 }

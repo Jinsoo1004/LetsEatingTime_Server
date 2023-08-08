@@ -16,5 +16,6 @@ public interface EntryMapper {
     public List<Entry> getById(String id);
     public List<Entry> getByDate(String date);
     public List<Entry> getByIdAndDate(String id, String date);
+    public List<Entry> getMealByIdAndDate(String id, String date);
     public List<Entry> get();
 }

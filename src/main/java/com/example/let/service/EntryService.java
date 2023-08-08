@@ -11,4 +11,5 @@ public interface EntryService {
     public List<Entry> get(String id);
     public List<Entry> getByDate(String Time);
     public List<Entry> get();
+    public List<Entry> getMealByIdAndDate(String id, String date);
 }
