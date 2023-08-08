@@ -88,16 +88,10 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.getById(id);
         List<Entry> entry = entryMapper.getByIdAndDate(user.getId(), LocalDateTime.now().toLocalDate().toString());
 
-        List<String> meal = new ArrayList<>();
-        for(int entryIndex = 0; entryIndex < entry.size(); entryIndex++) {
-            if(LocalDateTime.parse(entry.get(entryIndex).getEntryTime(), dateTimeFormatter).isBefore(LocalDateTime.now())) {
-                meal.add(entry.get(entryIndex).getInfo());
-            }
-        }
+        List<String> info = entry.stream().map(Entry::getInfo).toList();
         return UserForMeal.builder()
                 .user(user)
-                .mealTime(meal)
-                //.breakfast(entry.)
+                .mealType(info)
                 .build();
     }
     @Override
@@ -115,8 +109,7 @@ public class UserServiceImpl implements UserService {
 
             userForMeal.add(UserForMeal.builder()
                     .user(user.get(userIndex))
-                    .mealTime(info)
-
+                    .mealType(info)
                     .build()
             );
         }

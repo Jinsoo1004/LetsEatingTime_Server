@@ -10,5 +10,5 @@ import java.util.List;
 public class UserForMeal {
     @NonNull
     private User user;
-    private List<String> mealTime;
+    private List<String> mealType;
 }
