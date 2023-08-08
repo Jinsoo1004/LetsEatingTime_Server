@@ -1,17 +1,22 @@
 package com.example.let.controller;
 
-import com.example.let.domain.Access;
 import com.example.let.domain.Opening;
 import com.example.let.domain.res.ResponseDto;
+import com.example.let.exception.GlobalException;
 import com.example.let.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
+import org.apache.commons.io.FileUtils;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -311,5 +316,54 @@ public class RestTeacherController {
                         .build()
                 , HttpStatus.OK
         );
+    }
+
+    /**
+     * @Name 사용자 급식 신청 일괄 처리
+     * @Path "form/upload/meal"
+     *
+     * @text
+     * excel을 이용하여 사용자 급식 신청을 일괄 처리를 등록한다
+     *
+     * @Return Meal
+     */
+    @Operation(summary = "사용자 급식 신청 일괄 처리", description = "excel을 이용하여 사용자 급식 신청을 일괄 처리를 등록한다.")
+    @GetMapping(value="/form/upload/meal")
+    public ResponseEntity<?> setMealBundle(
+            @RequestParam("bundle") MultipartFile multipartFile
+    ) throws IOException {
+        return new ResponseEntity<>(ResponseDto.builder()
+                .status(200)
+                .data(fileUploadService.setMealBundle(multipartFile))
+                .build()
+                , HttpStatus.OK
+        );
+    }
+    /**
+     * @Name 사용자 급식 신청 일괄 처리 양식
+     * @Path "form/download/meal"
+     *
+     * @text
+     * 사용자 급식 신청을 일괄 처리하는 excel 양식을 반환한다
+     *
+     * @Return BinaryData
+     */
+    @Operation(summary = "사용자 급식 신청 일괄 처리 양식", description = "사용자 급식 신청을 일괄 처리하는 excel 양식을 반환한다")
+    @GetMapping(value="/form/download/meal")
+    public ResponseEntity<byte[]> getMealApplicationForm()
+    {
+        try {
+            File file = fileUploadService.getMealBundleForm();
+            byte[] bytes = FileUtils.readFileToByteArray(file);
+
+            return ResponseEntity.status(HttpStatus.OK)
+                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    .header("Content-Disposition",
+                            "attachment; filename=\"주말 급식 신청 양식.xlsx\"")
+                    .body(bytes);
+        } catch (Exception e) {
+            LoggerFactory.getLogger(getClass()).error(e.getMessage(), e);
+        }
+        throw new GlobalException(HttpStatus.BAD_REQUEST, "unknown error");
     }
 }
