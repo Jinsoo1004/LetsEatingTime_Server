@@ -75,7 +75,7 @@
         WHERE id = #{id}
         )
         AND date_format(entry_time, '%Y-%m-%d') = #{date}
-        AND type = `meal`;
+        AND type = "meal";
     </select>
     <insert id="register" parameterType="com.example.let.domain.Entry" useGeneratedKeys="true"
             keyProperty="idx" >

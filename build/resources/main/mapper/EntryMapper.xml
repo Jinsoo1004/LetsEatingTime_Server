@@ -66,6 +66,17 @@
         )
         AND date_format(entry_time, '%Y-%m-%d') = #{date};
     </select>
+    <select id="getMealByIdAndDate" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM entry
+        WHERE user_id =
+        (
+        SELECT idx FROM `user`
+        WHERE id = #{id}
+        )
+        AND date_format(entry_time, '%Y-%m-%d') = #{date}
+        AND type = `meal`;
+    </select>
     <insert id="register" parameterType="com.example.let.domain.Entry" useGeneratedKeys="true"
             keyProperty="idx" >
 
