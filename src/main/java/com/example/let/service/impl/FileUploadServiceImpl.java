@@ -151,8 +151,8 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
     @Override
     public File getMealBundleForm() throws IOException {
-        FileOutputStream fos = new FileOutputStream(new File("bundle/output.xlsx"));
-        File file = new File("bundle/meal.xlsx");
+        FileOutputStream fos = new FileOutputStream(new ClassPathResource("bundle/output.xlsx").getFile());
+        File file = new ClassPathResource("bundle/meal.xlsx").getFile();
         XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
         XSSFSheet sheet = workbook.getSheetAt(0);
         workbook.write(fos);
