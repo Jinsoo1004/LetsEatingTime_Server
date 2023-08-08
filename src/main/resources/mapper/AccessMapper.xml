@@ -78,4 +78,21 @@
             , now()
         )
     </insert>
+    <delete id="delete">
+        DELETE FROM access
+        WHERE user_id =
+        (
+            SELECT idx FROM `user`
+            WHERE id = #{id}
+        )
+    </delete>
+    <delete id="deleteByUserIdAndType">
+        DELETE FROM access
+        WHERE user_id =
+        (
+            SELECT idx FROM `user`
+            WHERE id = #{id}
+        )
+        AND type = #{type}
+    </delete>
 </mapper>

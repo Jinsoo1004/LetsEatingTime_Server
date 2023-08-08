@@ -8,7 +8,7 @@ CREATE TABLE `file` (
                         `size` int NOT NULL COMMENT '파일 크기',
                         `register_time` datetime NOT NULL COMMENT '등록 시간',
                         PRIMARY KEY (`file_idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 CREATE TABLE `user` (
                         `idx` int NOT NULL AUTO_INCREMENT,
                         `image` int DEFAULT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE `user` (
                         UNIQUE KEY `idx_UNIQUE` (`idx`),
                         KEY `fk_entry_user_name_idx` (`image`),
                         CONSTRAINT `fk_user_file_idx` FOREIGN KEY (`image`) REFERENCES `file` (`file_idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 CREATE TABLE `card` (
                         `idx` int NOT NULL AUTO_INCREMENT,
                         `user_id` int NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `card` (
                         UNIQUE KEY `nfc_id` (`nfc_id`),
                         KEY `fk_card_user_idx` (`user_id`),
                         CONSTRAINT `fk_card_user_idx` FOREIGN KEY (`user_id`) REFERENCES `user` (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 CREATE TABLE `access` (
                           `idx` int NOT NULL AUTO_INCREMENT,
                           `user_id` int NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `access` (
                           KEY `fk_account_user_idx_2_idx` (`grant_id`),
                           CONSTRAINT `fk_account_user_idx_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`idx`),
                           CONSTRAINT `fk_account_user_idx_2` FOREIGN KEY (`grant_id`) REFERENCES `user` (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 CREATE TABLE `entry` (
                          `idx` int NOT NULL AUTO_INCREMENT,
                          `user_id` int NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `entry` (
                          KEY `fk_entry_card_idx` (`card_id`),
                          CONSTRAINT `fk_entry_card_idx` FOREIGN KEY (`card_id`) REFERENCES `card` (`idx`),
                          CONSTRAINT `fk_entry_user_idx` FOREIGN KEY (`user_id`) REFERENCES `user` (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=351 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 CREATE TABLE `opening` (
                            `idx` int NOT NULL AUTO_INCREMENT,
                            `device` int NOT NULL,
@@ -81,4 +81,4 @@ CREATE TABLE `opening` (
                            PRIMARY KEY (`idx`),
                            KEY `fk_entry_user_name_idx` (`device`),
                            CONSTRAINT `fk_opening_user_device` FOREIGN KEY (`device`) REFERENCES `user` (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;

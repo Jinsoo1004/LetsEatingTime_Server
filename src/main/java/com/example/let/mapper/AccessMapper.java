@@ -16,4 +16,6 @@ public interface AccessMapper {
     public List<Access> getByType(String type);
     public Access getByIdAndType(String id, String type);
     public List<Access> getByIdAndTypeAndDate(String id, String type, String date);
+    public void delete(String id);
+    public void deleteByUserIdAndType(String id, String type);
 }
