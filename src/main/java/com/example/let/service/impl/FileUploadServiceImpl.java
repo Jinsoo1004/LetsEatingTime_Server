@@ -169,8 +169,8 @@ public class FileUploadServiceImpl implements FileUploadService {
             List<Access> access = accessMapper.getById(target.getId());
             userForAccess.add(UserForAccess.builder().user(target).access(access).build());
         }
-        File file = new ClassPathResource("bundle/meal.xlsx").getFile();
-        XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
+        InputStream stream = new ClassPathResource("bundle/meal.xlsx").getInputStream();
+        XSSFWorkbook workbook = new XSSFWorkbook(stream);
         XSSFSheet sheet = workbook.getSheetAt(0);
         XSSFRow row = null;
         XSSFCell cell = null;
