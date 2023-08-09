@@ -329,7 +329,7 @@ public class RestTeacherController {
      * @Return Meal
      */
     @Operation(summary = "사용자 급식 신청 일괄 처리", description = "excel을 이용하여 사용자 급식 신청을 일괄 처리를 등록한다.")
-    @GetMapping(value="/form/upload/meal")
+    @PostMapping(value="/form/upload/meal")
     public ResponseEntity<?> setMealBundle(
             @RequestParam("bundle") MultipartFile multipartFile
     ) throws IOException {
