@@ -83,12 +83,16 @@ CREATE TABLE `opening` (
                            CONSTRAINT `fk_opening_user_device` FOREIGN KEY (`device`) REFERENCES `user` (`idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
 
+Drop event auto_delete_withdrawed_user;
 DELIMITER //
 CREATE EVENT auto_delete_withdrawed_user
 ON SCHEDULE EVERY 1 DAY
 DO
 BEGIN
-DELETE FROM `let`.`user` WHERE `withdrawed_time` <= DATE_SUB(NOW(), INTERVAL 30 DAY);
+DELETE FROM let.entry WHERE user_id = (SELECT idx FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY ORDER BY idx limit 1);
+DELETE FROM let.access WHERE user_id = (SELECT idx FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY ORDER BY idx limit 1);
+DELETE FROM let.card WHERE user_id = (SELECT idx FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY ORDER BY idx limit 1);
+DELETE FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 10 SECOND ORDER BY idx limit 1;
 END;
 //
 DELIMITER ;
