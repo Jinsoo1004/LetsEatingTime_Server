@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="withdrawed_yn 설정 문자 변경 y-&gt;Y">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="sql 변경, 탈퇴 메소드 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/sql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/sql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +313,8 @@
       <workItem from="1686546852543" duration="213000" />
       <workItem from="1691373597502" duration="1143000" />
       <workItem from="1691453225694" duration="18220000" />
-      <workItem from="1691482473484" duration="3397000" />
+      <workItem from="1691482473484" duration="4137000" />
+      <workItem from="1691556407569" duration="132000" />
     </task>
     <task id="LOCAL-00023" summary="CardCheckRes 사용">
       <created>1681213929760</created>
@@ -659,7 +659,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686535865539</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="통계에서 미승인 유저 배제" />
     <MESSAGE value="전체 급식 참석 통계" />
     <MESSAGE value="유저 삭제 기능" />
     <MESSAGE value="유저 타입 고정 해제" />
@@ -702,7 +701,8 @@
     <MESSAGE value="file 가져오기 수정" />
     <MESSAGE value="회원탈퇴 처리" />
     <MESSAGE value="withdrawed_yn 설정 문자 변경 y-&gt;Y" />
-    <option name="LAST_COMMIT_MESSAGE" value="withdrawed_yn 설정 문자 변경 y-&gt;Y" />
+    <MESSAGE value="sql 변경, 탈퇴 메소드 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="sql 변경, 탈퇴 메소드 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
