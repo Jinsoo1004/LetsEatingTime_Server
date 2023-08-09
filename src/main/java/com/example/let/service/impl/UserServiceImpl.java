@@ -4,9 +4,7 @@ import com.example.let.JwtTokenProvider;
 import com.example.let.domain.*;
 import com.example.let.domain.req.PasswordChangeRequest;
 import com.example.let.exception.GlobalException;
-import com.example.let.mapper.AccessMapper;
-import com.example.let.mapper.EntryMapper;
-import com.example.let.mapper.UserMapper;
+import com.example.let.mapper.*;
 import com.example.let.module.RandomStringGenerator;
 import com.example.let.service.UserService;
 
@@ -30,7 +28,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
+    private final CardMapper cardMapper;
     private final EntryMapper entryMapper;
+    private final FileMapper fileMapper;
     private final AccessMapper accessMapper;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
@@ -139,6 +139,11 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public void delete(String id) {
+        User user = userMapper.getById(id);
+        entryMapper.deleteByUserId(user.getIdx());
+        accessMapper.delete(id);
+        cardMapper.deleteByUserId(user.getIdx());
+        fileMapper.deleteFile(user.getImage());
         userMapper.delete(id);
     }
 

@@ -64,4 +64,8 @@
             , now()
         )
     </insert>
+    <delete id="deleteByUserId">
+        DELETE FROM card
+        WHERE user_id = #{idx};
+    </delete>
 </mapper>

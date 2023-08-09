@@ -18,4 +18,5 @@ public interface EntryMapper {
     public List<Entry> getByIdAndDate(String id, String date);
     public List<Entry> getMealByIdAndDate(String id, String date);
     public List<Entry> get();
+    public void deleteByUserId(Long idx);
 }
