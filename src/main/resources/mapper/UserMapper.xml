@@ -257,7 +257,7 @@
     </select>
     <update id="withdraw" parameterType="String">
         UPDATE user
-        SET withdrawed_yn = "y",
+        SET withdrawed_yn = "Y",
             withdrawed_time = NOW()
         WHERE id = #{id}
     </update>
