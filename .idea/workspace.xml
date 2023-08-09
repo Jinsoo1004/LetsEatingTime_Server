@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="sql 변경, 탈퇴 메소드 변경">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="메소드 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/controller/RestTeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/CardMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/CardMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/EntryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/EntryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EntryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/EntryMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +318,7 @@
       <workItem from="1691373597502" duration="1143000" />
       <workItem from="1691453225694" duration="18220000" />
       <workItem from="1691482473484" duration="4137000" />
-      <workItem from="1691556407569" duration="132000" />
+      <workItem from="1691556407569" duration="1137000" />
     </task>
     <task id="LOCAL-00023" summary="CardCheckRes 사용">
       <created>1681213929760</created>
@@ -659,7 +663,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686535865539</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="전체 급식 참석 통계" />
     <MESSAGE value="유저 삭제 기능" />
     <MESSAGE value="유저 타입 고정 해제" />
     <MESSAGE value="이미지 요청 늘 허용" />
@@ -702,7 +705,8 @@
     <MESSAGE value="회원탈퇴 처리" />
     <MESSAGE value="withdrawed_yn 설정 문자 변경 y-&gt;Y" />
     <MESSAGE value="sql 변경, 탈퇴 메소드 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql 변경, 탈퇴 메소드 변경" />
+    <MESSAGE value="메소드 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="메소드 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

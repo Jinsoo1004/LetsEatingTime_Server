@@ -14,4 +14,5 @@ public interface CardMapper {
     public List<Card> getById(String id);
     public Card getByNfcId(Long nfcId);
     public List<Card> get();
+    public void deleteByUserId(Long idx);
 }
