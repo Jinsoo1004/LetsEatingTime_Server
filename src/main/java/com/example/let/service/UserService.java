@@ -92,9 +92,16 @@ public interface UserService {
      * 회원을 삭제합니다.
      *
      * @param
-     * @return ChartResponse
+     * @return
      */
     public void delete(String id);
+    /**
+     * 회원을 탈퇴 처리합니다.
+     *
+     * @param
+     * @return
+     */
+    public void withdraw(String id);
     /**
      * 비밀번호를 변경합니다.
      *

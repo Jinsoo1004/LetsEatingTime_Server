@@ -143,6 +143,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void withdraw(String id) {
+        userMapper.withdraw(id);
+    }
+
+    @Override
     public void passwordChange(PasswordChangeRequest request) {
         User user = userMapper.getById(request.getId());
         if(user == null) {
