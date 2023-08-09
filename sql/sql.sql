@@ -88,7 +88,7 @@ CREATE EVENT auto_delete_withdrawed_user
 ON SCHEDULE EVERY 1 DAY
 DO
 BEGIN
-DELETE FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY;
+DELETE FROM `let`.`user` WHERE `withdrawed_time` <= DATE_SUB(NOW(), INTERVAL 30 DAY);
 END;
 //
 DELIMITER ;
