@@ -92,7 +92,7 @@ BEGIN
 DELETE FROM let.entry WHERE user_id = (SELECT idx FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY ORDER BY idx limit 1);
 DELETE FROM let.access WHERE user_id = (SELECT idx FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY ORDER BY idx limit 1);
 DELETE FROM let.card WHERE user_id = (SELECT idx FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY ORDER BY idx limit 1);
-DELETE FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 10 SECOND ORDER BY idx limit 1;
+DELETE FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY ORDER BY idx limit 1;
 END;
 //
 DELIMITER ;
