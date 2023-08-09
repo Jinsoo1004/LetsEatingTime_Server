@@ -68,7 +68,7 @@ public class RestUserController {
      * @Return User
      */
     @Operation(summary = "회원탈퇴", description = "해당 사용자의 권한을 모두 잠그고 30일 뒤 삭제처리 한다")
-    @GetMapping("/withdraw")
+    @PostMapping("/withdraw")
     public ResponseEntity<?> withdraw(@RequestHeader("Authorization") String token) {
         String id = jwtTokenProvider.getAccessSubFromToken(token.substring(7));
         if(!id.isEmpty()) {
