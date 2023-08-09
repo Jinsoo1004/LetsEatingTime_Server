@@ -59,6 +59,31 @@ public class RestUserController {
     }
 
     /**
+     * @Name 회원탈퇴
+     * @Path "api/user/withdraw"
+     *
+     * @text
+     * 해당 사용자의 권한을 모두 잠그고 30일 뒤 삭제처리 한다
+     *
+     * @Return User
+     */
+    @Operation(summary = "회원탈퇴", description = "해당 사용자의 권한을 모두 잠그고 30일 뒤 삭제처리 한다")
+    @GetMapping("/withdraw")
+    public ResponseEntity<?> withdraw(@RequestHeader("Authorization") String token) {
+        String id = jwtTokenProvider.getAccessSubFromToken(token.substring(7));
+        if(!id.isEmpty()) {
+            userService.withdraw(id);
+            return new ResponseEntity<>(
+                    ResponseDto.builder()
+                            .status(200)
+                            .data("successfully completed")
+                            .build()
+                    , HttpStatus.OK
+            );
+        } else throw new GlobalException(HttpStatus.BAD_REQUEST, "can not find user");
+    }
+
+    /**
      * @Name 급식 접근 가져오기(날짜)
      * @Path "api/user/meal-entry"
      *

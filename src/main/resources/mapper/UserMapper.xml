@@ -255,6 +255,12 @@
                           AND status = 'N')
                    )   AS value
     </select>
+    <update id="withdraw" parameterType="String">
+        UPDATE user
+        SET withdrawed_yn = "y",
+            withdrawed_time = NOW()
+        WHERE id = #{id}
+    </update>
     <delete id="delete">
         DELETE FROM user
         WHERE id = #{id};

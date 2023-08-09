@@ -296,7 +296,7 @@ public class RestTeacherController {
     }
     /**
      * @Name 회원 삭제
-     * @Path "api/teacher/approve"
+     * @Path "api/teacher/delete/user"
      * @Request RequestParam(form) : Form
      *
      * @text
@@ -306,7 +306,7 @@ public class RestTeacherController {
      */
     @Operation(summary = "회원 삭제",
             description = "유저를 삭제합니다.")
-    @DeleteMapping("/delete-user")
+    @GetMapping(value="/delete/user")
     public ResponseEntity<?> userDelete(
             @RequestParam(name = "id") String id) {
         userService.delete(id);

@@ -82,3 +82,13 @@ CREATE TABLE `opening` (
                            KEY `fk_entry_user_name_idx` (`device`),
                            CONSTRAINT `fk_opening_user_device` FOREIGN KEY (`device`) REFERENCES `user` (`idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb3;
+
+DELIMITER //
+CREATE EVENT auto_delete_withdrawed_user
+ON SCHEDULE EVERY 1 DAY
+DO
+BEGIN
+DELETE FROM let.user WHERE withdrawed_time <= NOW() - INTERVAL 30 DAY;
+END;
+//
+DELIMITER ;
