@@ -163,7 +163,7 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
     @Override
     public byte[] getMealBundleForm() throws IOException {
-        List<User> user = userMapper.get();
+        List<User> user = userMapper.getStudent();
         List<UserForAccess> userForAccess = new ArrayList<>();
         for (User target : user) {
             List<Access> access = accessMapper.getById(target.getId());
