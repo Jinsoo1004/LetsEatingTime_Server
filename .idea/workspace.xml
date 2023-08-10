@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="오타 수정">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="학생만 가져오기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/FileUploadServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -317,7 +315,7 @@
       <workItem from="1691453225694" duration="18220000" />
       <workItem from="1691482473484" duration="4137000" />
       <workItem from="1691556407569" duration="5303000" />
-      <workItem from="1691634653112" duration="1239000" />
+      <workItem from="1691634653112" duration="1647000" />
     </task>
     <task id="LOCAL-00023" summary="CardCheckRes 사용">
       <created>1681213929760</created>
@@ -662,7 +660,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686535865539</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +678,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="이미지 binary 리턴 -&gt; image/png 리턴" />
     <MESSAGE value="인덱스 초과 에러 해결" />
     <MESSAGE value="ssl 설정" />
     <MESSAGE value="공식 인증서 적용" />
@@ -705,7 +702,8 @@
     <MESSAGE value="file을 거치지 않고 stream" />
     <MESSAGE value="메소드 변경" />
     <MESSAGE value="오타 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="오타 수정" />
+    <MESSAGE value="학생만 가져오기" />
+    <option name="LAST_COMMIT_MESSAGE" value="학생만 가져오기" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
