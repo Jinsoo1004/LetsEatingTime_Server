@@ -50,7 +50,7 @@
 	</insert>
 
 	<delete id="deleteFile">
-		DELETE FROM writing_file
+		DELETE FROM file
 		 WHERE file_idx = #{fileIdx}
 	</delete>
  
