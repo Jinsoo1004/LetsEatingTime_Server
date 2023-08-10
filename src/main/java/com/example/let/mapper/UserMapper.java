@@ -15,6 +15,7 @@ public interface UserMapper {
     public User getById(String id);
     public User getByIdx(Long idx);
     public List<User> get();
+    public List<User> getStudent();
     public void setRefreshToken(String id, String refreshCode);
     public void setImage(String id, Long image);
     public String getRefreshTokenById(String id);
