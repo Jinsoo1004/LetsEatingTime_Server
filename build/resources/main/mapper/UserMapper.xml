@@ -43,6 +43,11 @@
         FROM user
         ORDER BY grade, class_name, class_no
     </select>
+    <select id="getStudent" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM user WHERE user_type = 'S'
+        ORDER BY grade, class_name, class_no
+    </select>
     <select id="getByIdx" resultMap="result">
         <include refid="sql_select"></include>
         FROM user
@@ -108,7 +113,11 @@
                    (SELECT count(*)
                     FROM user
                     WHERE user_type = 'S'
-                      AND approved_yn = 'Y')
+                    AND   approved_yn = 'Y')
+                   -
+                   (SELECT count(*)
+                    FROM access
+                    WHERE type = "breakfast_weekend")
                )
         UNION ALL
         SELECT (
@@ -255,6 +264,12 @@
                           AND status = 'N')
                    )   AS value
     </select>
+    <update id="withdraw" parameterType="String">
+        UPDATE user
+        SET withdrawed_yn = "Y",
+            withdrawed_time = NOW()
+        WHERE id = #{id}
+    </update>
     <delete id="delete">
         DELETE FROM user
         WHERE id = #{id};

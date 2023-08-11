@@ -117,4 +117,8 @@
         FROM (SELECT * FROM entry WHERE idx = #{idx}) AS entry LEFT OUTER JOIN user
         ON entry.user_id = user.idx
     </select>
+    <delete id="deleteByUserId">
+        DELETE FROM entry
+        WHERE user_id = #{idx};
+    </delete>
 </mapper>

@@ -137,6 +137,7 @@ public class FileUploadServiceImpl implements FileUploadService {
         while (! row.getCell(0).getStringCellValue().equals("EndPoint")) {
             User user = userMapper.getById(row.getCell(2).getStringCellValue());
             accessMapper.delete(user.getId());
+            System.out.println(user.getId());
             if (row.getCell(4).getStringCellValue().equals("O")) {
                 accessService.register(user.getId(), grantor, "breakfast");
                 accessService.register(user.getId(), grantor, "lunch");
