@@ -4,9 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="조건 오류 해결">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="권한 추가전 삭제 처리">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestTeacherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/controller/RestUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/CardMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/CardMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/EntryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/EntryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/FileUploadServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/FileUploadServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/let/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/bundle/meal.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/bundle/meal.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/AccessMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/AccessMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/CardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/CardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/EntryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/EntryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/FileMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/FileMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/FileUploadServiceImpl.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RestUserController.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/FileUploadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,7 +340,8 @@
       <workItem from="1691453225694" duration="18220000" />
       <workItem from="1691482473484" duration="4137000" />
       <workItem from="1691556407569" duration="5303000" />
-      <workItem from="1691634653112" duration="2308000" />
+      <workItem from="1691634653112" duration="6160000" />
+      <workItem from="1691737953681" duration="93000" />
     </task>
     <task id="LOCAL-00023" summary="CardCheckRes 사용">
       <created>1681213929760</created>
@@ -660,7 +686,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686535865539</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,7 +704,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ssl 설정" />
     <MESSAGE value="공식 인증서 적용" />
     <MESSAGE value="aws rds 사용" />
     <MESSAGE value="통계 response List&lt;Long&gt; 으로 바꿈" />
@@ -703,7 +728,8 @@
     <MESSAGE value="오타 수정" />
     <MESSAGE value="학생만 가져오기" />
     <MESSAGE value="조건 오류 해결" />
-    <option name="LAST_COMMIT_MESSAGE" value="조건 오류 해결" />
+    <MESSAGE value="권한 추가전 삭제 처리" />
+    <option name="LAST_COMMIT_MESSAGE" value="권한 추가전 삭제 처리" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
