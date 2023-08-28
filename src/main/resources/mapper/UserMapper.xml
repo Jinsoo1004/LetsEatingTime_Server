@@ -73,6 +73,14 @@
         SET image = #{image}
         WHERE id = #{id}
     </update>
+    <update id="reset" parameterType="com.example.let.domain.User">
+        UPDATE user
+        SET name = #{name},
+        grade = #{grade},
+        class_name = #{className},
+        class_no = #{classNo}
+        WHERE id = #{id}
+    </update>
     <select id="getRefreshTokenById" resultType="String">
         SELECT refresh_token
         FROM user
