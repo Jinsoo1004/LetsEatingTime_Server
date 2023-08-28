@@ -45,7 +45,7 @@
     </select>
     <select id="getStudent" resultMap="result">
         <include refid="sql_select"></include>
-        FROM user WHERE user_type = 'S'
+        FROM user WHERE user_type = 'S'  AND approved_yn = 'Y'
         ORDER BY grade, class_name, class_no
     </select>
     <select id="getByIdx" resultMap="result">

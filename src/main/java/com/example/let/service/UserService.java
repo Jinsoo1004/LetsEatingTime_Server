@@ -109,4 +109,11 @@ public interface UserService {
      * @return
      */
     public void passwordChange(PasswordChangeRequest request);
+    /**
+     * 비밀번호를 변경합니다.
+     *
+     * @param
+     * @return
+     */
+    public void reset(User user);
 }

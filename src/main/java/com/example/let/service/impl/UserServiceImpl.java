@@ -162,4 +162,9 @@ public class UserServiceImpl implements UserService {
             userMapper.passwordUpdate(request.getId(), passwordEncoder.encode(request.getNewPassword()));
         } else throw new GlobalException(HttpStatus.BAD_REQUEST, "password not match");
     }
+
+    @Override
+    public void reset(User user) {
+        userMapper.reset(user);
+    }
 }

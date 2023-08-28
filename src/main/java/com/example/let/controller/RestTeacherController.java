@@ -1,6 +1,7 @@
 package com.example.let.controller;
 
 import com.example.let.domain.Opening;
+import com.example.let.domain.User;
 import com.example.let.domain.res.ResponseDto;
 import com.example.let.exception.GlobalException;
 import com.example.let.service.*;
@@ -286,6 +287,30 @@ public class RestTeacherController {
     public ResponseEntity<?> accessAdd(
             @RequestParam(name = "id") String id) {
         userService.approve(id);
+        return new ResponseEntity<>(
+                ResponseDto.builder()
+                        .status(200)
+                        .data("successfully completed")
+                        .build()
+                , HttpStatus.OK
+        );
+    }
+    /**
+     * @Name 회원 편집
+     * @Path "api/teacher/edit/student"
+     * @Request RequestParam(form) : Form
+     *
+     * @text
+     * 유저정보를 편집합니다.
+     *
+     * @Return
+     */
+    @Operation(summary = "회원 편집",
+            description = "유저정보를 편집합니다.")
+    @PostMapping("/edit/student")
+    public ResponseEntity<?> editStudent(
+            @RequestBody User user) {
+        userService.reset(user);
         return new ResponseEntity<>(
                 ResponseDto.builder()
                         .status(200)
