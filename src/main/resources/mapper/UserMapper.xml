@@ -94,6 +94,7 @@
         (
             idx
             , id
+            , image
             , password
             , name
             , create_time
@@ -106,6 +107,7 @@
         (
             #{idx}
             , #{id}
+            , #{image}
             , #{password}
             , #{name}
             , now()
