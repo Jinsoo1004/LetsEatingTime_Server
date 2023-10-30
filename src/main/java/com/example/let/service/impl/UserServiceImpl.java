@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String register(User user) {
         if(user.getId().equals("null")) throw new GlobalException(HttpStatus.BAD_REQUEST, "id can't \"null\"");
+        user.setImage(0L);
         userMapper.register(user);
         return user.getId();
     }
