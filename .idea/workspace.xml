@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="default 이미지 지정">
+    <list default="true" id="d52d1c51-6ccd-4e1e-aa99-cc5e5f10bf62" name="변경" comment="mapper sql 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/let/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +330,9 @@
       <workItem from="1697589395663" duration="1486000" />
       <workItem from="1698643958247" duration="832000" />
       <workItem from="1698646468410" duration="522000" />
-      <workItem from="1698651242357" duration="21000" />
+      <workItem from="1698651242357" duration="170000" />
+      <workItem from="1698651428162" duration="20000" />
+      <workItem from="1698730839594" duration="165000" />
     </task>
     <task id="LOCAL-00023" summary="CardCheckRes 사용">
       <created>1681213929760</created>
@@ -675,7 +677,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686535865539</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +695,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="access 확인 api" />
     <MESSAGE value="비밀번호 변경 api" />
     <MESSAGE value="비밀번호 변경 api 메소드 변경" />
     <MESSAGE value="비밀번호 변경 dto 사용" />
@@ -718,7 +719,8 @@
     <MESSAGE value="승인 안된 유저 가져오지 않기" />
     <MESSAGE value="유저 정보 편집" />
     <MESSAGE value="default 이미지 지정" />
-    <option name="LAST_COMMIT_MESSAGE" value="default 이미지 지정" />
+    <MESSAGE value="mapper sql 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="mapper sql 변경" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

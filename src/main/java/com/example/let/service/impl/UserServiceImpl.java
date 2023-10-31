@@ -144,7 +144,9 @@ public class UserServiceImpl implements UserService {
         entryMapper.deleteByUserId(user.getIdx());
         accessMapper.delete(id);
         cardMapper.deleteByUserId(user.getIdx());
-        fileMapper.deleteFile(user.getImage());
+        if (user.getImage() != 0) {
+            fileMapper.deleteFile(user.getImage());
+        }
         userMapper.delete(id);
     }
 
