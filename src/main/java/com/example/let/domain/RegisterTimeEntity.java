@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 import java.util.Date;
@@ -56,7 +58,11 @@ public class RegisterTimeEntity {
 			TemporalAccessor temporalAccessor = 
 					DateTimeFormatter.ISO_OFFSET_DATE_TIME.parse(str);
 			Instant instant = Instant.from(temporalAccessor);
-			return Date.from(instant);
+
+			ZonedDateTime utc = ZonedDateTime.ofInstant(instant, ZoneId.of("UTC"));
+			ZonedDateTime ktc = utc.withZoneSameInstant(ZoneId.of("Asia/Seoul"));
+
+			return Date.from(ktc.toInstant());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
