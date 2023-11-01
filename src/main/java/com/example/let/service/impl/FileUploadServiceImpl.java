@@ -90,6 +90,10 @@ public class FileUploadServiceImpl implements FileUploadService {
             throw new GlobalException(HttpStatus.BAD_REQUEST, "Invalid file data");
         }
 
+        System.out.println(uploadedFile.getDeletedTime());
+        System.out.println(uploadedFile.getDeletedTimeDate());
+        System.out.println(getDirectory(uploadedFile.getDeletedTimeDate()));
+
         String directory = getDirectory(uploadedFile.getRegisterTimeDate());
 
         return new File(directory, uploadedFile.getFileName());
