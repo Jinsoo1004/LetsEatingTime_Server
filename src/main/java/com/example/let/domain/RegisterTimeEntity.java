@@ -59,10 +59,7 @@ public class RegisterTimeEntity {
 					DateTimeFormatter.ISO_OFFSET_DATE_TIME.parse(str);
 			Instant instant = Instant.from(temporalAccessor);
 
-			ZonedDateTime utc = ZonedDateTime.ofInstant(instant, ZoneId.of("UTC"));
-			ZonedDateTime ktc = utc.withZoneSameInstant(ZoneId.of("Asia/Seoul"));
-
-			return Date.from(ktc.toInstant());
+			return Date.from(instant);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

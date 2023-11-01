@@ -90,10 +90,6 @@ public class FileUploadServiceImpl implements FileUploadService {
             throw new GlobalException(HttpStatus.BAD_REQUEST, "Invalid file data");
         }
 
-        System.out.println(uploadedFile.getRegisterTime());
-        System.out.println(uploadedFile.getRegisterTimeDate());
-        System.out.println(getDirectory(uploadedFile.getRegisterTimeDate()));
-
         String directory = getDirectory(uploadedFile.getRegisterTimeDate());
 
         return new File(directory, uploadedFile.getFileName());
@@ -117,6 +113,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 
     private String getDirectory(Date date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat(dateFormatMonth);
+        dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
 
         File directory = new File(location, dateFormat.format(date));
         if (!directory.exists()) {
